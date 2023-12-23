@@ -12,7 +12,7 @@ export const startCronJob = () => {
     async () => {
       // Calculate the expiration date to identify records older than 7 days
       const expirationDate = new Date();
-      expirationDate.setMinutes(expirationDate.getMinutes() - 20);
+      expirationDate.setMinutes(expirationDate.getMinutes() - 10);
 
       try {
         // Remove active sessions older than the calculated expirationDate
