@@ -61,7 +61,11 @@ class AirlineController {
    * 
    * @returns {Promise<void>} - Resolves with the airline details on successful retrieval.
    */
-  getAirlineById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  getAirlineById = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<void> => {
     try {
       // Extract the airline ID from the request parameters.
       const { id } = request.params;
