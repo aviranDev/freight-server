@@ -9,7 +9,7 @@ export const startCronJob = async () => {
     async () => {
       try {
         // Make an HTTP request to your Express route
-        const response = await axios.get('http://localhost:3000/api/cron-task');
+        const response = await axios.get('https://average-sunglasses-dove.cyclic.app/api/crons/cron-job');
 
         // Log a debug message indicating successful execution of the cron job
         logger.debug('Cron job ran at: ' + new Date().toLocaleString());
