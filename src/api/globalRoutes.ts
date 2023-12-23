@@ -26,7 +26,10 @@ function configureMiddleware(app: Application) {
   app.use(morganMiddleware); // Use Morgan for request logging
   app.use(corsMiddleware);  // Use the imported CORS middleware
   app.use("/api", api); // Use /api as the root path for the API
-  app.get('/cron', () => startCronJob())
+
+
+  app.get("/cron-job", startCronJob); // Use /api as the root path for the API
+
   // Start the Cron job by calling the function from the module
   // startCronJob();
 
