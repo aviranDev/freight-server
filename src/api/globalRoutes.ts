@@ -10,7 +10,7 @@ import contactRouter from "../routes/contacts";
 import airlineRouter from "../routes/airlines";
 import cronRoutes from '../routes/cron';
 import agentRouter from '../routes/agents';
-import { startCronJob } from "../utils/cronJob";
+// import { startCronJob } from "../utils/cronJob";
 const api = Router(); // Create a sub-router for API routes
 
 // Use consistent naming conventions for route paths and variables
@@ -29,7 +29,7 @@ function configureMiddleware(app: Application) {
   app.use("/api", api); // Use /api as the root path for the API
 
   // Start the Cron job by calling the function from the module
-  startCronJob();
+  // startCronJob();
 
   // Configure error handling middleware
   configureErrorHandlers(app);
