@@ -1,0 +1,12 @@
+# Ignore the node_modules folder, which contains project dependencies.
+node_modules/
+
+# Ignore the dist folder, which typically contains the compiled or built code.
+dist/
+
+# Ignore the .env file, which often contains sensitive information like environment variables.
+.env
+
+# Ignore JSON files within the JSON folder located inside the src folder.
+json/
+seeder/
