@@ -2,13 +2,28 @@ import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
 import AgentService from '../services/agents';
-import { IAirline } from '../interfaces/modelsInterfaces';
+import { IAgent, IAirline } from '../interfaces/modelsInterfaces';
 import UnknownError from '../errors/services/unknown';
 
 class AgentsController {
   // Declare an instance of AirlineService as a property
   private service = new AgentService();
 
+  /**
+   * Express middleware function for retrieving all agents.
+   *
+   * @param {Request} request - Express request object.
+   * @param {Response} response - Express response object.
+   * @param {NextFunction} next - Express next middleware function.
+   * @returns {Promise<void>} - Resolves with all agent details on successful retrieval.
+   *
+   * @description This middleware function fetches all agents.
+   *   It parses pagination parameters from the request query or uses default values.
+   *   Subsequently, it calls the `allAgents` method of the service to retrieve all agents.
+   *   If the operation is successful, it responds with a success message containing the agents.
+   *   In case of any errors during the process, they are passed to the error-handling middleware.
+   *   After completing the operation, it logs a message indicating the successful completion.
+   */
   allAgents = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
       // Parse pagination parameters from the request query or use defaults.
@@ -29,6 +44,19 @@ class AgentsController {
     }
   }
 
+  /**
+   * Returns an Express middleware function for retrieving agents associated with a specific port.
+   *
+   * @param {string} port - The port for which agents are to be fetched.
+   * @returns {(request: Request, response: Response, next: NextFunction) => Promise<void>} - Express middleware function.
+   *
+   * @description This middleware function fetches agents associated with the specified port.
+   *   It parses pagination parameters from the request query or uses default values.
+   *   Subsequently, it calls the `selectByPort` method of the service to retrieve agents.
+   *   If the operation is successful, it responds with a success message containing the agents.
+   *   In case of any errors during the process, they are passed to the error-handling middleware.
+   *   After completing the operation, it logs a message indicating the successful completion.
+   */
   selectByPort = (port: string):
     ((request: Request, response: Response, next: NextFunction) => Promise<void>) => {
     // Define and return an Express middleware function.
@@ -53,6 +81,68 @@ class AgentsController {
     }
   }
 
+  /**
+   * Route handler for retrieving details of a specific airline by its ID.
+   *
+   * @param {Request} request - Express request object.
+   * @param {Response} response - Express response object.
+   * @param {NextFunction} next - Express next middleware function.
+   *
+   * @description This middleware retrieves details of a specific airline by its unique ID.
+   *   It extracts the airline ID from the request parameters.
+   *   Subsequently, it calls the `getAgentById` method of the `AgentService` to retrieve the agent details.
+   *   If the retrieval is successful, it responds with a success message containing the agent details.
+   *   In case of any errors during the process, they are passed to the error-handling middleware.
+   *   After completing the operation, it logs a message indicating the successful completion of the retrieval.
+   *
+   * @returns {Promise<void>} - Resolves with the agent details on successful retrieval.
+   */
+  getAgentById = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+    try {
+      // Extract the airline ID from the request parameters.
+      const { id } = request.params;
+
+      // Call the agent service to retrieve the agent by its ID.
+      const agent = await this.service.getAgentById(id);
+
+      // Respond with a success message.
+      response.status(HTTP_STATUS.OK).send({ agent: agent });
+    } catch (error) {
+      // Pass any errors to the error-handling middleware.
+      next(error);
+    } finally {
+      // Log a message indicating that the operation is complete.
+      logger.debug('Display agents is complete.');
+    }
+  }
+
+  createAgent = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+    try {
+
+    } catch (error) {
+      // Pass any errors to the error-handling middleware.
+      next(error);
+    } finally {
+      // Log a message indicating that the operation is complete.
+      logger.debug('Create agents is complete.');
+    }
+  }
+
+  agentMongooseValidation(keys: (keyof IAgent)[]):
+    (request: Request, response: Response, next: NextFunction) => Promise<void> {
+    return async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+      try {
+        // Validate airline data using the provided keys.
+        await this.service.agentValidationContainer(request.body, keys);
+
+        // If validation is successful, proceed to the next middleware.
+        next();
+      } catch (error) {
+        // If validation fails, pass the error to the error-handling middleware.
+        next(error);
+      }
+    }
+  };
 };
 
 export default new AgentsController();

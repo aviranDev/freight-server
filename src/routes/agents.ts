@@ -48,20 +48,49 @@ router.get(`/${config.PORT_NAME_1}-agents`,
 );
 
 /**
- * Route handler to get agents based on the 'PORT_NAME_1' port.
+ * Route handler to get agents based on the 'PORT_NAME_2' port.
  *
- * @route GET /PORT_NAME_1-agents
+ * @route GET /PORT_NAME_2-agents
  * @middleware Requires user authentication and excludes users in the password reset flow.
  *
  * @description
- * This middleware retrieves agents that belong to the 'PORT_NAME_1' port.
+ * This middleware retrieves agents that belong to the 'PORT_NAME_2' port.
  * It requires user authentication.
- * The route can be used by sending a GET request to /PORT_NAME_1-agents.
+ * The route can be used by sending a GET request to /PORT_NAME_2-agents.
  */
 router.get(`/${config.PORT_NAME_2}-agents`,
   ...authMiddlewares,
   administratorAuthentication([ROLE1, ROLE2]),
   controller.selectByPort(config.PORT_NAME_2)
+);
+
+/**
+ * Route handler to get details of an agent by its ID.
+ *
+ * @route GET /display-agent/:id
+ * @middleware Requires user authentication and excludes users in the password reset flow.
+ * @param {string} id - The ID of the agent to retrieve.
+ *
+ * @description
+ * This middleware retrieves details of an airline based on the provided ID.
+ * It requires user authentication.
+ * The route can be used by sending a GET request to /display-agent/:id.
+ */
+router.get("/display-agent/:id",
+  ...authMiddlewares,
+  administratorAuthentication([ROLE1, ROLE2]),
+  controller.getAgentById
+);
+
+
+router.post("/create-agent",
+  ...authMiddlewares,
+  administratorAuthentication([ROLE1, ROLE2]),
+  validateRequestBody(validateAirline),
+  /*   controller.agentMongooseValidation([
+      "name", "prefix", "code", "agent"
+    ]), */
+  controller.createAgent,
 );
 
 export default router;
