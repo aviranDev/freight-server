@@ -5,7 +5,7 @@ import AuthenticationError from "../errors/services/authetication";
 import { comparePasswords } from "../utils/password";
 import { config } from "../config/server";
 import { salter, hashing } from "../utils/password";
-import TokenService from "./session";
+import SessionService from "./session";
 import User from "../Models/User";
 import { ValidationError } from "../errors/middlewares/validation";
 
@@ -16,12 +16,12 @@ import { ValidationError } from "../errors/middlewares/validation";
  */
 export class AuthService {
   private model: Model<IUser>
-  tokenService: TokenService;
+  tokenService: SessionService;
 
   constructor() {
     // Initialize the data model and TokenService
     this.model = User;
-    this.tokenService = new TokenService();
+    this.tokenService = new SessionService();
   };
 
   /**
