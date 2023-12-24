@@ -232,6 +232,17 @@ class TokenService {
       throw error;
     }
   }
+
+  /**
+   * Removes expired sessions based on the provided expiration date.
+   *
+   * @param {Date} expirationDate - The expiration date to identify sessions older than or equal to it.
+   * @returns {Promise<void>} - Resolves when the removal of expired sessions is complete.
+   */
+  public async removeExpiredSessions(expirationDate: Date): Promise<void> {
+    // Delete sessions with lastLogin timestamp less than or equal to the expiration date.
+    await this.model.deleteMany({ lastLogin: { $lte: expirationDate } });
+  }
 }
 
 export default TokenService;
