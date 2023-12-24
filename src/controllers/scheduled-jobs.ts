@@ -17,11 +17,12 @@ class ScheduledJobController {
    */
   cronTask = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
+      // Define the number of days to keep sessions
+      const DAYS_TO_KEEP_SESSIONS = 7;
+
       // Calculate the expiration date to identify records older than 7 days
       const expirationDate = new Date();
-
-      // expirationDate.setDate(expirationDate.getDate() - 7);
-      expirationDate.setMinutes(expirationDate.getMinutes() - 20);
+      expirationDate.setDate(expirationDate.getDate() - DAYS_TO_KEEP_SESSIONS);
 
       // Remove active sessions older than the calculated expirationDate
       await this.service.removeExpiredSessions(expirationDate)
@@ -33,7 +34,7 @@ class ScheduledJobController {
       response.status(HTTP_STATUS.OK).json({ message: 'Cron task executed successfully!' });
     } catch (error) {
       // Log an error message if an error occurs during the cron task execution
-      logger.error('Error in Cron task:', error);
+      logger.error('Error in Cron task at ' + new Date().toLocaleString() + ':', error);
 
       // Respond with an error status and message
       response.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({ error: 'Internal Server Error' });

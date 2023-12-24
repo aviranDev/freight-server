@@ -12,8 +12,7 @@ import { config } from '../config/server';
 export const startCronJob = async () => {
   new CronJob(
     // Cron schedule: Runs every hour
-    // "0 * * * *", 
-    "*/5 * * * *",
+    "0 * * * *",
     async () => {
       try {
         // Make an HTTP request to your Express route (local server for development)
