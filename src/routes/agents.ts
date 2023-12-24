@@ -107,4 +107,31 @@ router.post("/create-agent",
   controller.createAgent, // Handler for creating an agent
 );
 
+/**
+ * Express Route: /update-agent/:id
+ *
+ * @method PUT
+ * @path /update-agent/:id
+ *
+ * @middlewares
+ * - Validate ID Parameters Middleware: Validates the 'id' parameter in the request.
+ * - Authentication Middleware: Validates user authentication.
+ * - Administrator Authentication Middleware: Ensures the user has admin privileges (ROLE1 or ROLE2).
+ * - Request Body Validation Middleware: Validates the request body against the 'validateAgent' schema.
+ * - Mongoose Validation Middleware: Validates 'agent', 'port', 'room', and 'floor' using Mongoose schema.
+ *
+ * @handler controller.updateAgent
+ * The 'updateAgent' method in the 'controller' handles this route.
+ */
+router.put("/update-agent/:id",
+  validateIdParams,
+  ...authMiddlewares,
+  administratorAuthentication([ROLE1, ROLE2]),
+  validateRequestBody(validateAgent),
+  controller.agentMongooseValidation([
+    "agent", "port", "room", "floor"
+  ]),
+  controller.updateAgent,
+);
+
 export default router;

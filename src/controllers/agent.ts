@@ -138,7 +138,37 @@ class AgentsController {
       next(error);
     } finally {
       // Log a message indicating that the operation is complete.
-      logger.debug('Create agents is complete.');
+      logger.debug('Create agent is complete.');
+    }
+  }
+
+  /**
+   * Controller method to update an existing agent.
+   *
+   * @param {Request} request - Express request object.
+   * @param {Response} response - Express response object.
+   * @param {NextFunction} next - Express next middleware function.
+   * @returns {Promise<void>} - Resolves with updated agent details and a success message if the update is successful.
+   * @throws {Error} - If any error occurs during the update process.
+   */
+  updateAgent = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+    try {
+      // Step 1: Extract the airline ID from the request parameters.
+      const { id } = request.params;
+
+      // Step 2: Call the agent service to update the agent.
+      const updatedAirline = await this.service.updateAgent(id, request.body);
+
+      // Step 3: Respond with a success message.
+      response.status(HTTP_STATUS.CREATED).send(
+        { updatedAirline, message: `Agent: ${request.body.agent} has been Updated.` }
+      );
+    } catch (error) {
+      // Pass any errors to the error-handling middleware.
+      next(error);
+    } finally {
+      // Log a message indicating that the operation is complete.
+      logger.debug('Update agent is complete.');
     }
   }
 

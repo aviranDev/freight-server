@@ -1,16 +1,19 @@
-import { Model, Document } from "mongoose";
+import { Model, Document, Types } from "mongoose";
 import Agent from "../Models/Agent";
 import { IAgent } from "../interfaces/modelsInterfaces";
 import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
 import ValidationError from "../errors/services/validation";
-
+import AirlineService from "./airline";
 class AgentService {
   private model: Model<IAgent>;
+  airlineService: AirlineService;
+
   // Constructor to initialize the class
   constructor() {
     // Assign the provided Mongoose model to the class property
     this.model = Agent;
+    this.airlineService = new AirlineService();
   }
 
   /**
@@ -208,7 +211,6 @@ class AgentService {
           { room: data.room }
         ]
       });
-      console.log(existAgent);
 
       // Step 2: If the agent already exists, throw a ConflictError.
       if (existAgent) {
@@ -229,6 +231,38 @@ class AgentService {
     }
   }
 
+  /**
+   * Service method to update an existing agent based on the provided ID.
+   *
+   * @param {string} id - The ID of the agent to be updated.
+   * @param {IAgent} data - The data to update the agent with.
+   * @returns {Promise<IAgent>} - Resolves with the updated agent data if the update is successful.
+   * @throws {InternalError} - If the update operation fails.
+   * @throws {Error} - If any other error occurs during the update process.
+   */
+  async updateAgent(id: string, data: IAgent): Promise<IAgent> {
+    try {
+      // Step 1: Retrieve the previous agent data before the update.
+      const previousAgent = await this.model.findById(id);
+
+      // Step 2: Use Mongoose's findByIdAndUpdate to update the agent based on the provided ID.
+      const updatedAgent = await this.model.findByIdAndUpdate(id, data, { new: true });
+
+      // Step 3: If the update operation fails, throw an InternalError.
+      if (previousAgent === null || updatedAgent === null) {
+        throw new InternalError('Update document failed.');
+      }
+
+      // Step 4: Update related documents in another collection.
+      await this.airlineService.updateRelatedAirlines(previousAgent.agent, updatedAgent.agent);
+
+      // Step 5: Resolve with the updated agent data.
+      return updatedAgent;
+    } catch (error) {
+      // Step 6: Propagate any errors that occur during the update process.
+      throw error;
+    }
+  }
 }
 
 export default AgentService;

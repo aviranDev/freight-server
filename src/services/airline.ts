@@ -672,6 +672,47 @@ class AirlineService {
       throw error;
     }
   }
+
+  /**
+   * Asynchronously updates related documents in another collection that match the previous agent name.
+   *
+   * @param {string} previousName - The previous agent name to identify documents for update.
+   * @param {string} newName - The new agent name to be set in the related documents.
+   * @returns {Promise<void>} - Resolves when the update of related documents is complete.
+   * @throws {Error} - Propagates any errors that occur during the update of related documents.
+   */
+  async updateRelatedAirlines(previousName: string, newName: string): Promise<void> {
+    try {
+      // Step 1: Use aggregation to find documents in another collection that match the agent name.
+      const aggregationPipeline: any[] = [
+        {
+          $match: {
+            agent: previousName,
+          },
+        },
+        {
+          $set: {
+            agent: newName,
+          },
+        },
+        {
+          $merge: {
+            into: "airlines", // Specify the target collection.
+            whenMatched: "merge", // Specify the merge behavior.
+          },
+        },
+      ];
+
+      // Step 2: Execute an aggregation pipeline on the MongoDB collection using Mongoose's aggregate function.
+      await this.model.aggregate(aggregationPipeline).exec();
+
+      // Step 3: Resolve when the update of related documents is complete.
+      return;
+    } catch (error) {
+      // Step 4: Propagate any errors that occur during the update of related documents.
+      throw error;
+    }
+  }
 }
 
 export default AirlineService;
