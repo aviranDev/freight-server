@@ -5,7 +5,7 @@ import AuthenticationError from "../errors/services/authetication";
 import { comparePasswords } from "../utils/password";
 import { config } from "../config/server";
 import { salter, hashing } from "../utils/password";
-import TokenService from "./token";
+import TokenService from "./session";
 import User from "../Models/User";
 import { ValidationError } from "../errors/middlewares/validation";
 

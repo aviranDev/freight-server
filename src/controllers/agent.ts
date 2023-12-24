@@ -2,8 +2,7 @@ import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
 import AgentService from '../services/agents';
-import { IAgent, IAirline } from '../interfaces/modelsInterfaces';
-import UnknownError from '../errors/services/unknown';
+import { IAgent } from '../interfaces/modelsInterfaces';
 
 class AgentsController {
   // Declare an instance of AirlineService as a property
@@ -116,9 +115,24 @@ class AgentsController {
     }
   }
 
+  /**
+   * Controller method to create a new agent.
+   *
+   * @param {Request} request - Express request object.
+   * @param {Response} response - Express response object.
+   * @param {NextFunction} next - Express next middleware function.
+   * @returns {Promise<void>} - Resolves with a success message if the agent is created successfully.
+   * @throws {Error} - If any error occurs during the creation process.
+   */
   createAgent = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
+      // Step 1: Call the agent service to add a new agent.
+      await this.service.createAgent(request.body);
 
+      // Step 2: Respond with a success message.
+      response.status(HTTP_STATUS.CREATED).send(
+        { message: `The agent: ${request.body.agent} has been added.` }
+      );
     } catch (error) {
       // Pass any errors to the error-handling middleware.
       next(error);
@@ -128,21 +142,27 @@ class AgentsController {
     }
   }
 
+  /**
+   * Middleware for validating agent data using Mongoose schema based on specified keys.
+   *
+   * @param {Array<keyof IAgent>} keys - The keys to validate in the agent data.
+   * @returns {(request: Request, response: Response, next: NextFunction) => Promise<void>} - Express middleware function.
+   */
   agentMongooseValidation(keys: (keyof IAgent)[]):
     (request: Request, response: Response, next: NextFunction) => Promise<void> {
     return async (request: Request, response: Response, next: NextFunction): Promise<void> => {
       try {
-        // Validate airline data using the provided keys.
+        // Step 1: Validate agent data using the provided keys.
         await this.service.agentValidationContainer(request.body, keys);
 
-        // If validation is successful, proceed to the next middleware.
+        // Step 2: If validation is successful, proceed to the next middleware.
         next();
       } catch (error) {
-        // If validation fails, pass the error to the error-handling middleware.
+        // Step 3: If validation fails, pass the error to the error-handling middleware.
         next(error);
       }
     }
-  };
+  }
 };
 
 export default new AgentsController();

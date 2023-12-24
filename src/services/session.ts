@@ -9,8 +9,7 @@ import { ISession } from "../interfaces/modelsInterfaces";
 import { user } from "../types/global";
 import { TokenPayload } from "../interfaces/modelsInterfaces";
 
-
-class TokenService {
+class SessionService {
   // Define private properties for access and refresh tokens
   private accessTokenSecret = tokens.ACCESS_TOKEN_SECRET; // Secret key for access tokens
   private refreshTokenSecret = tokens.REFRESH_TOKEN_SECRET; // Secret key for refresh tokens
@@ -245,4 +244,4 @@ class TokenService {
   }
 }
 
-export default TokenService;
+export default SessionService;
