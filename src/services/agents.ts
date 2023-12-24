@@ -190,6 +190,45 @@ class AgentService {
       throw error;
     }
   }
+
+  /**
+   * Creates a new agent based on the provided data.
+   *
+   * @param {IAgent} data - The data of the agent to be created.
+   * @returns {Promise<void>} - Resolves if the agent is created successfully.
+   * @throws {ConflictError} - If an agent with the same name or room prefix already exists.
+   * @throws {Error} - If any other error occurs during the creation process.
+   */
+  async createAgent(data: IAgent): Promise<void> {
+    try {
+      // Step 1: Attempt to find an existing agent by its name or room number.
+      const existAgent = await this.model.findOne({
+        $or: [
+          { agent: data.agent },
+          { room: data.room }
+        ]
+      });
+      console.log(existAgent);
+
+      // Step 2: If the agent already exists, throw a ConflictError.
+      if (existAgent) {
+        if (existAgent.agent === data.agent) {
+          // The condition { agent: data.agent } was satisfied.
+          throw new ConflictError(`Agent with name '${data.agent}' already exists.`);
+        } else if (existAgent.room === data.room) {
+          // The condition { room: data.room } was satisfied.
+          throw new ConflictError(`Agent with room '${data.room}' already exists.`);
+        }
+      }
+
+      // Step 3: Create a new agent with the provided data.
+      await this.model.create({ ...data });
+    } catch (error) {
+      // Step 4: Propagate any errors that occur during the addition or update process.
+      throw error;
+    }
+  }
+
 }
 
 export default AgentService;

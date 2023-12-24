@@ -4,7 +4,7 @@ import { authMiddlewares } from "./common/userAuthMiddlewares";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import { config } from '../config/server';
 
-import { validateAirline } from "../validation/airlines";
+import { validateAgent } from "../validation/agents";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { limiter } from "../utils/limiter";
 import validateIdParams from "../validation/idParams";
@@ -82,15 +82,29 @@ router.get("/display-agent/:id",
   controller.getAgentById
 );
 
-
+/**
+ * Express Route: /create-agent
+ *
+ * @method POST
+ * @path /create-agent
+ *
+ * @middlewares
+ * - Authentication Middleware: Validates user authentication.
+ * - Administrator Authentication Middleware: Ensures the user has admin privileges (ROLE1 or ROLE2).
+ * - Request Body Validation Middleware: Validates the request body against the 'validateAgent' schema.
+ * - Mongoose Validation Middleware: Validates 'agent', 'port', 'room', and 'floor' using Mongoose schema.
+ *
+ * @handler controller.createAgent
+ * The 'createAgent' method in the 'controller' handles this route.
+ */
 router.post("/create-agent",
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
-  validateRequestBody(validateAirline),
-  /*   controller.agentMongooseValidation([
-      "name", "prefix", "code", "agent"
-    ]), */
-  controller.createAgent,
+  administratorAuthentication([ROLE1, ROLE2]), // Administrator Authentication Middleware
+  validateRequestBody(validateAgent), // Request Body Validation Middleware
+  controller.agentMongooseValidation([ // Mongoose Validation Middleware
+    "agent", "port", "room", "floor"
+  ]),
+  controller.createAgent, // Handler for creating an agent
 );
 
 export default router;

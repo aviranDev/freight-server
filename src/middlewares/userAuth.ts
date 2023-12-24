@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import TokenService from "../services/token";
+import TokenService from "../services/session";
 import AuthenticationError from "../errors/services/authetication";
 import AuthorizationError from "../errors/services/authorization";
 

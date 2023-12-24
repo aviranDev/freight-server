@@ -520,7 +520,7 @@ class AirlineService {
    * @throws {InternalError} Throws an internal error if something goes wrong during the process.
    * @returns {Promise<void>} A Promise that resolves when the addition or update is complete.
    */
-  async addAirline(data: IAirline): Promise<void> {
+  async createAirline(data: IAirline): Promise<void> {
     try {
       // Step 1: Attempt to find an existing airline by its name or prefix.
       const existAirline = await this.model.findOne({
@@ -536,11 +536,7 @@ class AirlineService {
       };
 
       // Step 3: Create a new airline with the provided data.
-      const app = await this.model.create({ ...data });
-      if (app instanceof Error) {
-        console.log("-------------------->>>>>>>>>>>>>>>>>>>>", app, "||||||||||||||||||||||||||||||||||||||||");
-      }
-
+      await this.model.create({ ...data });
     } catch (error) {
       // Step 4: Propagate any errors that occur during the addition or update process.
       throw error;

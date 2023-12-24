@@ -191,7 +191,7 @@ class AirlineController {
   createAirline = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
       // Step 1: Call the airline service to add a new airline.
-      await this.service.addAirline(request.body);
+      await this.service.createAirline(request.body);
 
       // Step 2: Respond with a success message.
       response.status(HTTP_STATUS.CREATED).send(
