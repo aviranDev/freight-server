@@ -5,9 +5,19 @@ import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
 import { ValidationError } from "../errors/middlewares/validation";
 
+/**
+ * Service class for handling operations related to airlines.
+ *
+ * This class encapsulates logic for interacting with the Airline model,
+ * providing methods for CRUD operations and any additional airline-specific functionality.
+ */
 class AirlineService {
-  private model: Model<IAirline>;
-  // Constructor to initialize the class
+  private model: Model<IAirline>; // Mongoose model for the Airline collection
+
+  /**
+   * Constructor for the AirlineService class.
+   * Initializes the Mongoose model for the Airline collection.
+   */
   constructor() {
     // Assign the provided Mongoose model to the class property
     this.model = Airline;
@@ -623,10 +633,10 @@ class AirlineService {
   async removeAirlineById(id: string): Promise<void> {
     try {
       // Use Mongoose findOneAndDelete method to find and remove the airline by ID
-      const removeByAirlineName = await this.model.findByIdAndDelete(id).exec();
+      const removeAirline = await this.model.findByIdAndDelete(id).exec();
 
       // If no matching document is found, throw a ConflictError
-      if (removeByAirlineName === null) {
+      if (removeAirline === null) {
         throw new ConflictError(`No matching document found for airline: ${id}`);
       }
     } catch (error) {
@@ -693,6 +703,46 @@ class AirlineService {
         {
           $set: {
             agent: newName,
+          },
+        },
+        {
+          $merge: {
+            into: "airlines", // Specify the target collection.
+            whenMatched: "merge", // Specify the merge behavior.
+          },
+        },
+      ];
+
+      // Step 2: Execute an aggregation pipeline on the MongoDB collection using Mongoose's aggregate function.
+      await this.model.aggregate(aggregationPipeline).exec();
+
+      // Step 3: Resolve when the update of related documents is complete.
+      return;
+    } catch (error) {
+      // Step 4: Propagate any errors that occur during the update of related documents.
+      throw error;
+    }
+  }
+
+  /**
+   * Asynchronously clears the agent association in related documents within another collection.
+   *
+   * @param {string} agentName - The name of the agent to be cleared from related documents.
+   * @returns {Promise<void>} - Resolves when the agent association is cleared in related documents.
+   * @throws {Error} - Propagates any errors that occur during the update of related documents.
+   */
+  async ClearAgentRelatedAirlines(agentName: string): Promise<void> {
+    try {
+      // Step 1: Use aggregation to find documents in another collection that match the agent name.
+      const aggregationPipeline: any[] = [
+        {
+          $match: {
+            agent: agentName,
+          },
+        },
+        {
+          $set: {
+            agent: 'no agent',
           },
         },
         {

@@ -15,9 +15,13 @@ import { ValidationError } from "../errors/middlewares/validation";
  * login, password reset, access token management, and more.
  */
 export class AuthService {
-  private model: Model<IUser>
-  tokenService: SessionService;
+  private model: Model<IUser> // Mongoose model for the User collection
+  tokenService: SessionService; // Service for managing user sessions and tokens
 
+  /**
+   * Constructor for the AuthService class.
+   * Initializes the Mongoose model for the User collection and the SessionService.
+   */
   constructor() {
     // Initialize the data model and TokenService
     this.model = User;
