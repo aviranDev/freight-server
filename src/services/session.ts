@@ -9,6 +9,10 @@ import { ISession } from "../interfaces/modelsInterfaces";
 import { user } from "../types/global";
 import { TokenPayload } from "../interfaces/modelsInterfaces";
 
+/**
+ * SessionService manages the creation, validation, and removal of user sessions.
+ * This service handles access and refresh tokens, including their secrets and expiration times.
+ */
 class SessionService {
   // Define private properties for access and refresh tokens
   private accessTokenSecret = tokens.ACCESS_TOKEN_SECRET; // Secret key for access tokens
@@ -21,7 +25,10 @@ class SessionService {
   // Define the Mongoose model for managing refresh tokens
   private model: Model<ISession>; // Mongoose model for managing refresh tokens
 
-  // Constructor to initialize the class
+  /**
+   * Constructor for the SessionService class.
+   * Initializes the class with the provided Mongoose model for managing refresh tokens.
+   */
   constructor() {
     // Assign the provided Mongoose model to the class property
     this.model = Session; // The Mongoose model for managing refresh tokens is assigned

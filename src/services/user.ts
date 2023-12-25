@@ -8,13 +8,22 @@ import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
 import { ValidationError } from "../errors/middlewares/validation";
 
+/**
+ * UserService manages user-related operations and interactions with the user data model.
+ * This service includes methods for working with user roles such as admin and employee.
+ */
 class UserService {
+  // Define private properties for the Mongoose user model and role constants
   private model: Model<IUser>
   private admin = config.ROLE2;
   private employee = config.ROLE3;
 
+  /**
+   * Constructor for the UserService class.
+   * Initializes the class with the Mongoose user model and role constants.
+   */
   constructor() {
-    // Initialize the data model
+    // Assign the Mongoose user model to the class property
     this.model = User;
   }
 

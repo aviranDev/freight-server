@@ -5,14 +5,26 @@ import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
 import ValidationError from "../errors/services/validation";
 import AirlineService from "./airline";
-class AgentService {
-  private model: Model<IAgent>;
-  airlineService: AirlineService;
 
-  // Constructor to initialize the class
+/**
+ * Service class for handling operations related to agents.
+ *
+ * This class encapsulates logic for interacting with the Agent model,
+ * providing methods for CRUD operations and managing associations with related data.
+ */
+class AgentService {
+  private model: Model<IAgent>; // Mongoose model for the Agent collection
+  airlineService: AirlineService; // Service for operations related to airlines
+
+  /**
+   * Constructor for the AgentService class.
+   * Initializes the Mongoose model and related services.
+   */
   constructor() {
     // Assign the provided Mongoose model to the class property
     this.model = Agent;
+
+    // Initialize the AirlineService for handling operations related to airlines
     this.airlineService = new AirlineService();
   }
 
@@ -260,6 +272,40 @@ class AgentService {
       return updatedAgent;
     } catch (error) {
       // Step 6: Propagate any errors that occur during the update process.
+      throw error;
+    }
+  }
+
+  /**
+   * Removes an airline by its ID using Mongoose's findOneAndDelete method.
+   *
+   * @param {string} id - The ID of the airline to be removed.
+   * @throws {ConflictError} Throws a conflict error if no matching document is found.
+   * @throws {InternalError} Throws an internal error if something goes wrong during the process.
+   * @returns {Promise<void>} A Promise that resolves when the removal is complete.
+   *
+   * @description
+   * This method uses Mongoose's findOneAndDelete method to find and remove the airline by its ID.
+   * If no matching document is found, it throws a ConflictError.
+   * If the removal is successful, the method resolves the Promise.
+   */
+  async removeAgentById(id: string): Promise<void> {
+    try {
+      // Step 1: Retrieve the previous agent data before the update.
+      const beforeDeleteing = await this.model.findById(id);
+
+      // Use Mongoose findOneAndDelete method to find and remove the agent by ID
+      const removeAgent = await this.model.findByIdAndDelete(id).exec();
+
+      // If no matching document is found, throw a ConflictError
+      if (beforeDeleteing === null || removeAgent === null) {
+        throw new ConflictError(`No matching document found for agent: ${id}`);
+      }
+
+      // Step 4: Update related documents in another collection.
+      await this.airlineService.ClearAgentRelatedAirlines(beforeDeleteing.agent);
+    } catch (error) {
+      // Propagate any errors that occur during the search
       throw error;
     }
   }

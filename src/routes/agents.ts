@@ -134,4 +134,20 @@ router.put("/update-agent/:id",
   controller.updateAgent,
 );
 
+/**
+ * Route handler to delete an agent by ID.
+ *
+ * @route DELETE /remove-agent/:id
+ * @middleware Applies rate limiting to prevent abuse.
+ * @middleware Requires user authentication.
+ * @middleware Authenticates users as admins or super admins.
+ * @param {string} id - The ID of the agent to be removed.
+ */
+router.delete("/remove-agent/:id",
+  limiter, // Applies rate limiting to prevent abuse.
+  ...authMiddlewares,
+  administratorAuthentication([ROLE1, ROLE2]), // Authenticates users as admins or super admins.
+  controller.removeAgent,
+);
+
 export default router;

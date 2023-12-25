@@ -193,6 +193,34 @@ class AgentsController {
       }
     }
   }
+
+  /**
+   * Asynchronously removes an agent by ID.
+   *
+   * @param {Request} request - Express request object.
+   * @param {Response} response - Express response object.
+   * @param {NextFunction} next - Express next middleware function.
+   * @returns {Promise<void>} - Resolves after successfully removing the agent.
+   * @throws {Error} - Propagates any errors that occur during the removal process.
+   */
+  removeAgent = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+    try {
+      // Extract ID from the request parameters
+      const { id } = request.params;
+
+      // Call the service method to remove the airline by ID
+      await this.service.removeAgentById(id);
+
+      // Respond with a success message.
+      response.status(HTTP_STATUS.CREATED).send({ message: 'Agent has been deleted.' });
+    } catch (error) {
+      // Pass any errors to the error-handling middleware.
+      next(error);
+    } finally {
+      // Log a message indicating that the operation is complete.
+      logger.debug('Remove agent complete.');
+    }
+  }
 };
 
 export default new AgentsController();

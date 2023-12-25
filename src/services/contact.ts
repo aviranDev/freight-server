@@ -5,9 +5,18 @@ import Contact from "../Models/Contact";
 import ConflictError from "../errors/services/conflict";
 import { ValidationError } from "../errors/middlewares/validation";
 
+/**
+ * ContactService manages operations related to contacts.
+ * This service is responsible for handling CRUD (Create, Read, Update, Delete)
+ * operations for contacts using the provided Mongoose model.
+ */
 class ContactService {
-  private model: Model<IContact>;
-  // Constructor to initialize the class
+  private model: Model<IContact>; // Mongoose model for the Contact collection
+
+  /**
+   * Constructor for the ContactService class.
+   * Initializes the class with the provided Mongoose model for contacts.
+   */
   constructor() {
     // Assign the provided Mongoose model to the class property
     this.model = Contact;
