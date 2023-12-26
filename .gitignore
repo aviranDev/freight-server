@@ -9,4 +9,9 @@ dist/
 
 # Ignore JSON files within the JSON folder located inside the src folder.
 json/
+
+# Ignore the seeder folder, which might contain seeding scripts or data.
 seeder/
+
+# Ignore Visual Studio Code settings folder.
+.vscode
