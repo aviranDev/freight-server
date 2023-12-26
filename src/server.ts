@@ -1,8 +1,10 @@
-import express, { Application } from "express";
+import express, { Application, Request, Response } from "express";
 import { configureMiddleware } from "./api/globalRoutes";
 import { initializeDb } from "./db/initializeDb";
 import { logger } from "./logger/logger";
 import * as http from "http";
+import { setGreetingMessage } from "./middlewares/test";
+import path from "path";
 
 /**
  * @description Start the server and return the HTTP server instance.
@@ -12,6 +14,18 @@ import * as http from "http";
 async function startServer(port: string | number): Promise<http.Server> {
   // Create an Express application
   const app: Application = express();
+
+  // Set EJS as the view engine
+  app.set('view engine', 'ejs');
+  app.set('views', path.join(__dirname, 'views'));
+
+  // Route handler for the root URL ("/")
+  app.get('/', setGreetingMessage, (req: Request, res: Response) => {
+    const greetingMessage = res.locals.greetingMessage;
+    const version = res.locals.version;
+
+    res.render('greeting', { message: `${greetingMessage}, ${version}` });
+  });
 
   // Connect to MongoDB
   try {
@@ -28,9 +42,11 @@ async function startServer(port: string | number): Promise<http.Server> {
   const runningHttpServer = await new Promise<http.Server>((resolve, reject) => {
     // Start the HTTP server and listen on the configured port
     const server = app.listen(port, () => {
+
       logger.info(`Server is running on port: ${port}`);
       resolve(server); // Resolve the Server instance
     });
+
 
     // Handle HTTP server errors, if any
     server.on("error", (err) => {
