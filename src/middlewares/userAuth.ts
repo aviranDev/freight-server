@@ -16,7 +16,7 @@ const token = new TokenService();
 export const userAuthentication = (request: Request, response: Response, next: NextFunction): void => {
   try {
     // Check for the 'authorization' header in the request
-    const authHeader = request.headers["authorization"];
+    const authHeader = request.headers["Authorization"] as string;
 
     // If the header is missing or doesn't start with 'Bearer ', throw an AuthenticationError
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
