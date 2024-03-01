@@ -6,7 +6,12 @@ import { HTTP_STATUS } from '../config/httpStatus';
 
 class UserController {
   // Declare an instance of UserService as a property
-  private service = new UserService();
+  private service: UserService;
+
+  // Constructor to initialize the UserService instance
+  constructor(service: UserService) {
+    this.service = service;
+  }
 
   /**
    * Adds a new member to the system while managing sessions.
@@ -219,4 +224,4 @@ class UserController {
   };
 };
 
-export default new UserController();
+export default UserController;

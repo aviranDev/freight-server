@@ -1,5 +1,4 @@
 import { Model } from "mongoose";
-import User from "../Models/User";
 import bcryptjs from "bcryptjs";
 import { IUser } from "../interfaces/modelsInterfaces";
 import { config } from '../config/server';
@@ -14,7 +13,7 @@ import { ValidationError } from "../errors/middlewares/validation";
  */
 class UserService {
   // Define private properties for the Mongoose user model and role constants
-  private model: Model<IUser>
+  private model: Model<IUser>;
   private admin = config.ROLE2;
   private employee = config.ROLE3;
 
@@ -22,9 +21,9 @@ class UserService {
    * Constructor for the UserService class.
    * Initializes the class with the Mongoose user model and role constants.
    */
-  constructor() {
+  constructor(userModel: Model<IUser>) {
     // Assign the Mongoose user model to the class property
-    this.model = User;
+    this.model = userModel;
   }
 
   /**

@@ -2,12 +2,22 @@ import { Router } from "express";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { validateRegister } from "../validation/user";
-import controller from "../controllers/user";
 import { config } from '../config/server';
 import validateIdParams from "../validation/idParams";
 import forbiddenAddedRoles from "../middlewares/forbiddenAddedRoles";
 import { authMiddlewares } from "./common/userAuthMiddlewares";
+import UserService from "../services/user";
+import UserController from "../controllers/user";
+import UserModel from "../Models/User";
 const { ROLE1, ROLE2 } = config;
+
+// Create an instance of the User Service
+const userService = new UserService(UserModel);
+
+// Create an instance of the User Controller with the UserService instance
+const userController = new UserController(userService);
+
+// Create an Express Router
 const router = Router();
 
 /**
@@ -21,7 +31,7 @@ const router = Router();
  * - `authResetPassword`: Provides additional security.
  * @response JSON - Returns user profile data.
  */
-router.get("/user-profile", ...authMiddlewares, controller.memberProfile);
+router.get("/user-profile", ...authMiddlewares, userController.memberProfile);
 
 /**
  * Add Member
@@ -43,9 +53,9 @@ router.post("/register",
   ...authMiddlewares,
   administratorAuthentication([ROLE1, ROLE2]),
   validateRequestBody(validateRegister),
-  controller.userMongooseValidation(['username', 'password', 'role']),
+  userController.userMongooseValidation(['username', 'password', 'role']),
   forbiddenAddedRoles([ROLE1]),
-  controller.addMember
+  userController.addMember
 );
 
 /**
@@ -63,7 +73,7 @@ router.post("/register",
 router.get("/all-employees",
   ...authMiddlewares,
   administratorAuthentication([ROLE1, ROLE2]),
-  controller.displayAllEmployees
+  userController.displayAllEmployees
 );
 
 /**
@@ -83,7 +93,7 @@ router.delete("/remove-user/:id",
   ...authMiddlewares,
   administratorAuthentication([ROLE1, ROLE2]),
   validateIdParams,
-  controller.removeMember
+  userController.removeMember
 );
 
 /**
@@ -105,7 +115,7 @@ router.put("/update-role/:id",
   administratorAuthentication([ROLE1]),
   validateIdParams,
   forbiddenAddedRoles([ROLE1]),
-  controller.changeMemberRole
+  userController.changeMemberRole
 );
 
 export default router;
