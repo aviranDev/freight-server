@@ -32,7 +32,7 @@ function configureErrorHandlers(app: Application) {
   app.use(internalErrorMiddleware);
 
   // Handle other errors (error handling middleware)
-  app.use(errorHandler);
+  app.use(errorHandler); // This should always be the last error handler
 }
 
 export { configureErrorHandlers };

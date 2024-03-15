@@ -4,7 +4,6 @@ import AuthService from "../services/auth";
 import { HTTP_STATUS } from '../config/httpStatus';
 import { IAuth } from '../interfaces/modelsInterfaces';
 
-
 class AuthController {
   // Declare an instance of AuthService as a property
   private service = new AuthService();

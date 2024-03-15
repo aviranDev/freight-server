@@ -17,8 +17,8 @@ class UserController {
    * Adds a new member to the system while managing sessions.
    * 
    * @async
-   * @param {Request} req - Express request object containing the member information in the request body.
-   * @param {Response} res - Express response object for sending the response.
+   * @param {Request} request - Express request object containing the member information in the request body.
+   * @param {Response} response - Express response object for sending the response.
    * @param {NextFunction} next - Express next middleware function for handling errors.
    * @returns {Promise<void>} A Promise that resolves when the operation is complete.
    *
@@ -32,16 +32,16 @@ class UserController {
    * - Respond with a success message and the newly created member.
    * - Logs that the registration operation has completed.
    */
-  addMember = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  addMember = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
       // Extract member information from the request body.
-      const member: IUser = req.body;
+      const member: IUser = request.body;
 
       // Add the new member using the service.
       const newMember = await this.service.addMember(member);
 
       // Respond with a success message and the newly created member.
-      res.status(HTTP_STATUS.CREATED).json({ newMember, message: "User Added Successfully." });
+      response.status(HTTP_STATUS.CREATED).json({ newMember, message: "User Added Successfully." });
     } catch (error) {
       // Handle errors by passing them to the next middleware.
       next(error);
@@ -54,8 +54,8 @@ class UserController {
   /**
    * Displays a paginated list of employee members.
    * @async
-   * @param {Request} req - Express request object containing query parameters for pagination.
-   * @param {Response} res - Express response object for sending the response.
+   * @param {Request} request - Express request object containing query parameters for pagination.
+   * @param {Response} response - Express response object for sending the response.
    * @param {NextFunction} next - Express next middleware function for handling errors.
    * @returns {Promise<void>} A Promise that resolves when the operation is complete.
    *
@@ -67,17 +67,17 @@ class UserController {
    * - Responds with the list of employees and pagination details.
    * - Logs that the display members operation has completed.
    */
-  displayAllEmployees = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  displayAllEmployees = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
       // Parse pagination parameters from the request query or use defaults.
-      const page: number = parseInt(req.query.page as string) || 1;
-      const limit: number = parseInt(req.query.limit as string) || 10;
+      const page: number = parseInt(request.query.page as string) || 1;
+      const limit: number = parseInt(request.query.limit as string) || 10;
 
       // Retrieve employee data from the service.
       const reponse = await this.service.displayAllEmployees(page, limit);
 
       // Respond with the list of employees and pagination details.
-      res.status(HTTP_STATUS.OK).json({
+      response.status(HTTP_STATUS.OK).json({
         employees: reponse.employeeMembers,
         pagination: {
           currentPage: reponse.currentPage,
@@ -97,8 +97,8 @@ class UserController {
   /**
    * Removes a member by their ID.
    * @async
-   * @param {Request} req - Express request object containing the member ID as a parameter.
-   * @param {Response} res - Express response object for sending the response.
+   * @param {Request} request - Express request object containing the member ID as a parameter.
+   * @param {Response} response - Express response object for sending the response.
    * @param {NextFunction} next - Express next middleware function for handling errors.
    * @returns {Promise<void>} A Promise that resolves when the operation is complete.
    *
@@ -110,16 +110,16 @@ class UserController {
    * - Responds with a success message.
    * - Logs that the member document deletion operation has completed.
    */
-  removeMember = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  removeMember = async (request: Request, response: Response, next: NextFunction): Promise<void> => {
     try {
       // Extract the member ID from the request parameters.
-      const { id } = req.params;
+      const { id } = request.params;
 
       // Remove the member using the service.
       await this.service.removeMember(id);
 
       // Respond with a success message.
-      res.status(HTTP_STATUS.OK).json({ message: `Document with ID ${id} has been deleted successfully.` });
+      response.status(HTTP_STATUS.OK).json({ message: `Document with ID ${id} has been deleted successfully.` });
     } catch (error) {
       next(error);
     } finally {
@@ -131,8 +131,8 @@ class UserController {
   /**
   * Edits the role of a member by their ID.
   * @async
-  * @param {Request} req - Express request object containing the member ID as a parameter and the updated role in the request body.
-  * @param {Response} res - Express response object for sending the response.
+  * @param {Request} request - Express request object containing the member ID as a parameter and the updated role in the request body.
+  * @param {Response} response - Express response object for sending the response.
   * @param {NextFunction} next - Express next middleware function for handling errors.
   * @returns {Promise<void>} A Promise that resolves when the operation is complete.
   *
@@ -144,16 +144,20 @@ class UserController {
   * - Responds with a success message.
   * - Logs that the member role change operation has completed.
   */
-  changeMemberRole = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  changeMemberRole = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<void> => {
     try {
       // Extract the member ID from the request parameters.
-      let { id } = req.params;
+      let { id } = request.params;
 
       // Call the service to update the member's role.
-      const upgradeMemberRole = await this.service.editMemberRole(id, req.body.role);
+      const upgradeMemberRole = await this.service.editMemberRole(id, request.body.role);
 
       // Respond with a success message.
-      res.status(HTTP_STATUS.CREATED).send({ message: `Member role has been updated to: ${upgradeMemberRole?.role}` });
+      response.status(HTTP_STATUS.CREATED).send({ message: `Member role has been updated to: ${upgradeMemberRole?.role}` });
     } catch (error) {
       next(error);
     } finally {
@@ -165,8 +169,8 @@ class UserController {
   /**
  * Retrieves the profile of a member.
  * @async
- * @param {Request} req - Express request object.
- * @param {Response} res - Express response object for sending the profile data.
+ * @param {Request} request - Express request object.
+ * @param {Response} response - Express response object for sending the profile data.
  * @param {NextFunction} next - Express next middleware function for handling errors.
  * @returns {Promise<void>} A Promise that resolves when the operation is complete.
  *
@@ -178,13 +182,17 @@ class UserController {
  * - Passes any errors to the next middleware for error handling.
  * - Logs that the member profile retrieval operation has completed.
  */
-  memberProfile = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+  memberProfile = async (
+    request: Request,
+    response: Response,
+    next: NextFunction
+  ): Promise<void> => {
     try {
       // Try to retrieve the profile of the authenticated member.
-      const member = await this.service.userProfile(req.user._id);
+      const member = await this.service.userProfile(request.user._id);
 
       // Respond with the member's profile data in JSON format.
-      res.status(HTTP_STATUS.OK).send(member);
+      response.status(HTTP_STATUS.OK).send(member);
     } catch (error) {
       next(error);
     } finally {
