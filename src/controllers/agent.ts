@@ -3,7 +3,10 @@ import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
 import AgentService from '../services/agents';
 import { IAgent } from '../interfaces/modelsInterfaces';
+import dotenv from 'dotenv'
+dotenv.config()
 
+// TypeScript knows this is of type 'development' | 'production' | 'test'
 class AgentsController {
   // Declare an instance of AirlineService as a property
   private service = new AgentService();

@@ -6,7 +6,6 @@ import jwt from "jsonwebtoken";
 import Session from "../Models/Session";
 import { tokens } from "../config/server";
 import { ISession } from "../interfaces/modelsInterfaces";
-import { user } from "../types/global";
 import { TokenPayload } from "../interfaces/modelsInterfaces";
 
 /**
@@ -156,12 +155,12 @@ class SessionService {
    * It then verifies the access token and extracts the user payload using the provided secret.
    * If the verification and decoding are successful, it returns the extracted user payload.
    */
-  public verifyAccessToken(authHeader: string): user {
+  public verifyAccessToken(authHeader: string): IUser {
     // Extract the token from the authorization header
     const token = authHeader.split(" ")[1];
 
     // Verify the access token and extract the user payload
-    const payload: user = jwt.verify(token, tokens.ACCESS_TOKEN_SECRET);
+    const payload = jwt.verify(token, tokens.ACCESS_TOKEN_SECRET) as IUser;
 
     // Return the extracted user payload from the access token
     return payload;
