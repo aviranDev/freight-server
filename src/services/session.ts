@@ -1,12 +1,8 @@
-import { IUser } from "../interfaces/modelsInterfaces";
-import { Model, Types } from "mongoose";
+import { Model } from "mongoose";
+import jwt, { sign } from "jsonwebtoken";
+import { ISession, IUser, TokenPayload } from "../interfaces/modelsInterfaces";
 import InternalError from "../errors/services/internalError";
-import { sign } from "jsonwebtoken";
-import jwt from "jsonwebtoken";
-import Session from "../Models/Session";
 import { tokens } from "../config/server";
-import { ISession } from "../interfaces/modelsInterfaces";
-import { TokenPayload } from "../interfaces/modelsInterfaces";
 
 /**
  * SessionService manages the creation, validation, and removal of user sessions.
@@ -28,9 +24,9 @@ class SessionService {
    * Constructor for the SessionService class.
    * Initializes the class with the provided Mongoose model for managing refresh tokens.
    */
-  constructor() {
+  constructor(sessionModel: Model<ISession>) {
     // Assign the provided Mongoose model to the class property
-    this.model = Session; // The Mongoose model for managing refresh tokens is assigned
+    this.model = sessionModel; // The Mongoose model for managing refresh tokens is assigned
   }
 
   /**
@@ -179,7 +175,7 @@ class SessionService {
    * If the refresh token is found, it returns the user ID associated with the removed refresh token.
    * If any issues occur during the removal process, an error is thrown for proper error handling.
    */
-  public async removeRefreshToken(cookie: string): Promise<Types.ObjectId> {
+  public async removeRefreshToken(cookie: string): Promise<void> {
     try {
       // Attempt to find and remove the corresponding refresh token using the provided cookie
       const refreshToken = await this.model.findOneAndRemove({ refreshToken: cookie });
@@ -190,8 +186,8 @@ class SessionService {
         throw new InternalError('Refresh token not found in the database.');
       }
 
-      // Return the user ID associated with the removed refresh token
-      return refreshToken.userId;
+      // Return void since the operation is successful
+      return Promise.resolve();
     } catch (error) {
       // If an error occurs during the database operation, it will be propagated, allowing for proper error handling.
       throw error;

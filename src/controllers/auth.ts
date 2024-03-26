@@ -1,12 +1,17 @@
+import { IAuthService } from './../interfaces/AuthInterface';
 import { NextFunction, Request, Response } from 'express';
 import { logger } from "../logger/logger";
-import AuthService from "../services/auth";
 import { HTTP_STATUS } from '../config/httpStatus';
 import { IAuth } from '../interfaces/modelsInterfaces';
 
 class AuthController {
-  // Declare an instance of AuthService as a property
-  private service = new AuthService();
+  // Declare an instance of UserService as a property
+  private service: IAuthService;
+
+  // Constructor to initialize the UserService instance
+  constructor(service: IAuthService) {
+    this.service = service;
+  }
 
   /**
    * Route handler for authenticating a user and providing access and refresh tokens.
@@ -200,4 +205,4 @@ class AuthController {
   };
 };
 
-export default new AuthController();
+export default AuthController;

@@ -24,7 +24,7 @@ export const agentSchema = new Schema<IAgent>({
     // Validation: Agent port must be one of the predefined options or default to an empty string.
   },
   room: {
-    type: String,
+    type: Number,
     min: 3,
     max: 3,
     required: true,

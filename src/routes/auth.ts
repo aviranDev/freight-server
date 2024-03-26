@@ -2,8 +2,21 @@ import { Router } from "express";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { validateLogin, validateResetPassword } from "../validation/auth";
 import { limiter } from "../utils/limiter";
-import AuthController from '../controllers/auth';
 import { userAuthentication } from "../middlewares/userAuth";
+import UserModel from "../Models/User";
+import AuthService from "../services/auth";
+import AuthController from '../controllers/auth';
+import SessionService from "../services/session";
+import Session from "../Models/Session";
+
+const sessionService = new SessionService(Session);
+
+// Create an instance of the User Service
+const authService = new AuthService(UserModel, sessionService);
+
+// Create an instance of the User Controller with the UserService instance
+const authController = new AuthController(authService);
+
 const router = Router();
 
 /**
@@ -21,8 +34,8 @@ const router = Router();
 router.post("/login",
   limiter, // Rate limiting middleware
   validateRequestBody(validateLogin), // Request body validation
-  AuthController.authMongooseValidation(['username', 'password']),
-  AuthController.login, // Controller function to handle login logic
+  authController.authMongooseValidation(['username', 'password']),
+  authController.login, // Controller function to handle login logic
 );
 
 /**
@@ -35,7 +48,7 @@ router.post("/login",
  * - AuthController.refreshTokenHandler: Handles access token refresh logic.
  * @response JSON - Returns a new access token upon successful refresh.
  */
-router.get("/refresh-token", AuthController.refreshToken);
+router.get("/refresh-token", authController.refreshToken);
 
 /**
  * Reset Password
@@ -52,8 +65,8 @@ router.get("/refresh-token", AuthController.refreshToken);
 router.post('/reset-password',
   userAuthentication,
   validateRequestBody(validateResetPassword),
-  AuthController.authMongooseValidation(['password', 'confirmPassword']),
-  AuthController.resetPasswrod
+  authController.authMongooseValidation(['password', 'confirmPassword']),
+  authController.resetPasswrod
 );
 
 /**
@@ -66,6 +79,6 @@ router.post('/reset-password',
  * AuthController.logout: Controller function to handle the logout process, 
  * which may include invalidating the session or access token.
  */
-router.delete("/logout", AuthController.logout);
+router.delete("/logout", authController.logout);
 
 export default router;

@@ -2,9 +2,10 @@ import { Request, Response, NextFunction } from "express";
 import TokenService from "../services/session";
 import AuthenticationError from "../errors/services/authetication";
 import AuthorizationError from "../errors/services/authorization";
+import Session from "../Models/Session";
 
 // Create an instance of the TokenService to handle token operations
-const token = new TokenService();
+const token = new TokenService(Session);
 
 /**
  * Middleware for JWT (JSON Web Token) authentication.

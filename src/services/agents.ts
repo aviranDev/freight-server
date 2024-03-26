@@ -1,10 +1,9 @@
 import { Model, Document, Types } from "mongoose";
-import Agent from "../Models/Agent";
 import { IAgent } from "../interfaces/modelsInterfaces";
 import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
 import ValidationError from "../errors/services/validation";
-import AirlineService from "./airline";
+import { IAirlineService } from "../interfaces/IAirlineService";
 
 /**
  * Service class for handling operations related to agents.
@@ -14,18 +13,18 @@ import AirlineService from "./airline";
  */
 class AgentService {
   private model: Model<IAgent>; // Mongoose model for the Agent collection
-  airlineService: AirlineService; // Service for operations related to airlines
+  airlineService: IAirlineService; // Service for operations related to airlines
 
   /**
    * Constructor for the AgentService class.
    * Initializes the Mongoose model and related services.
    */
-  constructor() {
+  constructor(agentModel: Model<IAgent>, airlineService: IAirlineService) {
     // Assign the provided Mongoose model to the class property
-    this.model = Agent;
+    this.model = agentModel;
 
     // Initialize the AirlineService for handling operations related to airlines
-    this.airlineService = new AirlineService();
+    this.airlineService = airlineService;
   }
 
   /**

@@ -1,6 +1,13 @@
 import { Router } from "express";
-import scheduledJobs from "../controllers/scheduled-jobs";
+import { ScheduledJobController } from "../controllers/scheduled-jobs";
+import SessionService from "../services/session";
+import Session from "../Models/Session";
+
+const service = new SessionService(Session);
+
 const router = Router();
+
+const scheduledJobs = new ScheduledJobController(service);
 
 /**
  * Express Route: /cron-job

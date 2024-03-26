@@ -40,6 +40,7 @@ const errorHandler = function (err: CustomError, req: Request, res: Response, ne
 
     // Respond with the appropriate status code and error details for unexpected errors
     res.status(HTTP_STATUS.INTERNAL_SERVER_ERROR).json({
+      message: "Internal error server",
       error: unexpectedError.errorResponse()
     });
   } catch (error) {

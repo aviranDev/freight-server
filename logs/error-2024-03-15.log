@@ -1,2 +1,0 @@
-2024-03-15T16:10:59.240Z [error]: Client request failed: GET /api/contacts/search-contact?name=user_10&department=aviation: Conflict Error - Contact not found in the database.
-2024-03-15T16:55:12.962Z [error]: Login Failed: GET /api/auth/refresh-token: Authentication Error - Cookie muse be provided.

@@ -3,13 +3,19 @@ import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
 import AgentService from '../services/agents';
 import { IAgent } from '../interfaces/modelsInterfaces';
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
+import IAgentService from '../interfaces/IAgentService';
 dotenv.config()
 
 // TypeScript knows this is of type 'development' | 'production' | 'test'
 class AgentsController {
   // Declare an instance of AirlineService as a property
-  private service = new AgentService();
+  private service: IAgentService;
+
+  // Constructor to initialize the UserService instance
+  constructor(service: IAgentService) {
+    this.service = service;
+  }
 
   /**
    * Express middleware function for retrieving all agents.
@@ -226,4 +232,4 @@ class AgentsController {
   }
 };
 
-export default new AgentsController();
+export default AgentsController;

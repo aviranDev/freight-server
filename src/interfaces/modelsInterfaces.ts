@@ -54,6 +54,6 @@ export interface IAgent {
   _id?: string;
   agent: string;
   port: string;
-  room: string;
+  room: number;
   floor: string;
 };

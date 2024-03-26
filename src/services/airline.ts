@@ -1,5 +1,4 @@
 import mongoose, { Model, Document } from "mongoose";
-import Airline from "../Models/Airline";
 import { IAirline } from "../interfaces/modelsInterfaces";
 import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
@@ -18,9 +17,9 @@ class AirlineService {
    * Constructor for the AirlineService class.
    * Initializes the Mongoose model for the Airline collection.
    */
-  constructor() {
+  constructor(airlineModel: Model<IAirline>) {
     // Assign the provided Mongoose model to the class property
-    this.model = Airline;
+    this.model = airlineModel;
   }
 
   /**

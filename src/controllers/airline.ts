@@ -1,13 +1,17 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import AirlineService from '../services/airline';
 import { IAirline } from '../interfaces/modelsInterfaces';
 import UnknownError from '../errors/services/unknown';
-
+import { IAirlineService } from '../interfaces/IAirlineService';
 class AirlineController {
   // Declare an instance of AirlineService as a property
-  private service = new AirlineService();
+  private service: IAirlineService;
+
+  // Constructor to initialize the UserService instance
+  constructor(service: IAirlineService) {
+    this.service = service;
+  }
 
   /**
    * Route handler to retrieve a list of all airlines with optional pagination.
@@ -309,4 +313,4 @@ class AirlineController {
   };
 };
 
-export default new AirlineController();
+export default AirlineController;
