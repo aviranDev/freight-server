@@ -1,11 +1,16 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import TokenService from '../services/session';
+import ISessionService from '../interfaces/ISessionService';
 
-class ScheduledJobController {
+export class ScheduledJobController {
   // Declare an instance of AirlineService as a property
-  private service = new TokenService();
+  private service: ISessionService;
+
+  // Constructor to initialize the UserService instance
+  constructor(service: ISessionService) {
+    this.service = service;
+  }
 
   /**
    * Controller method for the cron task.
@@ -42,4 +47,4 @@ class ScheduledJobController {
   };
 };
 
-export default new ScheduledJobController();
+export default ScheduledJobController;

@@ -29,9 +29,9 @@ class UserService {
   /**
    * Generates a salt for password hashing using bcryptjs.
    *
-   * @param {string} salt - The salt value for generating the salt.
+   * @param {number} salt - The salt value for generating the salt.
    * @returns {string} The generated salt.
-   * 
+   *
    * @description
    * This method takes a salt value and uses bcryptjs to synchronously generate a salt for password hashing.
    * The generated salt is then returned.

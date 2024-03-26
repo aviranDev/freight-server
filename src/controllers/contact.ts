@@ -1,13 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import ContactService from '../services/contact';
 import { IContact } from '../interfaces/modelsInterfaces';
 import UnknownError from '../errors/services/unknown';
+import IContactService from '../interfaces/IContactService';
 
 class ContactController {
   // Declare an instance of ContactService as a property
-  private service = new ContactService();
+  private service: IContactService;
+
+  // Constructor to initialize the UserService instance
+  constructor(service: IContactService) {
+    this.service = service;
+  }
 
   /**
    * Search for contacts based on query parameters.
@@ -286,4 +291,4 @@ class ContactController {
   };
 };
 
-export default new ContactController;
+export default ContactController;

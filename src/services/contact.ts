@@ -17,9 +17,9 @@ class ContactService {
    * Constructor for the ContactService class.
    * Initializes the class with the provided Mongoose model for contacts.
    */
-  constructor() {
+  constructor(conatctModel: Model<IContact>) {
     // Assign the provided Mongoose model to the class property
-    this.model = Contact;
+    this.model = conatctModel;
   }
 
   /**

@@ -21,32 +21,27 @@ const userController = new UserController(userService);
 const router = Router();
 
 /**
- * User Profile
- * @method GET
- * @route /user-profile
- * @description Retrieves the profile of a member.
- * @access Admin, Super Admin, Member.
+ * Retrieves the profile of a user.
+ * @route GET /user-profile
  * @middleware
- * - `authJWT`: Handles user authentication.
- * - `authResetPassword`: Provides additional security.
- * @response JSON - Returns user profile data.
+ * - `authJWT`: Authenticates the user.
+ * - `authResetPassword`: Enhances security.
+ * @response JSON - User profile data.
  */
 router.get("/user-profile", ...authMiddlewares, userController.memberProfile);
 
 /**
- * Add Member
- * @method POST
- * @route /add-member
- * @description Adds a new member to the system.
- * @access Admin and Super Admin.
+ * Adds a new member to the system.
+ * @route POST /register
+ * @access Admin and Super Admin
  * @middleware
- * - `authJWT`: Handles user authentication.
+ * - `authJWT`: Authenticates the user.
  * - `authorisedByRole`: Ensures the user has admin or super admin role.
- * - `authResetPassword`: Provides additional security.
- * - `validateRequestBody`: Expects valid user registration data in the request body.
+ * - `authResetPassword`: Enhances security.
+ * - `validateRequestBody`: Validates the request body for user registration data.
  * - `mongooseValidationSchema`: Validates the request against the Member model schema.
- * - `forbiddenAddedRoles`: Checks for forbidden roles in the request.
- * @request JSON - Expects a valid user registration data in the request body.
+ * - `forbiddenAddedRoles`: Prevents adding members with forbidden roles.
+ * @request JSON - Expects valid user registration data in the request body.
  * @response JSON - Returns the newly added member data.
  */
 router.post("/register",
@@ -59,15 +54,13 @@ router.post("/register",
 );
 
 /**
- * All Employees
- * @method GET
- * @route /all-employees
- * @description Retrieves a list of employee members with pagination details.
- * @access Admin and Super Admin.
+ * Retrieves a list of employee members with pagination details.
+ * @route GET /all-employees
+ * @access Admin and Super Admin
  * @middleware
- * - `authJWT`: Handles user authentication.
+ * - `authJWT`: Authenticates the user.
  * - `authorisedByRole`: Ensures the user has admin or super admin role.
- * - `authResetPassword`: Provides additional security.
+ * - `authResetPassword`: Enhances security.
  * @response JSON - Returns a list of employee members with pagination details.
  */
 router.get("/all-employees",
@@ -77,15 +70,14 @@ router.get("/all-employees",
 );
 
 /**
- * Remove Member
+ * Removes a user by their ID.
  * @method DELETE
- * @route /remove-member/:id
- * @description Removes a user by their ID.
- * @access Admin and Super Admin.
+ * @route /remove-user/:id
+ * @access Admin and Super Admin
  * @middleware
- * - `authJWT`: Handles user authentication.
+ * - `authJWT`: Authenticates the user.
  * - `authorisedByRole`: Ensures the user has admin or super admin role.
- * - `authResetPassword`: Provides additional security.
+ * - `authResetPassword`: Enhances security.
  * - `validateIdParams`: Validates the request parameter (member ID).
  * @response JSON - Returns the removed user's data or an error message.
  */
@@ -97,16 +89,15 @@ router.delete("/remove-user/:id",
 );
 
 /**
- * Update User Role
+ * Updates the role of a user by their ID.
  * @method PUT
  * @route /update-role/:id
- * @description Updates the role of a user by their ID.
- * @access Super Admin only.
+ * @access Super Admin only
  * @middleware
- * - `authJWT`: Handles user authentication.
+ * - `authJWT`: Authenticates the user.
  * - `authorisedByRole`: Ensures the user has super admin role.
  * - `validateIdParams`: Validates the request parameter (member ID).
- * - `authResetPassword`: Provides additional security.
+ * - `authResetPassword`: Enhances security.
  * - `forbiddenAddedRoles`: Checks for forbidden roles in the request.
  * @response JSON - Returns the updated user's data or an error message.
  */

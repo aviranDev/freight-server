@@ -1,14 +1,12 @@
-import { IAuth, IUser } from "../interfaces/modelsInterfaces";
+import { IAuth, ISession, IUser } from "../interfaces/modelsInterfaces";
 import { Model } from "mongoose";
 import InternalError from "../errors/services/internalError";
 import AuthenticationError from "../errors/services/authetication";
 import { comparePasswords } from "../utils/password";
 import { config } from "../config/server";
 import { salter, hashing } from "../utils/password";
-import SessionService from "./session";
-import User from "../Models/User";
 import { ValidationError } from "../errors/middlewares/validation";
-
+import ISessionService from "../interfaces/ISessionService";
 /**
  * AuthService handles user authentication, login, and password reset operations.
  * This service manages user authentication and password-related tasks, including
@@ -16,16 +14,16 @@ import { ValidationError } from "../errors/middlewares/validation";
  */
 export class AuthService {
   private model: Model<IUser> // Mongoose model for the User collection
-  tokenService: SessionService; // Service for managing user sessions and tokens
+  private tokenService: ISessionService; // Service for managing user sessions and tokens
 
   /**
    * Constructor for the AuthService class.
    * Initializes the Mongoose model for the User collection and the SessionService.
    */
-  constructor() {
+  constructor(userModel: Model<IUser>, tokenService: ISessionService) {
     // Initialize the data model and TokenService
-    this.model = User;
-    this.tokenService = new SessionService();
+    this.model = userModel;
+    this.tokenService = tokenService;
   };
 
   /**

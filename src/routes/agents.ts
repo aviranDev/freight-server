@@ -1,5 +1,5 @@
 import { Router } from "express";
-import controller from "../controllers/agent";
+import AgentController from "../controllers/agent";
 import { authMiddlewares } from "./common/userAuthMiddlewares";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import { config } from '../config/server';
@@ -8,6 +8,16 @@ import { validateAgent } from "../validation/agents";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { limiter } from "../utils/limiter";
 import validateIdParams from "../validation/idParams";
+import AirlineService from "../services/airline";
+import Airline from "../Models/Airline";
+import AgentService from "../services/agents";
+import Agent from "../Models/Agent";
+
+const airlineService = new AirlineService(Airline);
+
+const agentService = new AgentService(Agent, airlineService);
+
+const controller = new AgentController(agentService);
 
 // Destructure the ROLE1 and ROLE2 constants from the config object.
 const { ROLE1, ROLE2 } = config;

@@ -1,11 +1,17 @@
 import { Router } from "express";
 import { config } from '../config/server';
 import validateIdParams from "../validation/idParams";
-import controller from "../controllers/contact";
+import ContactController from "../controllers/contact";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { validateContact } from "../validation/contacts";
 import { authMiddlewares } from "./common/userAuthMiddlewares";
+import ContactService from "../services/contact";
+import Contact from "../Models/Contact";
+
+const service = new ContactService(Contact);
+
+const controller = new ContactController(service);
 
 // Destructure the ROLE1 and ROLE2 constants from the config object.
 const { ROLE1, ROLE2 } = config;

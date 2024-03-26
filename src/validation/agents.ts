@@ -33,7 +33,7 @@ const validateAgent = (body: IAgent): Joi.ValidationResult<IAgent> => {
       'string.empty': 'Port should not be empty',
     }),
     // Step 4: Validate the 'room' field.
-    room: Joi.string().regex(roomRejex).required().messages({
+    room: Joi.number().required().messages({
       'any.required': 'Room is required',
       'string.empty': 'Room should not be empty',
       'string.pattern.base': 'Room is allowed for 3 numeric strings only.'
