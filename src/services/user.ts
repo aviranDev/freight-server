@@ -1,11 +1,14 @@
 import { Model } from "mongoose";
 import bcryptjs from "bcryptjs";
 import { IUser } from "../interfaces/modelsInterfaces";
-import { config } from '../config/server';
+import { serverConfig } from '../config/serverConfiguration';
 import AuthorizationError from "../errors/services/authorization";
 import InternalError from "../errors/services/internalError";
 import ConflictError from "../errors/services/conflict";
 import { ValidationError } from "../errors/middlewares/validation";
+
+const { ROLE2, ROLE3 } = serverConfig.config.ROLES;
+const { SALT } = serverConfig.config;
 
 /**
  * UserService manages user-related operations and interactions with the user data model.
@@ -14,8 +17,8 @@ import { ValidationError } from "../errors/middlewares/validation";
 class UserService {
   // Define private properties for the Mongoose user model and role constants
   private model: Model<IUser>;
-  private admin = config.ROLE2;
-  private employee = config.ROLE3;
+  private admin = ROLE2;
+  private employee = ROLE3;
 
   /**
    * Constructor for the UserService class.
@@ -93,7 +96,7 @@ class UserService {
       }
 
       // Generate a salt for password hashing.
-      const salt = this.generateSalt(config.SALT);
+      const salt = this.generateSalt(SALT);
 
       // Hash the member's password.
       const hashPassword = await this.hashPassword(member.password, salt);

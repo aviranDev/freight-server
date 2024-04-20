@@ -1,0 +1,41 @@
+2024-04-20T12:41:46.416Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:41:46.504Z [info]: Server is running on port: 8181
+2024-04-20T12:47:33.013Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:47:33.052Z [info]: Server is running on port: 8181
+2024-04-20T12:47:54.645Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:47:54.681Z [info]: Server is running on port: 8181
+2024-04-20T12:48:05.534Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:05.575Z [info]: Server is running on port: 8181
+2024-04-20T12:48:17.363Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:17.403Z [info]: Server is running on port: 8181
+2024-04-20T12:48:25.494Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:25.532Z [info]: Server is running on port: 8181
+2024-04-20T12:48:33.571Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:33.608Z [info]: Server is running on port: 8181
+2024-04-20T12:48:42.953Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:42.989Z [info]: Server is running on port: 8181
+2024-04-20T12:48:52.024Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:52.058Z [info]: Server is running on port: 8181
+2024-04-20T12:48:58.707Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:48:58.739Z [info]: Server is running on port: 8181
+2024-04-20T12:49:08.787Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:49:08.824Z [info]: Server is running on port: 8181
+2024-04-20T12:49:14.987Z [info]: Connected To MongoDB Locally.
+2024-04-20T12:49:15.022Z [info]: Server is running on port: 8181
+2024-04-20T18:05:22.342Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:05:22.450Z [info]: Server is running on port: 8181
+2024-04-20T18:09:34.224Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:09:34.259Z [info]: Server is running on port: 8181
+2024-04-20T18:10:49.143Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:10:49.173Z [info]: Server is running on port: 8181
+2024-04-20T18:24:26.457Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:24:26.538Z [info]: Server is running on port: 8181
+2024-04-20T18:24:50.455Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:24:50.494Z [info]: Server is running on port: 8181
+2024-04-20T18:25:05.950Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:25:12.395Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:25:12.446Z [info]: Server is running on port: 8181
+2024-04-20T18:26:27.891Z [info]: Connected To MongoDB Locally.
+2024-04-20T18:26:27.922Z [info]: Server is running on port: 8181
+2024-04-20T18:41:05.665Z [info]: Received SIGINT. Closing server and shutting down...
+2024-04-20T18:41:05.726Z [info]: Shutting down gracefully...

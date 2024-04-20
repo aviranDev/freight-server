@@ -2,8 +2,6 @@ import { Router } from "express";
 import AgentController from "../controllers/agent";
 import { authMiddlewares } from "./common/userAuthMiddlewares";
 import { administratorAuthentication } from "../middlewares/adminAuth";
-import { config } from '../config/server';
-
 import { validateAgent } from "../validation/agents";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { limiter } from "../utils/limiter";
@@ -12,6 +10,8 @@ import AirlineService from "../services/airline";
 import Airline from "../Models/Airline";
 import AgentService from "../services/agents";
 import Agent from "../Models/Agent";
+import { serverConfig } from '../config/serverConfiguration';
+const { ROLES, PORT_NAMES } = serverConfig.config
 
 const airlineService = new AirlineService(Airline);
 
@@ -20,7 +20,6 @@ const agentService = new AgentService(Agent, airlineService);
 const controller = new AgentController(agentService);
 
 // Destructure the ROLE1 and ROLE2 constants from the config object.
-const { ROLE1, ROLE2 } = config;
 const router = Router();
 
 /**
@@ -36,7 +35,7 @@ const router = Router();
  */
 router.get("/all-agents",
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   controller.allAgents
 );
 
@@ -51,10 +50,10 @@ router.get("/all-agents",
  * It requires user authentication.
  * The route can be used by sending a GET request to /PORT_NAME_1-agents.
  */
-router.get(`/${config.PORT_NAME_1}-agents`,
+router.get(`/${PORT_NAMES.PORT_NAME_1}-agents`,
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
-  controller.selectByPort(config.PORT_NAME_1)
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
+  controller.selectByPort(PORT_NAMES.PORT_NAME_1)
 );
 
 /**
@@ -68,10 +67,10 @@ router.get(`/${config.PORT_NAME_1}-agents`,
  * It requires user authentication.
  * The route can be used by sending a GET request to /PORT_NAME_2-agents.
  */
-router.get(`/${config.PORT_NAME_2}-agents`,
+router.get(`/${PORT_NAMES.PORT_NAME_2}-agents`,
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
-  controller.selectByPort(config.PORT_NAME_2)
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
+  controller.selectByPort(PORT_NAMES.PORT_NAME_2)
 );
 
 /**
@@ -88,7 +87,7 @@ router.get(`/${config.PORT_NAME_2}-agents`,
  */
 router.get("/display-agent/:id",
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   controller.getAgentById
 );
 
@@ -109,7 +108,7 @@ router.get("/display-agent/:id",
  */
 router.post("/create-agent",
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]), // Administrator Authentication Middleware
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Administrator Authentication Middleware
   validateRequestBody(validateAgent), // Request Body Validation Middleware
   controller.agentMongooseValidation([ // Mongoose Validation Middleware
     "agent", "port", "room", "floor"
@@ -136,7 +135,7 @@ router.post("/create-agent",
 router.put("/update-agent/:id",
   validateIdParams,
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   validateRequestBody(validateAgent),
   controller.agentMongooseValidation([
     "agent", "port", "room", "floor"
@@ -156,7 +155,7 @@ router.put("/update-agent/:id",
 router.delete("/remove-agent/:id",
   limiter, // Applies rate limiting to prevent abuse.
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]), // Authenticates users as admins or super admins.
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Authenticates users as admins or super admins.
   controller.removeAgent,
 );
 

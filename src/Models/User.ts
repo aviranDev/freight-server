@@ -1,9 +1,10 @@
 import { Schema, model } from "mongoose";
 import { IUser } from "../interfaces/modelsInterfaces";
-import { config } from "../config/server";
 import { usernameRejex } from "../utils/rejex";
+import { serverConfig } from "../config/serverConfiguration";
+
 // User roles
-const { ROLE1, ROLE2, ROLE3 } = config;
+const { ROLE1, ROLE2, ROLE3 } = serverConfig.config.ROLES;
 
 /** User Model
  *  Collection name: User
@@ -37,6 +38,18 @@ export const UserSchema = new Schema<IUser>({
   resetPassword: {
     type: Boolean,
     default: false,
+  },
+  failedLoginAttempts: {
+    type: Number,
+    default: 0
+  },
+  accountLocked: {
+    type: Boolean,
+    default: false
+  },
+  lastFailedLoginDate: {
+    type: Date,
+    default: null
   },
   // Timestamp for user creation.
   createdAt: {

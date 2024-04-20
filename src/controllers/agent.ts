@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import AgentService from '../services/agents';
 import { IAgent } from '../interfaces/modelsInterfaces';
 import dotenv from 'dotenv';
 import IAgentService from '../interfaces/IAgentService';

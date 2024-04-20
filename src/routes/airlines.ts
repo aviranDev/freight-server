@@ -3,7 +3,7 @@ import { validateAirline } from "../validation/airlines";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import { limiter } from "../utils/limiter";
-import { config } from '../config/server';
+import { serverConfig } from '../config/serverConfiguration';
 import { authMiddlewares } from "./common/userAuthMiddlewares";
 import validateIdParams from "../validation/idParams";
 import Airline from "../Models/Airline";
@@ -15,7 +15,7 @@ const service = new AirlineService(Airline);
 const controller = new AirlineController(service);
 
 // Destructure the ROLE1 and ROLE2 constants from the config object.
-const { ROLE1, ROLE2 } = config;
+const { ROLES, PORT_NAMES } = serverConfig.config;
 const router = Router();
 
 /**
@@ -56,7 +56,7 @@ router.get("/display-airline/:id", ...authMiddlewares, controller.getAirlineById
  * It requires user authentication.
  * The route can be used by sending a GET request to /PORT_NAME_1-airlines.
  */
-router.get(`/${config.PORT_NAME_1}-airlines`, ...authMiddlewares, controller.selectByPort(config.PORT_NAME_1));
+router.get(`/${PORT_NAMES.PORT_NAME_1}-airlines`, ...authMiddlewares, controller.selectByPort(PORT_NAMES.PORT_NAME_1));
 
 /**
  * Route handler to get airlines based on the 'PORT_NAME_2' port.
@@ -69,7 +69,7 @@ router.get(`/${config.PORT_NAME_1}-airlines`, ...authMiddlewares, controller.sel
  * It requires user authentication.
  * The route can be used by sending a GET request to /PORT_NAME_2-airlines.
  */
-router.get(`/${config.PORT_NAME_2}-airlines`, ...authMiddlewares, controller.selectByPort(config.PORT_NAME_2));
+router.get(`/${PORT_NAMES.PORT_NAME_2}-airlines`, ...authMiddlewares, controller.selectByPort(PORT_NAMES.PORT_NAME_2));
 
 /**
  * Route handler to search for airlines based on a query parameter.
@@ -107,7 +107,7 @@ router.get("/search-airline", ...authMiddlewares, controller.searchAirline);
  */
 router.post("/create-airline",
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   validateRequestBody(validateAirline),
   controller.airlineMongooseValidation([
     "name", "prefix", "code", "agent"
@@ -138,7 +138,7 @@ router.post("/create-airline",
 router.put("/update-airline/:id",
   validateIdParams,
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]),
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   validateRequestBody(validateAirline),
   controller.airlineMongooseValidation([
     "name", "prefix", "code", "agent"
@@ -168,7 +168,7 @@ router.put("/update-airline/:id",
 router.delete("/remove-airline/:id",
   limiter, // Applies rate limiting to prevent abuse.
   ...authMiddlewares,
-  administratorAuthentication([ROLE1, ROLE2]), // Authenticates users as admins or super admins.
+  administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Authenticates users as admins or super admins.
   controller.removeAirline,
 );
 

@@ -1,6 +1,7 @@
 import { connectDb } from "./connectDb";
-import { localDb, externalDb } from "../config/mongo";
 import { logger } from "../logger/logger";
+import { mongoConfig } from "../config/mongo";
+const { localDb, externalDb } = mongoConfig.buildMongoConfig;
 
 /**
  * @description Initializes the database connection based on the current environment.

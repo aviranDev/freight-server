@@ -2,14 +2,14 @@ import { Router } from "express";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { validateRegister } from "../validation/user";
-import { config } from '../config/server';
+import { serverConfig } from '../config/serverConfiguration';
 import validateIdParams from "../validation/idParams";
 import forbiddenAddedRoles from "../middlewares/forbiddenAddedRoles";
 import { authMiddlewares } from "./common/userAuthMiddlewares";
 import UserService from "../services/user";
 import UserController from "../controllers/user";
 import UserModel from "../Models/User";
-const { ROLE1, ROLE2 } = config;
+const { ROLE1, ROLE2 } = serverConfig.config.ROLES;
 
 // Create an instance of the User Service
 const userService = new UserService(UserModel);

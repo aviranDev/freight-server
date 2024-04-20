@@ -32,10 +32,10 @@ const router = Router();
  * @response JSON - Returns an access token upon successful login. 
  */
 router.post("/login",
-  limiter, // Rate limiting middleware
-  validateRequestBody(validateLogin), // Request body validation
+  limiter,
+  validateRequestBody(validateLogin),
   authController.authMongooseValidation(['username', 'password']),
-  authController.login, // Controller function to handle login logic
+  authController.login,
 );
 
 /**

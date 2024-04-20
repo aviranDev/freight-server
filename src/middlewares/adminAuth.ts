@@ -1,7 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import AuthorizationError from "../errors/services/authorization";
-import { tokens } from '../config/server';
 import jwt, { JwtPayload } from 'jsonwebtoken';
+import { serverConfig } from '../config/serverConfiguration';
+const { REFRESH_TOKEN_SECRET } = serverConfig.config.TOKENS;
 
 /**
  * Middleware to authenticate users based on their roles.
@@ -21,7 +22,7 @@ export const administratorAuthentication = (roles: string[]):
       const token = request.cookies.jwt;
 
       // Verify and decode the JWT token, specifying the expected payload shape
-      const decoded = jwt.verify(token, tokens.REFRESH_TOKEN_SECRET) as JwtPayload;
+      const decoded = jwt.verify(token, REFRESH_TOKEN_SECRET) as JwtPayload;
 
       // Check if the user's role is included in the list of allowed roles
       const isAuthorized = authorizedRoles.includes(decoded?.role);
