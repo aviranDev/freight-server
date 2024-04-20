@@ -1,7 +1,8 @@
 import { CronJob } from 'cron';
 import { logger } from "../logger/logger";
 import axios from 'axios';
-import { config } from '../config/server';
+import { serverConfig } from '../config/serverConfiguration';
+const { PORT } = serverConfig.config;
 
 /**
  * Starts a cron job to perform a specific task at scheduled intervals.
@@ -16,7 +17,7 @@ export const startCronJob = async () => {
     async () => {
       try {
         // Make an HTTP request to your Express route (local server for development)
-        await axios.get(`http://localhost:${config.PORT}/api/crons/cron-job`);
+        await axios.get(`http://localhost:${PORT}/api/crons/cron-job`);
 
         // Log a debug message indicating successful execution of the cron job
         logger.debug('Cron job ran at: ' + new Date().toLocaleString());

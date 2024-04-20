@@ -1,10 +1,11 @@
 import cors, { CorsOptions } from "cors";
-import { origins } from '../config/server';
+import { serverConfig } from '../config/serverConfiguration';
+const { CORS_ORIGIN } = serverConfig.config;
 
 // Define CORS options using the 'CorsOptions' type
 const corsOptions: CorsOptions = {
   // Specify the allowed origins for CORS (e.g., ["http://example.com"])
-  origin: origins,
+  origin: CORS_ORIGIN,
 
   // Specify the allowed HTTP methods for CORS
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",

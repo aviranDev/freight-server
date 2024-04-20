@@ -1,70 +1,60 @@
-import dotenv from "dotenv"; // Import the dotenv package for managing environment variables
-import { EnvironmentVariableError } from "../errors/services/enviromentVariable"; // Import a custom error class for handling missing environment variables
-import { logger } from "../logger/logger"; // Import the logger module for logging errors
+import handleConfiguration from "./configHandler"; // Import the function for handling configuration
+import Config from "./Config"; // Import the generic Config class
+import dotenv from "dotenv"; // Import dotenv for loading environment variables from a .env file
+dotenv.config(); // Load environment variables from .env file if present
 
-dotenv.config(); // Load environment variables from a .env file (if present)
-
-// Define an interface for MongoDB connection options
-interface IMongo {
-  localDb: string; // Connection string for the local MongoDB database
-  externalDb: string; // Connection string for an external MongoDB database (e.g., Atlas)
+// Define interface for MongoDB configuration
+export interface IMongo {
+  localDb: string;
+  externalDb: string;
 }
 
-// Define environment options for production and development environments
-interface EnvironmentOptions {
+// Define types for atlas environment options
+type AtlasEnvironment = {
+  ATLAS_USERNAME: string;
+  ATLAS_PASSWORD: string;
+  ATALS_CONNECTION: string;
+  ATALS_DB: string;
+};
+
+// Define types for compass environment options
+type DevelopmentEnvironment = {
+  LOCAL_DB: string;
+  LOCAL_DB_PORT: string;
+};
+
+// Define a union type for different environment options
+export type EnvironmentOptions = {
+  "--production": AtlasEnvironment;
+  "--development": DevelopmentEnvironment;
+};
+
+// Function to retrieve environment variables with an optional default value
+const getEnvironmentVariable = (key: string, defaultValue = ""): string => {
+  return process.env[key] || defaultValue;
+};
+
+// Initialize environment options based on environment variables
+export const envOptions: EnvironmentOptions = {
   "--production": {
-    ATLAS_USERNAME: string; // Username for Atlas MongoDB
-    ATLAS_PASSWORD: string; // Password for Atlas MongoDB
-    ATALS_CONNECTION: string; // Atlas MongoDB connection string
-    ATALS_DB: string; // Atlas MongoDB database name
-  };
+    ATLAS_USERNAME: getEnvironmentVariable("ATLAS_USERNAME"),
+    ATLAS_PASSWORD: getEnvironmentVariable("ATLAS_PASSWORD"),
+    ATALS_CONNECTION: getEnvironmentVariable("ATALS_CONNECTION"),
+    ATALS_DB: getEnvironmentVariable("ATALS_DB"),
+  },
   "--development": {
-    LOCAL_DB: string; // Local MongoDB database name
-    LOCAL_DB_PORT: string; // Local MongoDB database port
-  };
-}
+    LOCAL_DB: getEnvironmentVariable("LOCAL_DB"),
+    LOCAL_DB_PORT: getEnvironmentVariable("LOCAL_DB_PORT"),
+  },
+};
 
-// Define a type for the environment (either '--production' or '--development')
-type EnvironmentType = '--production' | '--development';
+// Class for managing MongoDB configuration based on environment options
+export class MongoDBConfigClass extends Config<EnvironmentOptions> {
+  private readonly options: EnvironmentOptions;
 
-// Create a class for managing MongoDB configuration
-export class MongoDBConfigClass {
-  private readonly config: IMongo; // MongoDB connection options
-  private readonly env: EnvironmentType; // Current environment type ('--production' or '--development')
-
-  constructor() {
-    const envOptions: EnvironmentOptions = {
-      "--production": {
-        ATLAS_USERNAME: process.env.ATLAS_USERNAME || "", // Get Atlas username or use an empty string
-        ATLAS_PASSWORD: process.env.ATLAS_PASSWORD || "", // Get Atlas password or use an empty string
-        ATALS_CONNECTION: process.env.ATALS_CONNECTION || "", // Get Atlas connection string or use an empty string
-        ATALS_DB: process.env.ATALS_DB || "", // Get Atlas connection string or use an empty string
-      },
-      "--development": {
-        LOCAL_DB: process.env.LOCAL_DB || "", // Get the local database name or use an empty string
-        LOCAL_DB_PORT: process.env.LOCAL_DB_PORT || "", // Get the local database port or use an empty string
-      }
-    };
-
-    this.env = (process.argv[2] as EnvironmentType) || "--development"; // Get the current environment or default to '--development'
-
-    this.config = {
-      localDb: this.buildLocalDbConnection(envOptions["--development"]), // Build the local MongoDB connection string
-      externalDb: this.buildExternalDbConnection(envOptions["--production"]), // Build the external MongoDB connection string
-    };
-    this.validateEnvironmentVariables(this.env, envOptions); // Check for missing environment variables
-  }
-
-  // Private method to validate environment variables
-  private validateEnvironmentVariables(env: EnvironmentType, envOptions: EnvironmentOptions): void {
-    const missingKeys = Object.entries(envOptions[env])
-      .filter(([_, value]) => !value)
-      .map(([key]) => key)
-      .join(", ");
-
-    if (missingKeys) {
-      throw new EnvironmentVariableError(`On ${env}: ${missingKeys}`); // Throw an error for missing keys
-    }
+  constructor(options: EnvironmentOptions) {
+    super(options);
+    this.options = options;
   }
 
   // Private method to build the local MongoDB connection string
@@ -79,22 +69,14 @@ export class MongoDBConfigClass {
     return `mongodb+srv://${ATLAS_USERNAME}:${ATLAS_PASSWORD}@${ATALS_CONNECTION}/${ATALS_DB}`;
   }
 
-  // Public method to get the MongoDB configuration
-  public getMongoConfig(): IMongo {
-    return this.config;
+  // Getter method for dynamically constructing the MongoDB configuration
+  get buildMongoConfig(): IMongo {
+    const localDb = this.buildLocalDbConnection(this.options["--development"]);
+    const externalDb = this.buildExternalDbConnection(this.options["--production"]);
+
+    return { localDb, externalDb };
   }
 }
 
-// Function to handle MongoDB configuration and potential errors
-const handleDatabaseConfiguration = (): IMongo => {
-  try {
-    const config = new MongoDBConfigClass();
-    return config.getMongoConfig();
-  } catch (error) {
-    logger.error(`Error handling database configuration: ${error}`);
-    process.exit(1); // Terminate the process with an exit code of 1 (indicating an error)
-  }
-}
-
-// Export the MongoDB connection options
-export const { localDb, externalDb } = handleDatabaseConfiguration(); 
+// Export the MongoDB connection options after handling configuration
+export const mongoConfig = handleConfiguration(envOptions, MongoDBConfigClass); 

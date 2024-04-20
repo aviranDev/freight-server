@@ -1,7 +1,8 @@
 import { startServer } from "./server";
-import { config } from "./config/server";
 import { configureGracefulShutdown } from "./db/shutdownDb";
 import { logger } from "./logger/logger";
+import { serverConfig } from "./config/serverConfiguration";
+const { PORT } = serverConfig.config;
 
 /**
  * Main application entry point.
@@ -11,7 +12,7 @@ import { logger } from "./logger/logger";
 export async function main(): Promise<void> {
   try {
     // Get the configured port for the server from the 'config' object
-    const port = config.PORT;
+    const port = PORT;
 
     // Start the server and get the server instance
     const server = await startServer(port);

@@ -29,6 +29,9 @@ export interface IUser {
   role: string;
   token: string;
   resetPassword: boolean;
+  failedLoginAttempts: number;
+  accountLocked: boolean;
+  lastFailedLoginDate: Date | null;
   createdAt: Date
 };
 

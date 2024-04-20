@@ -1,14 +1,7 @@
 import Joi from "joi";
 import { IAgent } from "../interfaces/modelsInterfaces";
-import { roomRejex } from '../utils/rejex';
-import { config } from "../config/server";
-const {
-  PORT_NAME_1,
-  PORT_NAME_2,
-  FLOOR1,
-  FLOOR2,
-  FLOOR3
-} = config;
+import { serverConfig } from "../config/serverConfiguration";
+const { PORT_NAMES, FLOORS } = serverConfig.config;
 
 /**
  * Validates the provided agent data using Joi schema.
@@ -27,8 +20,8 @@ const validateAgent = (body: IAgent): Joi.ValidationResult<IAgent> => {
       'string.empty': 'Agent should not be empty',
     }),
     // Step 3: Validate the 'port' field.
-    port: Joi.string().valid(PORT_NAME_1, PORT_NAME_2).messages({
-      'any.only': `Port must be either ${PORT_NAME_1}, or ${PORT_NAME_2}`,
+    port: Joi.string().valid(PORT_NAMES.PORT_NAME_1, PORT_NAMES.PORT_NAME_2).messages({
+      'any.only': `Port must be either ${PORT_NAMES.PORT_NAME_1}, or ${PORT_NAMES.PORT_NAME_2}`,
       'any.required': 'Port is required',
       'string.empty': 'Port should not be empty',
     }),
@@ -39,8 +32,8 @@ const validateAgent = (body: IAgent): Joi.ValidationResult<IAgent> => {
       'string.pattern.base': 'Room is allowed for 3 numeric strings only.'
     }),
     // Step 5: Validate the 'floor' field.
-    floor: Joi.string().valid(FLOOR1, FLOOR2, FLOOR3).required().messages({
-      'any.only': `Floor must be either ${FLOOR1}, ${FLOOR2} or ${FLOOR3}`,
+    floor: Joi.string().valid(FLOORS.FLOOR1, FLOORS.FLOOR2, FLOORS.FLOOR3).required().messages({
+      'any.only': `Floor must be either ${FLOORS.FLOOR1}, ${FLOORS.FLOOR2} or ${FLOORS.FLOOR3}`,
       'any.required': 'Floor is required',
       'string.empty': 'Floor should not be empty',
     }),

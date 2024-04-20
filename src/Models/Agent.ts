@@ -1,7 +1,8 @@
 import { Schema, model } from "mongoose";
 import { IAgent } from "../interfaces/modelsInterfaces";
-import { config } from '../config/server';
 import dotenv from 'dotenv';
+import { serverConfig } from '../config/serverConfiguration';
+const { FLOORS, PORT_NAMES } = serverConfig.config
 dotenv.config();
 
 /** Agent Model
@@ -20,7 +21,7 @@ export const agentSchema = new Schema<IAgent>({
   },
   port: {
     type: String,
-    enum: [config.PORT_NAME_1, config.PORT_NAME_2], // Assign a port from the predefined options (port1, port2)
+    enum: [PORT_NAMES.PORT_NAME_1, PORT_NAMES.PORT_NAME_2], // Assign a port from the predefined options (port1, port2)
     // Validation: Agent port must be one of the predefined options or default to an empty string.
   },
   room: {
@@ -32,7 +33,7 @@ export const agentSchema = new Schema<IAgent>({
   },
   floor: {
     type: String,
-    enum: [config.FLOOR1, config.FLOOR2, config.FLOOR3],
+    enum: [FLOORS.FLOOR1, FLOORS.FLOOR2, FLOORS.FLOOR3],
     // Validation: Agent floor must be one of the predefined options or default to an empty string.
   },
 });

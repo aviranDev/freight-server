@@ -2,7 +2,14 @@ import { Model } from "mongoose";
 import jwt, { sign } from "jsonwebtoken";
 import { ISession, IUser, TokenPayload } from "../interfaces/modelsInterfaces";
 import InternalError from "../errors/services/internalError";
-import { tokens } from "../config/server";
+import { serverConfig } from "../config/serverConfiguration";
+
+const {
+  ACCESS_TOKEN_SECRET,
+  REFRESH_TOKEN_SECRET,
+  ACCESS_TOKEN_EXPIRE,
+  REFRESH_TOKEN_EXPIRE
+} = serverConfig.config.TOKENS
 
 /**
  * SessionService manages the creation, validation, and removal of user sessions.
@@ -10,12 +17,12 @@ import { tokens } from "../config/server";
  */
 class SessionService {
   // Define private properties for access and refresh tokens
-  private accessTokenSecret = tokens.ACCESS_TOKEN_SECRET; // Secret key for access tokens
-  private refreshTokenSecret = tokens.REFRESH_TOKEN_SECRET; // Secret key for refresh tokens
+  private accessTokenSecret = ACCESS_TOKEN_SECRET; // Secret key for access tokens
+  private refreshTokenSecret = REFRESH_TOKEN_SECRET; // Secret key for refresh tokens
 
   // Define expiration times for access and refresh tokens
-  private accessTokenExpire = tokens.ACCESS_TOKEN_EXPIRE; // Expiration time for access tokens (in seconds)
-  private refreshTokenExpire = tokens.REFRESH_TOKEN_EXPIRE; // Expiration time for refresh tokens (in seconds)
+  private accessTokenExpire = ACCESS_TOKEN_EXPIRE; // Expiration time for access tokens (in seconds)
+  private refreshTokenExpire = REFRESH_TOKEN_EXPIRE; // Expiration time for refresh tokens (in seconds)
 
   // Define the Mongoose model for managing refresh tokens
   private model: Model<ISession>; // Mongoose model for managing refresh tokens
@@ -156,7 +163,7 @@ class SessionService {
     const token = authHeader.split(" ")[1];
 
     // Verify the access token and extract the user payload
-    const payload = jwt.verify(token, tokens.ACCESS_TOKEN_SECRET) as IUser;
+    const payload = jwt.verify(token, ACCESS_TOKEN_SECRET) as IUser;
 
     // Return the extracted user payload from the access token
     return payload;

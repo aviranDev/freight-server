@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { config } from '../config/server';
+import { serverConfig } from '../config/serverConfiguration';
 import validateIdParams from "../validation/idParams";
 import ContactController from "../controllers/contact";
 import { administratorAuthentication } from "../middlewares/adminAuth";
@@ -14,7 +14,7 @@ const service = new ContactService(Contact);
 const controller = new ContactController(service);
 
 // Destructure the ROLE1 and ROLE2 constants from the config object.
-const { ROLE1, ROLE2 } = config;
+const { ROLE1, ROLE2 } = serverConfig.config.ROLES;
 const router = Router();
 
 router.get('/search-contact', ...authMiddlewares, controller.searchContact);

@@ -1,8 +1,8 @@
+import { serverConfig } from '../config/serverConfiguration';
 import Joi from "joi";
 import { IUser } from "../interfaces/modelsInterfaces";
 import { usernameRejex } from "../utils/rejex";
-import { config } from "../config/server";
-const { ROLE2, ROLE3 } = config;
+const { ROLE2, ROLE3 } = serverConfig.config.ROLES;
 
 /**
  * @description validate register

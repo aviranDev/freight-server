@@ -1,12 +1,19 @@
-import { IAuth, ISession, IUser } from "../interfaces/modelsInterfaces";
+import { IAuth, IUser } from "../interfaces/modelsInterfaces";
 import { Model } from "mongoose";
 import InternalError from "../errors/services/internalError";
 import AuthenticationError from "../errors/services/authetication";
 import { comparePasswords } from "../utils/password";
-import { config } from "../config/server";
+import { serverConfig } from "../config/serverConfiguration";
 import { salter, hashing } from "../utils/password";
 import { ValidationError } from "../errors/middlewares/validation";
 import ISessionService from "../interfaces/ISessionService";
+const { SALT } = serverConfig.config;
+
+const MAX_LOGIN_ATTEMPTS = 5;
+// const LOCK_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
+const LOCK_DURATION_MS = 1 * 60 * 1000; // 1 minute in milliseconds
+
+
 /**
  * AuthService handles user authentication, login, and password reset operations.
  * This service manages user authentication and password-related tasks, including
@@ -86,21 +93,63 @@ export class AuthService {
     : Promise<{ accessToken: string, refreshToken: string }> {
     try {
       // Find the user by username
-      const member = await this.model.findOne({ username: username });
+      const user = await this.model.findOne({ username: username });
 
       // Check if the user doesn't exist or the password doesn't match
-      if (!member || !comparePasswords(password, member.password)) {
+      if (!user) {
         throw new AuthenticationError('Invalid username or password.');
       };
 
+      // Check if the account is locked
+      if (user.accountLocked && user.lastFailedLoginDate) {
+        const oper = (Date.now() - user.lastFailedLoginDate.getTime())
+        const lockDuration = LOCK_DURATION_MS - oper;
+        console.log("LOCK_DURATION_MS: " + LOCK_DURATION_MS);
+        console.log("CURRENT DATE: " + Date.now());
+        console.log("lastFailedLoginDate: " + user.lastFailedLoginDate.getTime());
+        console.log("lockDuration: " + lockDuration);
+
+
+        if (lockDuration > 0) {
+          const hours = lockDuration / (60 * 60 * 1000); // Convert milliseconds to hours
+          throw new AuthenticationError(`Account is locked. Try again after ${hours.toFixed(2)} hours`);
+        }
+
+        // Reset failed login attempts upon successful login
+        user.failedLoginAttempts = 0;
+        user.accountLocked = false;
+        user.lastFailedLoginDate = null;
+      }
+
+      // Check if the user doesn't exist or the password doesn't match
+      if (!comparePasswords(password, user.password)) {
+        // Update failed login attempts count and last failed login date
+        user.failedLoginAttempts += 1;
+        user.lastFailedLoginDate = new Date();
+        await user.save();
+
+        // Check if the maximum attempts exceeded
+        if (user.failedLoginAttempts >= MAX_LOGIN_ATTEMPTS) {
+          // Lock the account
+          user.accountLocked = true;
+          await user.save();
+
+          throw new AuthenticationError('Account is locked. Try again after 24 hours --->');
+        }
+
+        throw new AuthenticationError('Invalid username or password.');
+      };
+
+      await user.save();
+
       // Generate a new access token
-      const accessToken = this.tokenService.generateAccessToken(member);
+      const accessToken = this.tokenService.generateAccessToken(user);
 
       // Generate a new refresh token
-      const refreshToken = this.tokenService.generateRefreshToken(member);
+      const refreshToken = this.tokenService.generateRefreshToken(user);
 
       // Store the refresh token in the database
-      await this.tokenService.storeRefreshTokenInDb(refreshToken, member._id);
+      await this.tokenService.storeRefreshTokenInDb(refreshToken, user._id);
 
       // Returns the generated access and refresh tokens as strings upon successful authentication.
       return { accessToken, refreshToken };
@@ -201,7 +250,7 @@ export class AuthService {
       }
 
       // Generate a salt and hash the new password
-      const salt = salter(config.SALT);
+      const salt = salter(SALT);
       const userPassword = await hashing(password, salt);
 
       // Update the user's password in the database
