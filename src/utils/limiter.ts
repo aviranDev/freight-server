@@ -22,7 +22,7 @@ export const limiter = rateLimit({
     error: {
       status: 403,
       name: "Authentication Error",
-      message: "Too many API requests from this IP, please try again after 1 minute."
+      message: "Too many API requests from this IP, please try again after 1 minute. test"
     }
   },
 });

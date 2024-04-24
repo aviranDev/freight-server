@@ -1,0 +1,36 @@
+2024-04-22T20:27:40.210Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T20:28:08.943Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T20:28:18.496Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T20:28:22.985Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:00:33.008Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:39.283Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:39.990Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:45.230Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:47.648Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:02:12.188Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:14.899Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:20.503Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:21.956Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:23.043Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:04:23.727Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:27.162Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:31.125Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:37.157Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:38.270Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:09:50.432Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:09:54.083Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:10:00.701Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:10:23.895Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:10:25.738Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:11:17.806Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:20.694Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:22.261Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:23.687Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:24.652Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:26.119Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:28.469Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:30.108Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:31.203Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:32.377Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:11:33.575Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-22T21:11:35.070Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours

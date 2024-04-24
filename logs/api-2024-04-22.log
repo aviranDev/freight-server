@@ -1,0 +1,68 @@
+2024-04-22T12:58:13.408Z [info]: Connected To MongoDB Locally.
+2024-04-22T12:58:13.584Z [info]: Server is running on port: 8181
+2024-04-22T13:13:32.207Z [info]: Connected To MongoDB Locally.
+2024-04-22T13:13:32.290Z [info]: Server is running on port: 8181
+2024-04-22T14:06:59.144Z [info]: Connected To MongoDB Locally.
+2024-04-22T14:06:59.238Z [info]: Server is running on port: 8181
+2024-04-22T14:07:08.550Z [info]: Connected To MongoDB Locally.
+2024-04-22T14:07:08.593Z [info]: Server is running on port: 8181
+2024-04-22T14:12:46.509Z [info]: Connected To MongoDB Locally.
+2024-04-22T14:12:46.607Z [info]: Server is running on port: 8181
+2024-04-22T14:24:06.960Z [info]: Connected To MongoDB Locally.
+2024-04-22T14:24:07.050Z [info]: Server is running on port: 8181
+2024-04-22T14:31:26.016Z [info]: Received SIGINT. Closing server and shutting down...
+2024-04-22T14:31:26.020Z [info]: Shutting down gracefully...
+2024-04-22T20:23:44.079Z [info]: Connected To MongoDB Locally.
+2024-04-22T20:23:44.195Z [info]: Server is running on port: 8181
+2024-04-22T20:27:40.208Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T20:28:06.237Z [info]: Connected To MongoDB Locally.
+2024-04-22T20:28:06.437Z [info]: Server is running on port: 8181
+2024-04-22T20:28:08.943Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T20:28:18.496Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T20:28:22.984Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T20:29:04.224Z [info]: Connected To MongoDB Locally.
+2024-04-22T20:29:04.257Z [info]: Server is running on port: 8181
+2024-04-22T21:00:33.006Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:39.283Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:39.990Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:45.229Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:00:47.648Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:02:12.187Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:14.898Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:20.502Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:21.956Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:02:23.043Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:03:34.610Z [info]: Connected To MongoDB Locally.
+2024-04-22T21:03:34.692Z [info]: Server is running on port: 8181
+2024-04-22T21:04:21.350Z [info]: Connected To MongoDB Locally.
+2024-04-22T21:04:21.391Z [info]: Server is running on port: 8181
+2024-04-22T21:04:23.727Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:27.162Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:31.125Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:37.157Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:04:38.269Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:05:06.593Z [info]: Connected To MongoDB Locally.
+2024-04-22T21:05:06.697Z [info]: Server is running on port: 8181
+2024-04-22T21:09:50.428Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:09:54.082Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:10:00.700Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:10:23.895Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:10:25.737Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:11:14.275Z [info]: Connected To MongoDB Locally.
+2024-04-22T21:11:14.357Z [info]: Server is running on port: 8181
+2024-04-22T21:11:17.806Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:20.694Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:22.261Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:23.687Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:24.652Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.00 hours
+2024-04-22T21:11:26.119Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:28.469Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:30.108Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:31.203Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-22T21:11:32.377Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-22T21:11:33.575Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-22T21:11:35.070Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-22T21:12:38.242Z [info]: Connected To MongoDB Locally.
+2024-04-22T21:12:38.336Z [info]: Server is running on port: 8181
+2024-04-23T00:59:33.555Z [info]: Received SIGINT. Closing server and shutting down...
+2024-04-23T00:59:33.604Z [info]: Shutting down gracefully...

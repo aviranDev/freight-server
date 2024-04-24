@@ -1,7 +1,9 @@
 import { EnvironmentVariableError } from "../errors/services/enviromentVariable";
 
+// Config class for validating configuration objects
 export class Config<T extends Record<string, any>> {
   constructor(protected config: T) {
+    // Validate the provided configuration object
     this.validateConfig(config);
   }
 
