@@ -25,7 +25,7 @@ const errorHandler = function (err: CustomError, req: Request, res: Response, ne
 
       // Respond with the appropriate status code, message, and error details
       res.status(err.status).json({
-        message: err.name,
+        message: err.message,
         error: err.errorResponse()
       });
       return;

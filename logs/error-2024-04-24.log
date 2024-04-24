@@ -1,0 +1,27 @@
+2024-04-24T00:10:39.579Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:10:41.038Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:10:42.047Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:10:42.862Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:10:43.670Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:16:06.892Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:16:07.823Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:16:08.690Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:16:09.453Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:16:10.129Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:20:20.795Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:20:21.983Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:20:22.776Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:20:23.512Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:20:24.237Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:26:48.469Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:26:49.521Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:26:57.766Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:26:58.677Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:26:59.411Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:27:00.209Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:27:00.890Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-24T00:27:01.622Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-24T00:27:04.810Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-24T00:38:48.305Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:39:00.260Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T00:39:01.634Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.

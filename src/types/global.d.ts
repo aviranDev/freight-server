@@ -35,6 +35,7 @@ declare global {
         role: string;
         resetPassword: boolean;
       };
+      username: string
     }
   }
 }

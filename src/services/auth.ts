@@ -104,10 +104,10 @@ export class AuthService {
       if (user.accountLocked && user.lastFailedLoginDate) {
         const oper = (Date.now() - user.lastFailedLoginDate.getTime())
         const lockDuration = LOCK_DURATION_MS - oper;
-        console.log("LOCK_DURATION_MS: " + LOCK_DURATION_MS);
-        console.log("CURRENT DATE: " + Date.now());
-        console.log("lastFailedLoginDate: " + user.lastFailedLoginDate.getTime());
-        console.log("lockDuration: " + lockDuration);
+        /*         console.log("LOCK_DURATION_MS: " + LOCK_DURATION_MS);
+                console.log("CURRENT DATE: " + Date.now());
+                console.log("lastFailedLoginDate: " + user.lastFailedLoginDate.getTime());
+                console.log("lockDuration: " + lockDuration); */
 
 
         if (lockDuration > 0) {
