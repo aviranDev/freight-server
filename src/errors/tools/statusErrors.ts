@@ -15,5 +15,6 @@ export const errorServiceMap = new Map<number, string>([
   [HTTP_STATUS.FORBIDDEN, 'Forbidden Error'],
   [HTTP_STATUS.NOT_FOUND, 'Not Found Error'],
   [HTTP_STATUS.CONFLICT, 'Conflict Error'],
+  [HTTP_STATUS.TOO_MANY_REQUESTS, 'Too Many Requests'],
   [HTTP_STATUS.INTERNAL_SERVER_ERROR, 'Internal Server Error'],
 ]);

@@ -7,6 +7,7 @@ import { serverConfig } from "../config/serverConfiguration";
 import { salter, hashing } from "../utils/password";
 import { ValidationError } from "../errors/middlewares/validation";
 import ISessionService from "../interfaces/ISessionService";
+import ManyRequests from "../errors/services/manyRequest";
 const { SALT } = serverConfig.config;
 
 const MAX_LOGIN_ATTEMPTS = 5;
@@ -102,17 +103,11 @@ export class AuthService {
 
       // Check if the account is locked
       if (user.accountLocked && user.lastFailedLoginDate) {
-        const oper = (Date.now() - user.lastFailedLoginDate.getTime())
+        const oper = (Date.now() - user.lastFailedLoginDate.getTime());
         const lockDuration = LOCK_DURATION_MS - oper;
-        /*         console.log("LOCK_DURATION_MS: " + LOCK_DURATION_MS);
-                console.log("CURRENT DATE: " + Date.now());
-                console.log("lastFailedLoginDate: " + user.lastFailedLoginDate.getTime());
-                console.log("lockDuration: " + lockDuration); */
-
 
         if (lockDuration > 0) {
-          const hours = lockDuration / (60 * 60 * 1000); // Convert milliseconds to hours
-          throw new AuthenticationError(`Account is locked. Try again after ${hours.toFixed(2)} hours`);
+          throw new ManyRequests(`Account is locked. Too many requests, please try again later.`);
         }
 
         // Reset failed login attempts upon successful login
@@ -134,7 +129,7 @@ export class AuthService {
           user.accountLocked = true;
           await user.save();
 
-          throw new AuthenticationError('Account is locked. Try again after 24 hours --->');
+          throw new ManyRequests('Account is locked. Too many requests, please try again later.');
         }
 
         throw new AuthenticationError('Invalid username or password.');

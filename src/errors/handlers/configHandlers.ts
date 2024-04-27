@@ -6,7 +6,7 @@ import { internalErrorMiddleware } from "../middlewares/internal";
 import { conflictErrorMiddleware } from "../middlewares/conflict";
 import { unknownRoutes } from "../middlewares/unknown";
 import { errorHandler } from "./errorHandler";
-
+import { manyRequestsMiddleware } from '../middlewares/manyRequests';
 /**
  * Configures error-handling middleware for an Express application.
  *
@@ -27,6 +27,9 @@ function configureErrorHandlers(app: Application) {
 
   // Handle conflict errors (status 409)
   app.use(conflictErrorMiddleware);
+
+  // Handle too many requests errors (status 429)
+  app.use(manyRequestsMiddleware);
 
   // Handle internal server errors (status 500)
   app.use(internalErrorMiddleware);
