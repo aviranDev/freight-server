@@ -1,0 +1,178 @@
+2024-04-25T00:05:58.767Z [info]: Connected To MongoDB Locally.
+2024-04-25T00:05:58.924Z [info]: Server is running on port: 8181
+2024-04-25T00:06:10.380Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T00:06:12.666Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T00:06:14.242Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T00:06:17.269Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T00:06:19.713Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T00:54:16.087Z [info]: Connected To MongoDB Locally.
+2024-04-25T00:54:16.293Z [info]: Server is running on port: 8181
+2024-04-25T00:54:22.444Z [info]: Received SIGINT. Closing server and shutting down...
+2024-04-25T01:18:17.839Z [info]: Connected To MongoDB Locally.
+2024-04-25T01:18:18.036Z [info]: Server is running on port: 8181
+2024-04-25T09:16:57.428Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:17:31.961Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:17:32.049Z [info]: Server is running on port: 8181
+2024-04-25T09:18:09.986Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:18:10.019Z [info]: Server is running on port: 8181
+2024-04-25T09:19:16.618Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:19:47.026Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:19:49.316Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:19:50.997Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:19:53.317Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:20:55.317Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:20:56.361Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:20:57.045Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:20:57.670Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:20:58.170Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:21:57.296Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:22:00.603Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:22:01.596Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:22:03.163Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:22:04.245Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:22:04.782Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:23:44.578Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:23:44.638Z [info]: Server is running on port: 8181
+2024-04-25T09:23:57.024Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:23:57.066Z [info]: Server is running on port: 8181
+2024-04-25T09:24:15.965Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:24:15.999Z [info]: Server is running on port: 8181
+2024-04-25T09:29:29.381Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:29:29.414Z [info]: Server is running on port: 8181
+2024-04-25T09:29:52.483Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:29:52.520Z [info]: Server is running on port: 8181
+2024-04-25T09:30:06.300Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:30:06.360Z [info]: Server is running on port: 8181
+2024-04-25T09:30:31.331Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:30:31.371Z [info]: Server is running on port: 8181
+2024-04-25T09:34:42.720Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:34:42.752Z [info]: Server is running on port: 8181
+2024-04-25T09:34:50.046Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:34:50.109Z [info]: Server is running on port: 8181
+2024-04-25T09:35:00.125Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:35:00.164Z [info]: Server is running on port: 8181
+2024-04-25T09:39:19.272Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:39:19.323Z [info]: Server is running on port: 8181
+2024-04-25T09:39:40.580Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:40:11.436Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:40:11.468Z [info]: Server is running on port: 8181
+2024-04-25T09:40:12.527Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:40:39.556Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:40:39.594Z [info]: Server is running on port: 8181
+2024-04-25T09:40:44.442Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:44:05.563Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:44:05.612Z [info]: Server is running on port: 8181
+2024-04-25T09:44:22.057Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:44:22.093Z [info]: Server is running on port: 8181
+2024-04-25T09:44:23.450Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:44:44.296Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:44:44.328Z [info]: Server is running on port: 8181
+2024-04-25T09:44:47.207Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:44:49.779Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:44:51.348Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:44:51.958Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:44:52.624Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:45:08.153Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:45:08.209Z [info]: Server is running on port: 8181
+2024-04-25T09:45:24.269Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:45:24.305Z [info]: Server is running on port: 8181
+2024-04-25T09:45:50.682Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:45:53.496Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:45:54.594Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:45:55.416Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:45:55.996Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:17.135Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:47:17.165Z [info]: Server is running on port: 8181
+2024-04-25T09:47:19.078Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:20.459Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:21.334Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:21.929Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:22.454Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:30.345Z [info]: Connected To MongoDB Locally.
+2024-04-25T09:47:30.378Z [info]: Server is running on port: 8181
+2024-04-25T09:47:49.733Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:51.378Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:56.497Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:58.861Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T09:47:59.698Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:08:35.096Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:08:35.274Z [info]: Server is running on port: 8181
+2024-04-25T10:09:13.539Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:09:13.586Z [info]: Server is running on port: 8181
+2024-04-25T10:09:53.710Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:09:53.750Z [info]: Server is running on port: 8181
+2024-04-25T10:10:25.787Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:10:25.828Z [info]: Server is running on port: 8181
+2024-04-25T10:10:32.608Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:10:32.646Z [info]: Server is running on port: 8181
+2024-04-25T10:10:46.170Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:10:46.209Z [info]: Server is running on port: 8181
+2024-04-25T10:11:31.176Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:11:31.211Z [info]: Server is running on port: 8181
+2024-04-25T10:12:39.558Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:13:43.346Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:13:43.391Z [info]: Server is running on port: 8181
+2024-04-25T10:13:46.884Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:14:24.062Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:14:24.096Z [info]: Server is running on port: 8181
+2024-04-25T10:14:37.826Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:14:37.875Z [info]: Server is running on port: 8181
+2024-04-25T10:14:51.207Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:14:51.246Z [info]: Server is running on port: 8181
+2024-04-25T10:15:30.148Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:15:30.197Z [info]: Server is running on port: 8181
+2024-04-25T10:16:11.354Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:16:11.388Z [info]: Server is running on port: 8181
+2024-04-25T10:18:13.993Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:18:30.112Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:18:30.153Z [info]: Server is running on port: 8181
+2024-04-25T10:18:31.209Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:18:48.094Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:18:48.143Z [info]: Server is running on port: 8181
+2024-04-25T10:18:59.888Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:18:59.932Z [info]: Server is running on port: 8181
+2024-04-25T10:19:22.719Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:19:22.780Z [info]: Server is running on port: 8181
+2024-04-25T10:20:43.897Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:21:17.668Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:21:17.705Z [info]: Server is running on port: 8181
+2024-04-25T10:21:18.762Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:21:42.641Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:21:42.675Z [info]: Server is running on port: 8181
+2024-04-25T10:21:48.858Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:22:05.089Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:22:05.152Z [info]: Server is running on port: 8181
+2024-04-25T10:22:17.499Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:22:17.535Z [info]: Server is running on port: 8181
+2024-04-25T10:22:18.444Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:22:28.991Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:22:29.044Z [info]: Server is running on port: 8181
+2024-04-25T10:22:29.207Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:22:31.690Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:24:04.843Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:24:04.883Z [info]: Server is running on port: 8181
+2024-04-25T10:25:44.633Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:25:44.676Z [info]: Server is running on port: 8181
+2024-04-25T10:26:01.222Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:26:01.279Z [info]: Server is running on port: 8181
+2024-04-25T10:26:11.211Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:26:11.247Z [info]: Server is running on port: 8181
+2024-04-25T10:26:28.298Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:26:28.337Z [info]: Server is running on port: 8181
+2024-04-25T10:26:50.198Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:26:50.241Z [info]: Server is running on port: 8181
+2024-04-25T10:26:54.028Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:26:57.391Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:26:59.642Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:27:01.055Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:27:02.001Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:28:16.836Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:28:16.871Z [info]: Server is running on port: 8181
+2024-04-25T10:28:37.859Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:28:41.864Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:28:43.014Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:28:43.676Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:28:45.383Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-25T10:29:12.558Z [info]: Connected To MongoDB Locally.
+2024-04-25T10:29:12.593Z [info]: Server is running on port: 8181
+2024-04-25T11:30:34.731Z [info]: Received SIGINT. Closing server and shutting down...

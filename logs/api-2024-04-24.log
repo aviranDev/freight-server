@@ -31,3 +31,62 @@
 2024-04-24T00:39:01.633Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
 2024-04-24T00:50:27.750Z [info]: Received SIGINT. Closing server and shutting down...
 2024-04-24T00:50:27.756Z [info]: Shutting down gracefully...
+2024-04-24T09:05:51.564Z [info]: Connected To MongoDB Locally.
+2024-04-24T09:05:51.762Z [info]: Server is running on port: 8181
+2024-04-24T09:09:15.450Z [info]: Connected To MongoDB Locally.
+2024-04-24T09:09:15.576Z [info]: Server is running on port: 8181
+2024-04-24T09:22:35.288Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:22:36.241Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:22:37.021Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:22:37.740Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:22:38.473Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 24 hours --->
+2024-04-24T09:22:39.143Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-24T09:22:40.656Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.02 hours
+2024-04-24T09:22:48.429Z [info]: Connected To MongoDB Locally.
+2024-04-24T09:22:48.512Z [info]: Server is running on port: 8181
+2024-04-24T09:22:49.770Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:22:50.803Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:22:54.200Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:23:00.353Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:23:07.067Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:23:08.274Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:23:09.351Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:23:10.152Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:23:13.367Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:23:14.675Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Account is locked. Try again after 0.01 hours
+2024-04-24T09:25:46.317Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:25:47.702Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:25:48.426Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:25:49.125Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:25:58.737Z [info]: Connected To MongoDB Locally.
+2024-04-24T09:25:58.773Z [info]: Server is running on port: 8181
+2024-04-24T09:26:00.050Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:26:01.270Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:26:02.020Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:26:02.658Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T09:26:03.332Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T16:27:54.473Z [info]: Connected To MongoDB Locally.
+2024-04-24T16:27:54.563Z [info]: Server is running on port: 8181
+2024-04-24T23:05:29.778Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:05:29.938Z [info]: Server is running on port: 8181
+2024-04-24T23:05:48.886Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:05:48.936Z [info]: Server is running on port: 8181
+2024-04-24T23:06:17.472Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:06:17.522Z [info]: Server is running on port: 8181
+2024-04-24T23:06:44.169Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:06:44.202Z [info]: Server is running on port: 8181
+2024-04-24T23:15:03.471Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:15:03.571Z [info]: Server is running on port: 8181
+2024-04-24T23:15:20.804Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:15:20.849Z [info]: Server is running on port: 8181
+2024-04-24T23:16:45.097Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T23:16:47.166Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T23:16:48.103Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T23:16:49.299Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T23:16:50.275Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-24T23:18:20.853Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:18:20.892Z [info]: Server is running on port: 8181
+2024-04-24T23:31:20.901Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:31:20.989Z [info]: Server is running on port: 8181
+2024-04-24T23:58:37.929Z [info]: Connected To MongoDB Locally.
+2024-04-24T23:58:38.085Z [info]: Server is running on port: 8181

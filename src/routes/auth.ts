@@ -7,60 +7,7 @@ import AuthService from "../services/auth";
 import AuthController from '../controllers/auth';
 import SessionService from "../services/session";
 import Session from "../Models/Session";
-import { Request, Response, NextFunction } from 'express';
-import User from '../Models/User';
-
-// Custom rate limiter middleware
-const rateLimiter = (maxRequests: number, windowMs: number) => {
-  // Create an object to store request counts and lock initiation time for each IP address
-  const requestCounts: { [ip: string]: { count: number, lockTime?: number } } = {};
-
-  return async (req: Request, res: Response, next: NextFunction) => {
-    const ip = req.ip;
-    const username = req.body.username;
-
-    try {
-      // Find the user by username
-      const user = await User.findOne({ username });
-
-      // If a user is found, check if the lock duration has elapsed
-      if (user) {
-        const currentTime = Date.now();
-
-        // Check if the IP address has a lock time and if the lock duration has elapsed
-        if (requestCounts[ip]?.lockTime && currentTime < (requestCounts[ip] as { lockTime: number }).lockTime) {
-          return res.status(429).json({ error: 'Too many requests, please try again later.' });
-        }
-      } else {
-        // If no user is found, perform rate limiting
-        requestCounts[ip] = requestCounts[ip] ?? { count: 0 };
-
-        // Increment the request count for this IP address
-        requestCounts[ip].count++;
-
-        // Check if the request count exceeds the maximum allowed requests
-        if (requestCounts[ip].count > maxRequests) {
-          // Set the lock time for this IP address
-          requestCounts[ip].lockTime = Date.now() + windowMs;
-
-          // Reset the request count after the window duration
-          setTimeout(() => {
-            requestCounts[ip].count = 0;
-            requestCounts[ip].lockTime = undefined;
-          }, windowMs);
-
-          return res.status(429).json({ error: 'Too many requests, please try again later.' });
-        }
-      }
-    } catch (error) {
-      console.error('Error checking user:', error);
-      return res.status(500).json({ error: 'Internal server error' });
-    }
-
-    // Proceed with the request
-    next();
-  };
-};
+import rateLimiter from "../utils/limiter";
 
 // Example usage:
 const maxRequests = 5; // Maximum allowed requests

@@ -1,0 +1,69 @@
+2024-04-27T00:12:07.111Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:12:07.191Z [info]: Server is running on port: 8181
+2024-04-27T00:15:41.378Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:15:42.463Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:15:43.323Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:15:44.057Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:15:44.795Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:15:45.712Z [error]: Custom Error - Too many requests, please try again later.
+2024-04-27T00:16:53.629Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:16:53.663Z [info]: Server is running on port: 8181
+2024-04-27T00:16:54.862Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:16:56.864Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:16:58.460Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:17:00.392Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:17:01.246Z [error]: Login Failed: POST /api/auth/login: Authentication Error - Invalid username or password.
+2024-04-27T00:17:02.006Z [error]: Too Many Requests - Too many requests, please try again later.
+2024-04-27T00:17:10.990Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:17:11.020Z [info]: Server is running on port: 8181
+2024-04-27T00:17:12.074Z [error]: Too Many Requests - Too many requests, please try again later.
+2024-04-27T00:17:13.076Z [error]: Too Many Requests - Too many requests, please try again later.
+2024-04-27T00:18:02.269Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:18:02.306Z [info]: Server is running on port: 8181
+2024-04-27T00:18:21.748Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:18:21.780Z [info]: Server is running on port: 8181
+2024-04-27T00:18:48.863Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:18:48.894Z [info]: Server is running on port: 8181
+2024-04-27T00:19:04.291Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:19:04.326Z [info]: Server is running on port: 8181
+2024-04-27T00:19:08.359Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
+2024-04-27T00:19:11.158Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
+2024-04-27T00:19:50.283Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
+2024-04-27T00:20:04.819Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
+2024-04-27T00:21:21.132Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:21:21.166Z [info]: Server is running on port: 8181
+2024-04-27T00:21:39.371Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:21:39.400Z [info]: Server is running on port: 8181
+2024-04-27T00:23:06.661Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:23:06.691Z [info]: Server is running on port: 8181
+2024-04-27T00:26:34.269Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:26:34.309Z [info]: Server is running on port: 8181
+2024-04-27T00:26:45.404Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:26:45.437Z [info]: Server is running on port: 8181
+2024-04-27T00:27:45.098Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:27:45.128Z [info]: Server is running on port: 8181
+2024-04-27T00:27:59.068Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:27:59.102Z [info]: Server is running on port: 8181
+2024-04-27T00:28:10.577Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:28:10.614Z [info]: Server is running on port: 8181
+2024-04-27T00:29:44.086Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:29:44.119Z [info]: Server is running on port: 8181
+2024-04-27T00:31:41.714Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:31:41.752Z [info]: Server is running on port: 8181
+2024-04-27T00:32:41.073Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:32:41.108Z [info]: Server is running on port: 8181
+2024-04-27T00:32:59.809Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:32:59.851Z [info]: Server is running on port: 8181
+2024-04-27T00:33:14.500Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:33:14.534Z [info]: Server is running on port: 8181
+2024-04-27T00:33:58.594Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:33:58.659Z [info]: Server is running on port: 8181
+2024-04-27T00:34:15.046Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:34:15.104Z [info]: Server is running on port: 8181
+2024-04-27T00:34:26.925Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:34:26.990Z [info]: Server is running on port: 8181
+2024-04-27T00:34:35.036Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:34:35.069Z [info]: Server is running on port: 8181
+2024-04-27T00:37:17.514Z [info]: Connected To MongoDB Locally.
+2024-04-27T00:37:17.623Z [info]: Server is running on port: 8181
+2024-04-27T01:11:57.131Z [info]: Received SIGINT. Closing server and shutting down...

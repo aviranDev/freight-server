@@ -11,6 +11,7 @@ export enum HTTP_STATUS {
   NOT_FOUND = 404, // 404 - Requested resource not found
   CONFLICT = 409, // 409 - Conflict with the current state of the target resource
   INTERNAL_SERVER_ERROR = 500, // 500 - Server encountered an unexpected condition
+  TOO_MANY_REQUESTS = 429,
 }
 
 export default HTTP_STATUS;

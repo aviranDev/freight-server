@@ -2,7 +2,6 @@ import { Router } from "express";
 import { validateAirline } from "../validation/airlines";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { administratorAuthentication } from "../middlewares/adminAuth";
-import { limiter } from "../utils/limiter";
 import { serverConfig } from '../config/serverConfiguration';
 import { authMiddlewares } from "./common/userAuthMiddlewares";
 import validateIdParams from "../validation/idParams";
@@ -166,7 +165,6 @@ router.put("/update-airline/:id",
  * - DELETE /remove-airline?prefix=AirlinePrefix
  */
 router.delete("/remove-airline/:id",
-  limiter, // Applies rate limiting to prevent abuse.
   ...authMiddlewares,
   administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Authenticates users as admins or super admins.
   controller.removeAirline,

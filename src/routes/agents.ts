@@ -4,7 +4,6 @@ import { authMiddlewares } from "./common/userAuthMiddlewares";
 import { administratorAuthentication } from "../middlewares/adminAuth";
 import { validateAgent } from "../validation/agents";
 import validateRequestBody from "../middlewares/validateBodyRequest";
-import { limiter } from "../utils/limiter";
 import validateIdParams from "../validation/idParams";
 import AirlineService from "../services/airline";
 import Airline from "../Models/Airline";
@@ -153,7 +152,6 @@ router.put("/update-agent/:id",
  * @param {string} id - The ID of the agent to be removed.
  */
 router.delete("/remove-agent/:id",
-  limiter, // Applies rate limiting to prevent abuse.
   ...authMiddlewares,
   administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Authenticates users as admins or super admins.
   controller.removeAgent,
