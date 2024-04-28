@@ -1,6 +1,10 @@
-import { HTTP_STATUS } from '../../config/httpStatus';
-import { errorServiceMap } from '../tools/statusErrors';
-import { ErrorResponse } from '../tools/interface';
+import { HTTP_STATUS, httpStatusCodes } from '../config/httpStatus';
+
+interface ErrorResponse {
+  status: number; // HTTP status code of the error response.
+  name: string; // Name or type of the error.
+  message: string; //Descriptive message providing details about the error.
+}
 
 /**
  * CustomError class extends the built-in Error class.
@@ -27,7 +31,7 @@ export class CustomError extends Error {
    * @returns {string} - The human-readable status name.
    */
   protected getStatusName(status: number): string {
-    return errorServiceMap.get(status) || 'Custom Error';
+    return httpStatusCodes.get(status) || 'Custom Error';
   }
 
   /**

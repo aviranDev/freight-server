@@ -1,7 +1,19 @@
 import { Schema, model } from "mongoose";
-import { IUser } from "../interfaces/modelsInterfaces";
 import { usernameRejex } from "../utils/rejex";
 import { serverConfig } from "../config/serverConfiguration";
+
+export interface IUser {
+  _id: string;
+  username: string;
+  password: string;
+  role: string;
+  token: string;
+  resetPassword: boolean;
+  failedLoginAttempts: number;
+  accountLocked: boolean;
+  lastFailedLoginDate: Date | null;
+  createdAt: Date
+};
 
 // User roles
 const { ROLE1, ROLE2, ROLE3 } = serverConfig.config.ROLES;

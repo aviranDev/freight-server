@@ -1,19 +1,33 @@
-import { IAuth, IUser } from "../interfaces/modelsInterfaces";
 import { Model } from "mongoose";
-import InternalError from "../errors/services/internalError";
-import AuthenticationError from "../errors/services/authetication";
-import { comparePasswords } from "../utils/password";
+import { IUser } from "../Models/User";
+import { InternalError } from "../errors/internalError";
+import { AuthenticationError } from "../errors/autheticationError";
+import { comparePasswords, salter, hashing } from "../utils/password";
 import { serverConfig } from "../config/serverConfiguration";
-import { salter, hashing } from "../utils/password";
-import { ValidationError } from "../errors/middlewares/validation";
-import ISessionService from "../interfaces/ISessionService";
-import ManyRequests from "../errors/services/manyRequest";
+import { ValidationError } from "../errors/validation";
+import ISessionService from "../services/session";
+import { ManyRequests } from '../errors/manyRequests';
 const { SALT } = serverConfig.config;
+
+export interface IAuth {
+  username: string;
+  password: string;
+  confirmPassword?: string;
+  lockDuration: number;
+  maxLoginAttempts: number;
+}
+
+export interface IAuthService {
+  authenticateUser(username: string, password: string): Promise<{ accessToken: string, refreshToken: string }>;
+  refreshAccessToken(refreshToken: string): Promise<{ success: boolean, accessToken?: string }>;
+  resetUserPassword(userId: string, cookie: string, password: string, confirmPassword: string): Promise<void>;
+  logoutUser(cookie: string): Promise<void>;
+  authValidationContainer(body: IAuth, keys: (keyof IAuth)[]): Promise<null>;
+}
 
 const MAX_LOGIN_ATTEMPTS = 5;
 // const LOCK_DURATION_MS = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 const LOCK_DURATION_MS = 1 * 60 * 1000; // 1 minute in milliseconds
-
 
 /**
  * AuthService handles user authentication, login, and password reset operations.
@@ -23,15 +37,24 @@ const LOCK_DURATION_MS = 1 * 60 * 1000; // 1 minute in milliseconds
 export class AuthService {
   private model: Model<IUser> // Mongoose model for the User collection
   private tokenService: ISessionService; // Service for managing user sessions and tokens
+  readonly lockDuration: number;
+  readonly maxLoginAttempts: number;
 
   /**
    * Constructor for the AuthService class.
    * Initializes the Mongoose model for the User collection and the SessionService.
    */
-  constructor(userModel: Model<IUser>, tokenService: ISessionService) {
+  constructor(
+    userModel: Model<IUser>,
+    tokenService: ISessionService,
+    lockDuration: number = 1 * 60 * 1000,
+    maxLoginAttempts: number = 5
+  ) {
     // Initialize the data model and TokenService
     this.model = userModel;
     this.tokenService = tokenService;
+    this.lockDuration = lockDuration;
+    this.maxLoginAttempts = maxLoginAttempts;
   };
 
   /**

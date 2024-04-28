@@ -1,0 +1,59 @@
+2024-04-28T09:10:45.348Z [error]: Authorization Failed: PUT /api/users/update-role/660fe5072a0ebcbb548ddd13: Client lacks permission to access the resource - Please reset your password.
+2024-04-28T09:11:38.884Z [error]: Authentication failed: POST /api/auth/reset-password: Authentication required or failed - Cookie must be provided.
+2024-04-28T09:11:49.074Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T09:12:33.075Z [error]: Authorization Failed: PUT /api/users/update-role/660fe5072a0ebcbb548ddd13: Client lacks permission to access the resource - User in role: employee is not authorized.
+2024-04-28T09:13:13.417Z [error]: Authorization Failed: PUT /api/users/update-role/660fe5072a0ebcbb548ddd14: Client lacks permission to access the resource - User in role: employee is not authorized.
+2024-04-28T09:13:54.797Z [error]: Authorization Failed: PUT /api/users/update-role/660fe5072a0ebcbb548ddd14: Client lacks permission to access the resource - User in role: admin is not authorized.
+2024-04-28T09:14:31.364Z [error]: Authorization Failed: PUT /api/users/update-role/660fe5072a0ebcbb548ddd14: Client lacks permission to access the resource - User in role: admin is not authorized.
+2024-04-28T09:15:06.406Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0ebcbb548dddsdf: Bad request - Item with id: 660fe5072a0ebcbb548dddsdf doesn't exist
+2024-04-28T09:15:40.706Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0ebcbb548dddsdf: Bad request - Item with id: 660fe5072a0ebcbb548dddsdf doesn't exist
+2024-04-28T09:16:17.431Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0eb: Bad request - Item with id: 660fe5072a0eb doesn't exist
+2024-04-28T09:16:58.420Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0eb: Bad request - Item with id: 660fe5072a0eb doesn't exist
+2024-04-28T09:17:00.815Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0eb: Bad request - Item with id: 660fe5072a0eb doesn't exist
+2024-04-28T09:17:03.006Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0eb: Bad request - Item with id: 660fe5072a0eb doesn't exist
+2024-04-28T09:17:05.904Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0eb: Bad request - Item with id: 660fe5072a0eb doesn't exist
+2024-04-28T09:17:09.729Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0ebcbb548dddsdf: Bad request - Item with id: 660fe5072a0ebcbb548dddsdf doesn't exist
+2024-04-28T09:17:16.218Z [error]: Internal error server: Server encountered an unexpected condition - User with ID 658f005b5cf5ec5b19f1391f not found
+2024-04-28T09:18:13.248Z [error]: Internal error server: Server encountered an unexpected condition - User with ID 660fe5072a0ebcbb548ddd18 not found
+2024-04-28T09:18:18.339Z [error]: Validation Failed: PUT /api/users/update-role/660fe5072a0ebcbb548: Bad request - Item with id: 660fe5072a0ebcbb548 doesn't exist
+2024-04-28T11:46:39.872Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:43.075Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:45.004Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:45.823Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:46.645Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:47.552Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:48.031Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:48.974Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:49.748Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:50.735Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:46:51.521Z [error]: Validation Failed: POST /api/auth/login: Bad request - Password must be at least 6 characters long.
+2024-04-28T11:47:03.911Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:47:06.160Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:47:09.265Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:47:10.139Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:47:10.950Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:47:24.805Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:47:25.970Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:50:28.213Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:51:04.729Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:51:05.916Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:51:11.318Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:51:12.213Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:51:13.187Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:51:14.318Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:51:17.182Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:51:22.688Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:51:23.987Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:51:30.152Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:55:34.840Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:55:35.870Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:55:36.788Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:55:37.552Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:55:38.269Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-28T11:55:38.884Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:55:39.616Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:55:40.451Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:55:41.086Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:55:46.587Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:56:35.475Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.
+2024-04-28T11:56:37.243Z [error]: Too many requests from the client - Account is locked. Too many requests, please try again later.

@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { IUser } from "../interfaces/modelsInterfaces";
+import { IUser } from "../Models/User";
 
 /**
  * Validates the provided login credentials using Joi schema.

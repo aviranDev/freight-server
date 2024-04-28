@@ -1,4 +1,4 @@
-import express, { Application, Router, Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction } from "express";
 
 // Middleware to set the greeting message
 export const setGreetingMessage = (req: Request, res: Response, next: NextFunction) => {
@@ -6,4 +6,3 @@ export const setGreetingMessage = (req: Request, res: Response, next: NextFuncti
   res.locals.greetingMessage = 'Welcome to freight API';
   next();
 };
-

@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import AuthorizationError from '../errors/services/authorization';
+import { AuthorizationError } from "../errors/authorizationError";
 
 /**
  * Middleware to check if a given role is in the list of forbidden roles.
@@ -7,10 +7,10 @@ import AuthorizationError from '../errors/services/authorization';
  * @returns Express middleware function.
  */
 export const forbiddenAddedRoles = (forbiddenRoles: string[]) => {
-  return async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  return async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       // Extract the 'role' from the request body
-      const { role } = request.body;
+      const { role } = req.body;
 
       // Check if the role is in the list of forbidden roles
       if (forbiddenRoles?.includes(role)) {

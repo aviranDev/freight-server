@@ -1,9 +1,35 @@
-import { Model, Document, Types } from "mongoose";
-import { IAgent } from "../interfaces/modelsInterfaces";
-import InternalError from "../errors/services/internalError";
-import ConflictError from "../errors/services/conflict";
-import ValidationError from "../errors/services/validation";
-import { IAirlineService } from "../interfaces/IAirlineService";
+import { Model, Document } from "mongoose";
+import { IAgent } from '../Models/Agent';
+import { InternalError } from "../errors/internalError";
+import { ConflictError } from "../errors/conflictError";
+import { ValidationError } from "../errors/validation";
+import { IAirlineService } from "./airline";
+
+export interface IAgentService {
+  allAgents(page: number, pageSize: number): Promise<{
+    agents: (Document<unknown, {}, IAgent & { port: string }> & Omit<IAgent & Required<{
+      _id: string;
+    }>, never>)[];
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+  }>;
+
+  selectByPort(port: string, page: number, pageSize: number): Promise<{
+    portAgents: (Document<unknown, {}, IAgent & { port: string }> & Omit<IAgent & Required<{
+      _id: string;
+    }>, never>)[];
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+  }>;
+
+  getAgentById(documentId: string): Promise<IAgent>;
+  agentValidationContainer(body: IAgent, keys: (keyof IAgent)[]): Promise<null>;
+  createAgent(data: IAgent): Promise<void>;
+  updateAgent(id: string, data: IAgent): Promise<IAgent>;
+  removeAgentById(id: string): Promise<void>;
+}
 
 /**
  * Service class for handling operations related to agents.

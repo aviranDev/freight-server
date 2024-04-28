@@ -1,9 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import { IAgent } from '../interfaces/modelsInterfaces';
+import { IAgent } from '../Models/Agent';
 import dotenv from 'dotenv';
-import IAgentService from '../interfaces/IAgentService';
+import { IAgentService } from '../services/agents';
+
 dotenv.config()
 
 // TypeScript knows this is of type 'development' | 'production' | 'test'

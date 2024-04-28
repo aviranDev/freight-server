@@ -1,6 +1,18 @@
 import { Request, Response, NextFunction } from 'express';
-import { logger } from "../../logger/logger";
-import ManyRequests from '../services/manyRequest';
+import { logger } from "../logger/logger";
+import { CustomError } from "./mainService";
+import { HTTP_STATUS } from '../config/httpStatus';
+
+/**
+ * Custom error class for handling too many requests errors (HTTP status code 429).
+ * Extends the base CustomError class and sets the status code to 429 Too Many Requests.
+ */
+class ManyRequests extends CustomError {
+  constructor(message: string) {
+    super(HTTP_STATUS.TOO_MANY_REQUESTS, message);
+    this.name = this.getStatusName(HTTP_STATUS.TOO_MANY_REQUESTS);
+  }
+}
 
 /**
  * Middleware for handling too many requests errors (HTTP status code 429).
@@ -34,4 +46,4 @@ const manyRequestsMiddleware = (error: ManyRequests, request: Request, response:
   }
 }
 
-export { manyRequestsMiddleware }
+export { manyRequestsMiddleware, ManyRequests }

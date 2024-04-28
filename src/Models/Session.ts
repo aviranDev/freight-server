@@ -1,5 +1,10 @@
-import mongoose, { Schema, model } from "mongoose";
-import { ISession } from "../interfaces/modelsInterfaces";
+import mongoose, { Schema, model, Types, Document } from "mongoose";
+
+export interface ISession extends Document {
+  refreshToken: string;
+  userId: Types.ObjectId;
+  lastLogin: Date;
+};
 
 /** Session Model
  *  Collection name: Session

@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { IAgent } from "../interfaces/modelsInterfaces";
+import { IAgent } from '../Models/Agent';
 import { serverConfig } from "../config/serverConfiguration";
 const { PORT_NAMES, FLOORS } = serverConfig.config;
 

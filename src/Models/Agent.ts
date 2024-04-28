@@ -1,7 +1,14 @@
 import { Schema, model } from "mongoose";
-import { IAgent } from "../interfaces/modelsInterfaces";
 import dotenv from 'dotenv';
 import { serverConfig } from '../config/serverConfiguration';
+export interface IAgent {
+  _id?: string;
+  agent: string;
+  port: string;
+  room: number;
+  floor: string;
+};
+
 const { FLOORS, PORT_NAMES } = serverConfig.config
 dotenv.config();
 

@@ -1,9 +1,9 @@
-import { logger } from "../../logger/logger";
-import { CustomError } from "../services/mainService";
-import { HTTP_STATUS } from '../../config/httpStatus';
+import { logger } from "../logger/logger";
+import { CustomError } from "./mainService";
+import { HTTP_STATUS } from '../config/httpStatus';
 import { Request, Response, NextFunction } from 'express';
-import { logError } from "../tools/logError";
-import UnknownError from "../services/unknown";
+import { logError } from "./logError";
+import { UnknownError } from "./unknown";
 
 /**
  * Error handling middleware responsible for logging errors and sending appropriate responses.

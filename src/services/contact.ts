@@ -1,10 +1,41 @@
-import { IContact } from "../interfaces/modelsInterfaces";
 import { Model, Document, Types } from "mongoose";
-import InternalError from "../errors/services/internalError";
-import Contact from "../Models/Contact";
-import ConflictError from "../errors/services/conflict";
-import { ValidationError } from "../errors/middlewares/validation";
+import { InternalError } from "../errors/internalError";
+import { ConflictError } from "../errors/conflictError";
+import { ValidationError } from "../errors/validation";
+import { IContact } from "../Models/Contact";
 
+export interface IContactService {
+  allContacts(page: number, pageSize: number): Promise<{
+    contacts: (Document<unknown, {}, IContact> & Omit<IContact & {
+      _id: Types.ObjectId;
+    }, never>)[];
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+  }>;
+
+  readContactById(documentId: string): Promise<IContact>;
+
+  selectDepartment(selection: string, page: number, pageSize: number): Promise<{
+    depratment: (Document<unknown, {}, IContact> & Omit<IContact & {
+      _id: Types.ObjectId;
+    }, never>)[];
+    selection: string;
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+  }>;
+
+  searchContact(contactName: string, department?: string): Promise<IContact>;
+
+  createContact(data: IContact): Promise<void>;
+
+  updateContact(id: string, data: IContact): Promise<IContact>;
+
+  removeContact(id: string): Promise<null>;
+
+  contactValidationContainer(body: IContact, keys: (keyof IContact)[]): Promise<null>;
+}
 /**
  * ContactService manages operations related to contacts.
  * This service is responsible for handling CRUD (Create, Read, Update, Delete)

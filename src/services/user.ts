@@ -1,14 +1,29 @@
 import { Model } from "mongoose";
 import bcryptjs from "bcryptjs";
-import { IUser } from "../interfaces/modelsInterfaces";
 import { serverConfig } from '../config/serverConfiguration';
-import AuthorizationError from "../errors/services/authorization";
-import InternalError from "../errors/services/internalError";
-import ConflictError from "../errors/services/conflict";
-import { ValidationError } from "../errors/middlewares/validation";
-
+import { AuthorizationError } from "../errors/authorizationError";
+import { InternalError } from "../errors/internalError";
+import { ConflictError } from "../errors/conflictError";
+import { ValidationError } from "../errors/validation";
+import { IUser } from "../Models/User";
 const { ROLE2, ROLE3 } = serverConfig.config.ROLES;
 const { SALT } = serverConfig.config;
+
+export interface IUserService {
+  // Define the methods of the UserService class
+  addMember(member: IUser): Promise<IUser>;
+  displayAllEmployees(page: number, pageSize: number): Promise<{
+    employeeMembers: IUser[];
+    currentPage: number;
+    totalPages: number;
+    totalItems: number;
+  }>;
+  removeMember(id: string): Promise<IUser>;
+  editMemberRole(id: string, memberRole: string): Promise<IUser>;
+  userProfile(id: string): Promise<IUser>;
+  updatePassword(userId: string, userPassword: string): Promise<IUser>;
+  userValidationContainer(body: IUser, keys: (keyof IUser)[]): Promise<null>;
+}
 
 /**
  * UserService manages user-related operations and interactions with the user data model.

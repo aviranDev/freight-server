@@ -1,6 +1,6 @@
-import { serverConfig } from '../config/serverConfiguration';
 import Joi from "joi";
-import { IUser } from "../interfaces/modelsInterfaces";
+import { serverConfig } from '../config/serverConfiguration';
+import { IUser } from "../Models/User";
 import { usernameRejex } from "../utils/rejex";
 const { ROLE2, ROLE3 } = serverConfig.config.ROLES;
 

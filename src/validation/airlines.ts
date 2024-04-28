@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { IAirline } from "../interfaces/modelsInterfaces";
+import { IAirline } from '../Models/Airline';
 import { prefixRejex, codeRejex } from '../utils/rejex';
 
 /**

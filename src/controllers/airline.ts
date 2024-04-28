@@ -1,9 +1,10 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import { IAirline } from '../interfaces/modelsInterfaces';
-import UnknownError from '../errors/services/unknown';
-import { IAirlineService } from '../interfaces/IAirlineService';
+import { IAirline } from '../Models/Airline';
+import { UnknownError } from '../errors/unknown';
+import { IAirlineService } from '../services/airline';
+
 class AirlineController {
   // Declare an instance of AirlineService as a property
   private service: IAirlineService;

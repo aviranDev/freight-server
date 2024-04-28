@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { CustomError } from '../errors/services/mainService';
+import { CustomError } from '../errors/mainService';
 
 /**
  * Represents a route handler function for Express.

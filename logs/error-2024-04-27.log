@@ -16,3 +16,20 @@
 2024-04-27T00:19:11.158Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
 2024-04-27T00:19:50.284Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
 2024-04-27T00:20:04.820Z [error]: Too Many Requests - Account is locked. Too many requests, please try again later.
+2024-04-27T16:04:18.399Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-27T16:04:58.263Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-27T16:04:58.271Z [error]: Internal Server Error: Unexpected Error:POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-27T16:04:58.303Z [error]: Error in errorHandler: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at new NodeError (node:internal/errors:406:5)
+    at ServerResponse.setHeader (node:_http_outgoing:652:11)
+    at ServerResponse.header (C:\projects\on-progress\freight\freight-server\node_modules\express\lib\response.js:794:10)
+    at ServerResponse.send (C:\projects\on-progress\freight\freight-server\node_modules\express\lib\response.js:174:12)
+    at ServerResponse.json (C:\projects\on-progress\freight\freight-server\node_modules\express\lib\response.js:278:15)
+    at errorHandler (C:\projects\on-progress\freight\freight-server\src\errors\handlers\errorHandler.ts:42:51)
+    at Layer.handle_error (C:\projects\on-progress\freight\freight-server\node_modules\express\lib\router\layer.js:71:5)
+    at trim_prefix (C:\projects\on-progress\freight\freight-server\node_modules\express\lib\router\index.js:326:13)
+    at C:\projects\on-progress\freight\freight-server\node_modules\express\lib\router\index.js:286:9
+    at Function.process_params (C:\projects\on-progress\freight\freight-server\node_modules\express\lib\router\index.js:346:12)
+2024-04-27T16:05:40.879Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.
+2024-04-27T16:05:43.882Z [error]: Authentication failed: POST /api/auth/login: Authentication required or failed - Invalid username or password.

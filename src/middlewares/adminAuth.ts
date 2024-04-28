@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import AuthorizationError from "../errors/services/authorization";
+import { AuthorizationError } from "../errors/authorizationError";
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { serverConfig } from '../config/serverConfiguration';
 const { REFRESH_TOKEN_SECRET } = serverConfig.config.TOKENS;
@@ -12,14 +12,14 @@ const { REFRESH_TOKEN_SECRET } = serverConfig.config.TOKENS;
  * @returns {Promise<void>} A Promise that resolves when authentication is successful.
  */
 export const administratorAuthentication = (roles: string[]):
-  ((request: Request, response: Response, next: NextFunction) => Promise<void>) => {
+  ((req: Request, res: Response, next: NextFunction) => Promise<void>) => {
   // If no roles are provided, default to ['superAdmin', 'admin']
   const authorizedRoles = roles.length > 0 ? roles : ['superAdmin', 'admin']
 
-  return async (request: Request, response: Response, next: NextFunction): Promise<void> => {
+  return async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     try {
       // Extract the JWT token from the user's cookies
-      const token = request.cookies.jwt;
+      const token = req.cookies.jwt;
 
       // Verify and decode the JWT token, specifying the expected payload shape
       const decoded = jwt.verify(token, REFRESH_TOKEN_SECRET) as JwtPayload;

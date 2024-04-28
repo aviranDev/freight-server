@@ -1,5 +1,5 @@
-import { logger } from "../../logger/logger";
-import { CustomError } from "../services/mainService";
+import { logger } from "../logger/logger";
+import { CustomError } from "./mainService";
 
 /**
  * Logs an error with additional contextual information.

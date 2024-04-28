@@ -4,7 +4,6 @@ import { closeDbConnection } from "./connectDb";
 
 /**
  * Configures graceful shutdown handling for the server process.
- *
  * @param {Server} server - The HTTP server instance.
  */
 function configureGracefulShutdown(server: Server): void {
@@ -18,7 +17,6 @@ function configureGracefulShutdown(server: Server): void {
 
   /**
    * Handles the graceful shutdown process when a signal is received.
-   *
    * @param {string} signal - The signal received (e.g., SIGINT, SIGTERM).
    * @param {Server} server - The HTTP server instance.
    */
@@ -30,7 +28,6 @@ function configureGracefulShutdown(server: Server): void {
 
 /**
  * Performs a graceful shutdown of the server and associated resources.
- *
  * @param {Server} server - The HTTP server instance.
  */
 async function gracefulShutdown(server: Server): Promise<void> {
