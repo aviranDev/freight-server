@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import { IContact } from '../interfaces/modelsInterfaces';
-import UnknownError from '../errors/services/unknown';
-import IContactService from '../interfaces/IContactService';
+import { IContact } from "../Models/Contact";
+import { UnknownError } from '../errors/unknown';
+import { IContactService } from '../services/contact';
 
 class ContactController {
   // Declare an instance of ContactService as a property

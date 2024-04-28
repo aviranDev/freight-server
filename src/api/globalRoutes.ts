@@ -2,7 +2,7 @@ import express, { Application, Router } from "express";
 import cookieParser from "cookie-parser";
 import morganMiddleware from "../logger/morgan";
 import corsMiddleware from "../middlewares/corsMiddleware";
-import { configureErrorHandlers } from '../errors/handlers/configHandlers';
+import { configureErrorHandlers } from '../errors/configHandlers';
 import { configureSecurityHeaders } from '../helpers/securityHeaders';
 import authRoutes from "../routes/auth";
 import usersRoutes from "../routes/users";

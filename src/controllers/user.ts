@@ -1,8 +1,8 @@
 import { Request, Response, NextFunction } from "express";
-import { IUser } from "../interfaces/modelsInterfaces";
+import { IUser } from "../Models/User";
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import { IUserService } from "../interfaces/UserInterface";
+import { IUserService } from "../services/user";
 
 class UserController {
   // Declare an instance of UserService as a property

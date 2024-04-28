@@ -1,6 +1,11 @@
 import { Schema, model } from "mongoose";
-import { IContact } from "../interfaces/modelsInterfaces";
-
+export interface IContact {
+  department: string;
+  contactName: string;
+  phone: string;
+  extension: string;
+  email: string;
+};
 /** 
  *  Contact Model
  *  Collection name: Contact

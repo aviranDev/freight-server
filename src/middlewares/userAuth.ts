@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import TokenService from "../services/session";
-import AuthenticationError from "../errors/services/authetication";
-import AuthorizationError from "../errors/services/authorization";
+import { AuthenticationError } from "../errors/autheticationError";
+import { AuthorizationError } from "../errors/authorizationError";
 import Session from "../Models/Session";
 
 // Create an instance of the TokenService to handle token operations
@@ -10,14 +10,14 @@ const token = new TokenService(Session);
 /**
  * Middleware for JWT (JSON Web Token) authentication.
  * This middleware checks the 'authorization' header for a valid JWT token.
- * @param request - The Express request object.
- * @param response - The Express response object.
+ * @param req - The Express request object.
+ * @param res - The Express response object.
  * @param next - The Express next function to proceed to the next middleware/route.
  */
-export const userAuthentication = (request: Request, response: Response, next: NextFunction): void => {
+export const userAuth = (req: Request, res: Response, next: NextFunction): void => {
   try {
     // Check for the 'authorization' header in the request
-    const authHeader = request.headers["authorization"];
+    const authHeader = req.headers["authorization"];
 
     // If the header is missing or doesn't start with 'Bearer ', throw an AuthenticationError
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
@@ -26,7 +26,7 @@ export const userAuthentication = (request: Request, response: Response, next: N
 
     // Verify the access token and set the user data in the request object
     const payload = token.verifyAccessToken(authHeader);
-    request.user = payload;
+    req.user = payload;
 
     // Continue to the next middleware or route
     next();
@@ -41,4 +41,4 @@ export const userAuthentication = (request: Request, response: Response, next: N
   }
 };
 
-export default userAuthentication; 
+export default userAuth; 

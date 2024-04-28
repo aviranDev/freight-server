@@ -1,5 +1,17 @@
 import { Request, Response, NextFunction } from 'express';
-import UnknownError from "../services/unknown";
+import { CustomError } from "./mainService";
+import { HTTP_STATUS } from '../config/httpStatus';
+
+/**
+ * Custom error class for handling unknown routes errors.
+ * Extends the base CustomError class and sets the status code to 404 Unknown.
+ */
+class UnknownError extends CustomError {
+  constructor(message: string) {
+    super(HTTP_STATUS.NOT_FOUND, message);
+    this.name = this.getStatusName(HTTP_STATUS.NOT_FOUND);
+  }
+}
 
 /**
  * Middleware for handling unknown routes by generating a 404 "Not Found" error response.
@@ -18,4 +30,4 @@ const unknownRoutes = (request: Request, response: Response, next: NextFunction)
   next(notFoundError);
 }
 
-export { unknownRoutes };
+export { unknownRoutes, UnknownError };

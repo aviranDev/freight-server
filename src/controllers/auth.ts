@@ -1,8 +1,7 @@
-import { IAuthService } from './../interfaces/AuthInterface';
 import { NextFunction, Request, Response } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import { IAuth } from '../interfaces/modelsInterfaces';
+import { IAuth, IAuthService } from '../services/auth';
 
 class AuthController {
   // Declare an instance of UserService as a property

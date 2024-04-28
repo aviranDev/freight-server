@@ -1,5 +1,5 @@
 import { logger } from "../logger/logger";
-import { EnvironmentVariableError } from "../errors/services/enviromentVariable";
+import { EnvironmentVariableError } from "../errors/enviromentVariable";
 
 // Define a generic type for the class
 type ConfigClass<T> = new (config: T) => any;

@@ -3,7 +3,7 @@ import { configureMiddleware } from "./api/globalRoutes";
 import { initializeDb } from "./db/initializeDb";
 import { logger } from "./logger/logger";
 import * as http from "http";
-import { setGreetingMessage } from "./middlewares/test";
+import { setGreetingMessage } from "./middlewares/greeting";
 
 /**
  * @description Start the server and return the HTTP server instance.

@@ -1,6 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import InternalError from "../errors/services/internalError";
-import { ValidationError } from "../errors/middlewares/validation";
+import { ValidationError } from "../errors/validation";
 import { ValidationResult } from 'joi'; // Import Joi
 
 // Define a type for the callback function used for request body validation with Joi
@@ -11,9 +10,9 @@ type JoiValidationCallback = (body: any) => ValidationResult; // Use Joi's Valid
  * @param callback Function that validates the request body and returns an object with an 'error' property.
  */
 const validateRequestBody = (callback: JoiValidationCallback) => {
-  return async (request: Request, response: Response, next: NextFunction) => {
+  return async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { error } = callback(request.body);
+      const { error } = callback(req.body);
 
       // Check for validation errors and throw a ValidationError if found
       if (error) {
@@ -23,13 +22,8 @@ const validateRequestBody = (callback: JoiValidationCallback) => {
       // If there are no validation errors, continue to the next middleware
       next();
     } catch (error) {
-      if (error instanceof ValidationError) {
-        // Handle custom ValidationError
-        return next(error);
-      }
-
       // Handle other errors, like unexpected errors
-      next(new InternalError(`Something went wrong: ${error}`));
+      next(error);
     }
   };
 };

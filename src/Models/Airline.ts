@@ -1,7 +1,14 @@
 import { Schema, model } from "mongoose";
-import { IAirline } from "../interfaces/modelsInterfaces";
 import Agent from "./Agent";
-import ValidationError from "../errors/services/validation";
+import { ValidationError } from "../errors/validation";
+
+export interface IAirline {
+  _id?: string;
+  name: string;
+  prefix: string;
+  code: string;
+  agent: string;
+};
 
 /** Airline Model
  *  Collection name: Airline

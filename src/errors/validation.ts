@@ -1,6 +1,25 @@
 import { Request, Response, NextFunction } from 'express';
-import { logError } from "../tools/logError";
-import ValidationError from '../services/validation';
+import { logError } from "./logError";
+import { CustomError } from "./mainService";
+import { HTTP_STATUS } from '../config/httpStatus';
+
+/**
+ * Custom error class for handling conflict errors.
+ * Extends the base CustomError class and sets the status code to 409 conflict.
+ */
+class ValidationError extends CustomError {
+  /**
+* Creates an instance of ValidationError.
+* @param {string} message - The error message associated with the user validation errors.
+*/
+  constructor(message: string) {
+    // Call the constructor of the base class (CustomError) with the status code and message.
+    super(HTTP_STATUS.BAD_REQUEST, message);
+
+    // Set the name of the error to match the HTTP status name (e.g., 'validation').
+    this.name = this.getStatusName(HTTP_STATUS.BAD_REQUEST);
+  }
+}
 
 /**
  * Middleware for handling unknown routes by generating a 404 "Not Found" error response.
@@ -11,7 +30,7 @@ import ValidationError from '../services/validation';
  * @param {Response} response - The Express response object.
  * @param {NextFunction} next - The Express next function.
  */
-const validationErrorMiddleware = (
+const validationMiddleware = (
   error: ValidationError,
   request: Request,
   response: Response,
@@ -43,4 +62,4 @@ const validationErrorMiddleware = (
   }
 }
 
-export { ValidationError, validationErrorMiddleware };
+export { ValidationError, validationMiddleware };

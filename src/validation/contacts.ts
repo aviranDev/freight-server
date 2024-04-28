@@ -1,5 +1,5 @@
 import Joi from "joi";
-import { IContact } from "../interfaces/modelsInterfaces";
+import { IContact } from "../Models/Contact";
 import { emailRejex, phoneRejex, extensionRejex } from '../utils/rejex';
 
 /**

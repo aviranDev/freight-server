@@ -1,20 +1,13 @@
 import { Router } from "express";
 import validateRequestBody from "../middlewares/validateBodyRequest";
 import { validateLogin, validateResetPassword } from "../validation/auth";
-import { userAuthentication } from "../middlewares/userAuth";
+import { userAuth } from "../middlewares/userAuth";
 import UserModel from "../Models/User";
 import AuthService from "../services/auth";
 import AuthController from '../controllers/auth';
 import SessionService from "../services/session";
 import Session from "../Models/Session";
 import rateLimiter from "../utils/limiter";
-
-// Example usage:
-const maxRequests = 5; // Maximum allowed requests
-const windowMs = 60 * 1000; // 1 minute in milliseconds
-
-// Create the rate limiter middleware
-const limiter = rateLimiter(maxRequests, windowMs);
 
 const sessionService = new SessionService(Session);
 
@@ -25,6 +18,9 @@ const authService = new AuthService(UserModel, sessionService);
 const authController = new AuthController(authService);
 
 const router = Router();
+
+// Create the rate limiter middleware
+const limiter = rateLimiter(authService.maxLoginAttempts, authService.lockDuration);
 
 /**
  * User Login
@@ -70,7 +66,7 @@ router.get("/refresh-token", authController.refreshToken);
  * - AuthController.resetPassword: Controller function to handle the password reset logic.
  */
 router.post('/reset-password',
-  userAuthentication,
+  userAuth,
   validateRequestBody(validateResetPassword),
   authController.authMongooseValidation(['password', 'confirmPassword']),
   authController.resetPasswrod

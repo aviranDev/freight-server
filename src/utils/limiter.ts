@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import User from '../Models/User';
 import FailedLoginAttempt from '../Models/FailedLogin';
-import ManyRequests from '../errors/services/manyRequest';
+import { ManyRequests } from '../errors/manyRequests';
 
 // Custom rate limiter middleware
 export const rateLimiter = (maxRequests: number, windowMs: number) => {

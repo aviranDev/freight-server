@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import mongoose from 'mongoose';
-import { ValidationError } from "../errors/middlewares/validation";
+import { ValidationError } from "../errors/validation";
 
 /**
  * Middleware to validate document ID parameters.

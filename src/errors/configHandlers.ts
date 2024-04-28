@@ -1,12 +1,12 @@
 import { Application } from "express";
-import { validationErrorMiddleware } from "../middlewares/validation";
-import authenticationErrorMiddleware from "../middlewares/authetication";
-import { authorizationErrorMiddleware } from "../middlewares/authorization";
-import { internalErrorMiddleware } from "../middlewares/internal";
-import { conflictErrorMiddleware } from "../middlewares/conflict";
-import { unknownRoutes } from "../middlewares/unknown";
+import { validationMiddleware } from "./validation";
+import { authenticationMiddleware } from "./autheticationError";
+import { authorizationMiddleware } from "./authorizationError";
+import { internalMiddleware } from "./internalError";
+import { conflictMiddleware } from "./conflictError";
+import { unknownRoutes } from "./unknown";
 import { errorHandler } from "./errorHandler";
-import { manyRequestsMiddleware } from '../middlewares/manyRequests';
+import { manyRequestsMiddleware } from './manyRequests';
 /**
  * Configures error-handling middleware for an Express application.
  *
@@ -14,25 +14,25 @@ import { manyRequestsMiddleware } from '../middlewares/manyRequests';
  */
 function configureErrorHandlers(app: Application) {
   // Handle validation errors (status 400)
-  app.use(validationErrorMiddleware);
+  app.use(validationMiddleware);
 
   // Handle authentication errors (status 401)
-  app.use(authenticationErrorMiddleware);
+  app.use(authenticationMiddleware);
 
   // Handle authorization errors (status 403)
-  app.use(authorizationErrorMiddleware);
+  app.use(authorizationMiddleware);
 
   // Handle unknown routes (status 404)
   app.use(unknownRoutes);
 
   // Handle conflict errors (status 409)
-  app.use(conflictErrorMiddleware);
+  app.use(conflictMiddleware);
 
   // Handle too many requests errors (status 429)
   app.use(manyRequestsMiddleware);
 
   // Handle internal server errors (status 500)
-  app.use(internalErrorMiddleware);
+  app.use(internalMiddleware);
 
   // Handle other errors (error handling middleware)
   app.use(errorHandler); // This should always be the last error handler

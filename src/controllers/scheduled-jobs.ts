@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { logger } from "../logger/logger";
 import { HTTP_STATUS } from '../config/httpStatus';
-import ISessionService from '../interfaces/ISessionService';
+import ISessionService from '../services/session';
 
 export class ScheduledJobController {
   // Declare an instance of AirlineService as a property

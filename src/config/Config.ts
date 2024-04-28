@@ -1,4 +1,4 @@
-import { EnvironmentVariableError } from "../errors/services/enviromentVariable";
+import { EnvironmentVariableError } from "../errors/enviromentVariable";
 
 // Config class for validating configuration objects
 export class Config<T extends Record<string, any>> {

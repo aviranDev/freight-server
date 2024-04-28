@@ -1,8 +1,26 @@
 import { Model } from "mongoose";
 import jwt, { sign } from "jsonwebtoken";
-import { ISession, IUser, TokenPayload } from "../interfaces/modelsInterfaces";
-import InternalError from "../errors/services/internalError";
+import { IUser } from "../Models/User";
+import { InternalError } from "../errors/internalError";
 import { serverConfig } from "../config/serverConfiguration";
+import { ISession } from "../Models/Session";
+
+export interface TokenPayload {
+  _id: string;
+  username: string;
+  resetPassword: boolean;
+  role: string;
+}
+
+export interface ISessionService {
+  generateAccessToken(user: IUser): string;
+  generateRefreshToken(user: IUser): string;
+  verifyRefreshToken(refreshToken: string): Promise<IUser>;
+  verifyAccessToken(authHeader: string): IUser;
+  removeRefreshToken(cookie: string): Promise<void>;
+  storeRefreshTokenInDb(refreshToken: string, userId: string): Promise<void>;
+  removeExpiredSessions(expirationDate: Date): Promise<void>;
+}
 
 const {
   ACCESS_TOKEN_SECRET,
