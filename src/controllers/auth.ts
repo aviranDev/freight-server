@@ -38,8 +38,9 @@ class AuthController {
 
       // Set the refresh token as an HTTP-only cookie.
       res.cookie("jwt", refreshToken, {
-        httpOnly: true,
+        // httpOnly: true,
         sameSite: 'none',
+        secure: true,
         maxAge: 7 * 24 * 60 * 60 * 1000,// 7 days
       });
 
@@ -53,7 +54,7 @@ class AuthController {
       next(error);
     } finally {
       // Log a debug message indicating the completion of the authentication process.
-      logger.debug("Authentication process complete");
+      logger.info("Authentication process complete");
     }
   };
 
@@ -80,6 +81,7 @@ class AuthController {
     try {
       // Extract the refresh token from the request cookies.
       const cookies = request.cookies;
+
       const refreshToken = cookies?.jwt || undefined;
 
       // Request a new access token using the refresh token.

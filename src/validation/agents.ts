@@ -32,10 +32,18 @@ const validateAgent = (body: IAgent): Joi.ValidationResult<IAgent> => {
       'string.pattern.base': 'Room is allowed for 3 numeric strings only.'
     }),
     // Step 5: Validate the 'floor' field.
-    floor: Joi.string().valid(FLOORS.FLOOR1, FLOORS.FLOOR2, FLOORS.FLOOR3).required().messages({
+    floor: Joi.number().valid(FLOORS.FLOOR1, FLOORS.FLOOR2, FLOORS.FLOOR3).required().messages({
       'any.only': `Floor must be either ${FLOORS.FLOOR1}, ${FLOORS.FLOOR2} or ${FLOORS.FLOOR3}`,
       'any.required': 'Floor is required',
       'string.empty': 'Floor should not be empty',
+    }),
+    // Step 6: Validate the 'phone' field.
+    phone: Joi.array().items(
+      Joi.string().pattern(/^\d{10}$/)
+    ).messages({
+      'array.base': 'Phone must be an array',
+      'any.required': 'Phone is required',
+      'string.pattern.base': 'Phone must be 10 digits',
     }),
   });
 

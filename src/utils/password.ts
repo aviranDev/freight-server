@@ -1,35 +1,36 @@
 import bcryptjs from "bcryptjs";
+import { serverConfig } from "../config/serverConfiguration";
+
+const SECURE_DEFAULT_SALT_ROUNDS: number = serverConfig.config.SALT;
 
 /** 
- * @description Salter
- * @param salt  string
- * @returns random characters before or after a password prior to hashing.
+ * Generate a salt for password hashing.
+ * @param {string} salt - Custom salt value or fallback to default salt rounds.
+ * @returns {string} - Generated salt.
  */
-const SECURE_DEFAULT_SALT_ROUNDS: number = 12;
-
-export const salter = (salt: string) => {
+export const generateSalt = (salt: string): string => {
   return bcryptjs.genSaltSync(Number(salt) || SECURE_DEFAULT_SALT_ROUNDS);
 }
 
 /**
- * @description Hashing
- * @param password string
- * @param salter string
- * @returns encryption algorithm passqord.
+ * Hash a password using a given salt.
+ * @param {string} password - The plain text password to hash.
+ * @param {string} salt - The salt to use for hashing.
+ * @returns {Promise<string>} - The hashed password.
  */
-export const hashing = async (password: string, salter: string): Promise<string> => {
-  const hashedPassword = await bcryptjs.hash(password, salter);
+export const hashPassword = async (password: string, salt: string): Promise<string> => {
+  const hashedPassword = await bcryptjs.hash(password, salt);
   return hashedPassword;
 }
 
 /**
- * @description Compare passwords
- * @param bodyPassword string: reqesut body password
- * @param userPassword string: database user password
- * @returns boolean.
+ * Compare a plain text password with a hashed password.
+ * @param {string} plainPassword - The plain text password to compare.
+ * @param {string} hashedPassword - The hashed password to compare against.
+ * @returns {boolean} - True if the passwords match, false otherwise.
  */
-export const comparePasswords = (bodyPassword: string, userPassword: string) => {
-  return bcryptjs.compareSync(bodyPassword.trim(), userPassword);
+export const comparePasswords = (plainPassword: string, hashedPassword: string): boolean => {
+  return bcryptjs.compareSync(plainPassword.trim(), hashedPassword);
 }
 
-export default { salter, hashing, comparePasswords };
+export default { generateSalt, hashPassword, comparePasswords };

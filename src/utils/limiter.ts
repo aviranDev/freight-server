@@ -3,19 +3,46 @@ import User from '../Models/User';
 import FailedLoginAttempt from '../Models/FailedLogin';
 import { ManyRequests } from '../errors/manyRequests';
 
-// Custom rate limiter middleware
+/**
+ * Rate Limiter Middleware
+ * This middleware function helps prevent brute-force attacks by limiting the number of login attempts
+ * from a single IP address within a specified time window. If the number of failed login attempts
+ * exceeds the maximum allowed requests, the IP address is temporarily blocked.
+ * 
+ * @param maxRequests - Maximum allowed login attempts from a single IP address within the windowMs timeframe.
+ * @param windowMs - Time window in milliseconds during which the maxRequests are counted.
+ * @returns Express middleware function to be used in route handling.
+ *
+ * The middleware checks if a user exists and whether their IP address has exceeded the allowed number of login attempts.
+ * If the user does not exist, the failed login attempts are tracked. 
+ * If the limit is exceeded, further login attempts are blocked until the time window elapses. 
+ * Failed login attempts are recorded in the FailedLoginAttempt model, and a 
+ * timeout is set to clear the record after the time window to allow for new login attempts.
+ */
 export const rateLimiter = (maxRequests: number, windowMs: number) => {
   let timeoutId: NodeJS.Timeout | null = null; // Store the timeout ID
-  const errorMessage = 'Account is locked. Too many requests, please try again later.';
+  const errorMessage = 'Account is locked. try again later.';
 
-  return async (req: Request, res: Response, next: NextFunction) => {
-    const { ip, body: { username } } = req;
+  const clearPreviousTimeout = () => {
+    if (timeoutId) clearTimeout(timeoutId);
+  };
+
+  const setLockTimeout = async (ip: string, windowMs: number) => {
+    timeoutId = setTimeout(async () => {
+      await FailedLoginAttempt.deleteOne({ ip });
+    }, windowMs);
+  };
+
+  return async (request: Request, response: Response, next: NextFunction) => {
+    const { ip, body: { username } } = request;
 
     try {
       // Find the user by username
       const user = await User.findOne({ username });
+
       // Find the existing record for this IP address
       const countDB = await FailedLoginAttempt.findOne({ ip });
+
       // Get the current time
       const currentTime = Date.now();
 
@@ -33,18 +60,16 @@ export const rateLimiter = (maxRequests: number, windowMs: number) => {
         );
 
         // Check if the request count exceeds the maximum allowed requests
-        if (newCountDB.count > maxRequests) {
+        if (newCountDB.count >= maxRequests) {
           // Set the lock time for this IP address
           newCountDB.lockTime = Date.now() + windowMs;
           await newCountDB.save();
 
           // Clear previous timeout if it exists
-          if (timeoutId) clearTimeout(timeoutId);
+          clearPreviousTimeout();
 
           // Set new timeout to remove the document after the window duration
-          timeoutId = setTimeout(async () => {
-            await FailedLoginAttempt.deleteOne({ ip });
-          }, windowMs);
+          setLockTimeout(ip, windowMs);
 
           // Throw a ManyRequests error indicating that the account is locked
           throw new ManyRequests(errorMessage);

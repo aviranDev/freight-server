@@ -12,13 +12,14 @@ import Agent from "../Models/Agent";
 import { serverConfig } from '../config/serverConfiguration';
 const { ROLES, PORT_NAMES } = serverConfig.config
 
+// Initialize the services with their respective models
 const airlineService = new AirlineService(Airline);
-
 const agentService = new AgentService(Agent, airlineService);
 
+// Initialize the controller with the agent service
 const controller = new AgentController(agentService);
 
-// Destructure the ROLE1 and ROLE2 constants from the config object.
+// Create a new Express router instance
 const router = Router();
 
 /**
@@ -110,7 +111,7 @@ router.post("/create-agent",
   administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Administrator Authentication Middleware
   validateRequestBody(validateAgent), // Request Body Validation Middleware
   controller.agentMongooseValidation([ // Mongoose Validation Middleware
-    "agent", "port", "room", "floor"
+    "agent", "port", "room", "floor", "phone"
   ]),
   controller.createAgent, // Handler for creating an agent
 );
@@ -137,7 +138,7 @@ router.put("/update-agent/:id",
   administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   validateRequestBody(validateAgent),
   controller.agentMongooseValidation([
-    "agent", "port", "room", "floor"
+    "agent", "port", "room", "floor", "phone"
   ]),
   controller.updateAgent,
 );
