@@ -6,10 +6,14 @@ dotenv.config(); // Load environment variables from a .env file (if present)
 // Define interface for server configuration options
 interface ServerConfigOptions {
   PORT: number;
-  SALT: string;
+  SALT: number;
   ROLES: Record<string, string>;
   PORT_NAMES: Record<string, string>;
-  FLOORS: Record<string, string>;
+  FLOORS: {
+    FLOOR1: number;
+    FLOOR2: number;
+    FLOOR3: number;
+  };
   CORS_ORIGIN: string;
   TOKENS: {
     ACCESS_TOKEN_EXPIRE: string;
@@ -22,7 +26,7 @@ interface ServerConfigOptions {
 // Define server configuration options based on environment variables with defaults
 const configOptions: ServerConfigOptions = {
   PORT: Number(process.env.PORT || 8181),
-  SALT: process.env.SALT || "",
+  SALT: Number(process.env.SALT) || 5,
   ROLES: {
     ROLE1: process.env.ROLE1 || "",
     ROLE2: process.env.ROLE2 || "",
@@ -33,11 +37,11 @@ const configOptions: ServerConfigOptions = {
     PORT_NAME_2: process.env.PORT_NAME_2 || "",
   },
   FLOORS: {
-    FLOOR1: process.env.FLOOR1 || "",
-    FLOOR2: process.env.FLOOR2 || "",
-    FLOOR3: process.env.FLOOR3 || "",
+    FLOOR1: Number(process.env.FLOOR1) || 0,
+    FLOOR2: Number(process.env.FLOOR2) || 0,
+    FLOOR3: Number(process.env.FLOOR3) || 0,
   },
-  CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost/", // Default CORS origin
+  CORS_ORIGIN: process.env.CORS_ORIGIN || "http://localhost:5173/", // Default CORS origin
   TOKENS: {
     ACCESS_TOKEN_EXPIRE: process.env.ACCESS_TOKEN_EXPIRE || "",
     ACCESS_TOKEN_SECRET: process.env.ACCESS_TOKEN_SECRET || "",

@@ -40,7 +40,7 @@ export class Config<T extends Record<string, any>> {
         if (typeof value === 'object' && value !== null) {
           validateObject(value, fullPath, depth + 1);
           // If the value is falsy, add the key to the missingKeys array
-        } else if (!value) {
+        } else if (value === '') {
           missingKeys.push(fullPath);
         }
       });
@@ -57,3 +57,52 @@ export class Config<T extends Record<string, any>> {
 }
 
 export default Config;
+
+
+/* 
+import { EnvironmentVariableError } from "../errors/enviromentVariable";
+
+// Config class for validating configuration objects
+export class Config<T extends Record<string, any>> {
+  constructor(protected config: T) {
+    // Validate the provided configuration object
+    this.validateConfig(config);
+  }
+
+  protected validateConfig(config: T, depthLimit: number = 1000): void {
+    // Array to store missing keys in the configuration
+    const missingKeys: string[] = [];
+
+    // Recursive function to validate the configuration object
+    const validateObject = (obj: Record<string, any>, path: string = '', depth: number = 0): void => {
+      if (depth > depthLimit) {
+        throw new Error('Recursion depth limit exceeded');
+      }
+
+      // Iterate through each key-value pair in the object
+      Object.entries(obj).forEach(([key, value]) => {
+        // Construct the full path of the key
+        const fullPath = path ? `${path}.${key}` : key;
+
+        // If the value is an object, recursively validate it
+        if (typeof value === 'object' && value !== null) {
+          validateObject(value, fullPath, depth + 1);
+        } else {
+          // If the value is falsy, add the key to the missingKeys array
+          if (value === undefined || value === null || value === '') {
+            missingKeys.push(fullPath);
+          }
+        }
+      });
+    };
+
+    validateObject(config);
+
+    if (missingKeys.length > 0) {
+      throw new EnvironmentVariableError(`${missingKeys.join(', ')}`);
+    }
+  }
+}
+
+export default Config;
+*/

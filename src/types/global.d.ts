@@ -14,9 +14,9 @@ declare global {
       REFRESH_TOKEN_SECRET: string;
       PORT_NAME_1: string;
       PORT_NAME_2: string;
-      FLOOR1: string;
-      FLOOR2: string;
-      FLOOR3: string;
+      FLOOR1: number;
+      FLOOR2: number;
+      FLOOR3: number;
       SALT: string;
       ROLE1: string;
       ROLE2: string;

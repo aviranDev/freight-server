@@ -2,7 +2,7 @@ import { Model } from "mongoose";
 import { IUser } from "../Models/User";
 import { InternalError } from "../errors/internalError";
 import { AuthenticationError } from "../errors/autheticationError";
-import { comparePasswords, salter, hashing } from "../utils/password";
+import { comparePasswords, generateSalt, hashPassword } from "../utils/password";
 import { serverConfig } from "../config/serverConfiguration";
 import { ValidationError } from "../errors/validation";
 import ISessionService from "../services/session";
@@ -47,7 +47,8 @@ export class AuthService {
   constructor(
     userModel: Model<IUser>,
     tokenService: ISessionService,
-    lockDuration: number = 1 * 60 * 1000,
+    // lockDuration = 24 * 60 * 60 * 100, // 24 hours in milliseconds
+    lockDuration = 2 * 60 * 1000, // 24 hours in milliseconds
     maxLoginAttempts: number = 5
   ) {
     // Initialize the data model and TokenService
@@ -130,7 +131,7 @@ export class AuthService {
         const lockDuration = LOCK_DURATION_MS - oper;
 
         if (lockDuration > 0) {
-          throw new ManyRequests(`Account is locked. Too many requests, please try again later.`);
+          throw new ManyRequests(`Account is locked. try again later.`);
         }
 
         // Reset failed login attempts upon successful login
@@ -268,8 +269,8 @@ export class AuthService {
       }
 
       // Generate a salt and hash the new password
-      const salt = salter(SALT);
-      const userPassword = await hashing(password, salt);
+      const salt = generateSalt(SALT);
+      const userPassword = await hashPassword(password, salt);
 
       // Update the user's password in the database
       await this.updatePassword(userId, userPassword);

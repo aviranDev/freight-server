@@ -6,7 +6,8 @@ export interface IAgent {
   agent: string;
   port: string;
   room: number;
-  floor: string;
+  floor: number;
+  phone: string[];
 };
 
 const { FLOORS, PORT_NAMES } = serverConfig.config
@@ -33,17 +34,32 @@ export const agentSchema = new Schema<IAgent>({
   },
   room: {
     type: Number,
-    min: 3,
-    max: 3,
+    min: 1,
+    max: 999,
     required: true,
     // Validation: Agent room must be exactly 3 characters.
   },
   floor: {
-    type: String,
+    type: Number,
     enum: [FLOORS.FLOOR1, FLOORS.FLOOR2, FLOORS.FLOOR3],
     // Validation: Agent floor must be one of the predefined options or default to an empty string.
   },
+  phone: {
+    type: [{
+      type: String,
+      validate: {
+        validator: function (v: string) {
+          return /^\d{10}$/.test(v); // Validate each phone number format
+        },
+        message: (props: { value: string }) => `${props.value} is not a valid 10-digit phone number!`
+      }
+    }],
+    default: [], // Default value: an empty array
+  },
 });
+
+
+
 
 const Agent = model<IAgent>("Agent", agentSchema);
 
