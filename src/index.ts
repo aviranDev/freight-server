@@ -28,5 +28,8 @@ export async function main(): Promise<void> {
   }
 }
 
-// Call the main function to start the application
-main(); 
+// Start the application by calling the main function
+main().catch(error => {
+  logger.error("Unhandled error in main function:", { error });
+  process.exit(1);
+});

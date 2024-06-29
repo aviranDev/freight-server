@@ -8,6 +8,7 @@ export interface IAgent {
   room: number;
   floor: number;
   phone: string[];
+  email: string[];
 };
 
 const { FLOORS, PORT_NAMES } = serverConfig.config
@@ -56,6 +57,20 @@ export const agentSchema = new Schema<IAgent>({
     }],
     default: [], // Default value: an empty array
   },
+  email: {
+    type: [{
+      type: String,
+      validate: {
+        validator: function (v: string) {
+          // Email validation regex
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+        },
+        message: (props: { value: string }) => `${props.value} is not a valid email address!`
+      }
+    }],
+    default: [], // Default value: an empty array
+  },
+
 });
 
 
