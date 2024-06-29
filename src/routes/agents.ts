@@ -111,7 +111,7 @@ router.post("/create-agent",
   administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]), // Administrator Authentication Middleware
   validateRequestBody(validateAgent), // Request Body Validation Middleware
   controller.agentMongooseValidation([ // Mongoose Validation Middleware
-    "agent", "port", "room", "floor", "phone"
+    "agent", "port", "room", "floor", "phone", "email"
   ]),
   controller.createAgent, // Handler for creating an agent
 );
@@ -138,7 +138,7 @@ router.put("/update-agent/:id",
   administratorAuthentication([ROLES.ROLE1, ROLES.ROLE2]),
   validateRequestBody(validateAgent),
   controller.agentMongooseValidation([
-    "agent", "port", "room", "floor", "phone"
+    "agent", "port", "room", "floor", "phone", "email"
   ]),
   controller.updateAgent,
 );

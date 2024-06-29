@@ -192,7 +192,6 @@ class AgentService {
     }
   }
 
-
   /**
    * Validates airline data against the Mongoose schema using the provided keys.
    *
@@ -280,56 +279,17 @@ class AgentService {
   async updateAgent(id: string, data: IAgent): Promise<IAgent> {
     try {
       // Step 1: Retrieve the previous agent data before the update.
-      const previousAgent = await this.model.findById(id);
+      let agent = await this.model.findById(id);
 
-      // Step 2: If the agent does not exist, throw an InternalError.
-      if (previousAgent === null) {
-        throw new InternalError('Update document failed.');
-      }
+      agent = await this.model.findByIdAndUpdate(id, data, { new: true });
 
-      // Step 3: Filter out phone numbers that are new (not in previousAgent.phone).
-      const newPhones = data.phone.filter(phone => !previousAgent.phone.includes(phone));
-
-      // Step 4: Filter out phone numbers that are to be removed (not in data.phone).
-      const removePhones = previousAgent.phone.filter(phone => !data.phone.includes(phone));
-
-      // Step 5: Prepare the update data, excluding the phone field.
-      const { phone, ...updateData } = data;
-
-      // Step 6: Use Mongoose's findByIdAndUpdate to update the agent with other data.
-      const updatedAgent = await this.model.findByIdAndUpdate(id, updateData, { new: true });
-
-      // Step 7: If the update operation fails, throw an InternalError.
-      if (updatedAgent === null) {
-        throw new InternalError('Update document failed.');
-      }
-
-      // Step 8: Add new phone numbers and remove old ones from the agent's phone array.
-      if (newPhones.length > 0 || removePhones.length > 0) {
-        const updateObject: any = {};
-
-        if (newPhones.length > 0) {
-          updateObject.$addToSet = { phone: { $each: newPhones } };
-        }
-
-        if (removePhones.length > 0) {
-          updateObject.$pull = { phone: { $in: removePhones } };
-        }
-
-        await this.model.findByIdAndUpdate(id, updateObject, { new: true });
-      }
-
-      // Step 9: Update related documents in another collection.
-      await this.airlineService.updateRelatedAirlines(previousAgent.agent, updatedAgent.agent);
-
-      // Step 10: Return the updated agent data.
-      const finalUpdatedAgent = await this.model.findById(id);
-      if (finalUpdatedAgent === null) {
+      // const finalUpdatedAgent = await this.model.findById(id);
+      if (agent === null) {
         throw new InternalError('Final retrieval of updated document failed.');
       }
-      return finalUpdatedAgent;
+      return agent;
     } catch (error) {
-      // Step 11: Propagate any errors that occur during the update process.
+      // Step 12: Propagate any errors that occur during the update process.
       throw error;
     }
   }

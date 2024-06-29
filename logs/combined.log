@@ -498,3 +498,541 @@
 {"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-22T19:43:32.292Z"}
 {"level":"info","message":"Received SIGINT. Closing server and shutting down...","timestamp":"2024-06-22T19:47:22.985Z"}
 {"level":"info","message":"Shutting down gracefully...","timestamp":"2024-06-22T19:47:23.021Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:28:56.104Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:28:56.169Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:29:35.399Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:29:35.452Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:32:51.186Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:32:51.241Z"}
+{"level":"info","message":"Authentication process complete","timestamp":"2024-06-23T18:35:05.638Z"}
+{"level":"http","message":"POST /api/auth/login 200 485.351 ms - 309\n","timestamp":"2024-06-23T18:35:05.641Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:36:22.511Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:36:22.730Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:37:06.419Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:37:06.477Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:46:39.507Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:46:39.570Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:49:34.963Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:49:35.004Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:50:26.489Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:50:26.551Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:52:34.593Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:52:34.676Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:53:33.522Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:53:33.561Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:54:06.659Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:54:06.739Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:54:35.337Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:54:35.400Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T18:54:47.809Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T18:54:47.901Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 23.6.2024, 22:00:00","timestamp":"2024-06-23T19:00:00.078Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 15.119 ms - 46\n","timestamp":"2024-06-23T19:00:00.085Z"}
+{"level":"debug","message":"Cron job ran successfully at: 23.6.2024, 22:00:00","timestamp":"2024-06-23T19:00:00.088Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:05:06.937Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:05:06.969Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:06:12.217Z"}
+{"level":"debug","message":"Data successfully imported","timestamp":"2024-06-23T19:06:12.276Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:06:55.606Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:06:55.663Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:07:11.554Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:07:11.598Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:07:34.312Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:07:34.346Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:08:20.087Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:08:20.123Z"}
+{"level":"info","message":"Authentication process complete","timestamp":"2024-06-23T19:08:29.421Z"}
+{"level":"http","message":"POST /api/auth/login 200 293.731 ms - 309\n","timestamp":"2024-06-23T19:08:29.424Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-23T19:08:34.340Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 29.930 ms - 289\n","timestamp":"2024-06-23T19:08:34.340Z"}
+{"level":"error","message":"Internal error server: Server encountered an unexpected condition - Update document failed.","timestamp":"2024-06-23T19:08:53.207Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-23T19:08:53.209Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/6676e0a9d7f16b3daae2e7b3 500 35.639 ms - 148\n","timestamp":"2024-06-23T19:08:53.214Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667872249e2a9e285dc22813: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-23T19:09:25.762Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-23T19:09:25.767Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667872249e2a9e285dc22813 500 30.154 ms - 140\n","timestamp":"2024-06-23T19:09:25.767Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:11:05.323Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:11:05.361Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667872249e2a9e285dc22813: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-23T19:11:07.789Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-23T19:11:07.794Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667872249e2a9e285dc22813 500 39.016 ms - 140\n","timestamp":"2024-06-23T19:11:07.799Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667872249e2a9e285dc22813: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-23T19:12:01.172Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-23T19:12:01.173Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667872249e2a9e285dc22813 500 18.270 ms - 140\n","timestamp":"2024-06-23T19:12:01.174Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667872249e2a9e285dc22813: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-23T19:12:02.193Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-23T19:12:02.195Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667872249e2a9e285dc22813 500 10.989 ms - 140\n","timestamp":"2024-06-23T19:12:02.195Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:13:03.678Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:13:03.718Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:13:23.750Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:13:23.789Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:13:30.886Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:13:30.926Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:13:37.047Z"}
+{"level":"debug","message":"Data successfully imported","timestamp":"2024-06-23T19:13:37.088Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-23T19:13:56.117Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-23T19:13:56.152Z"}
+{"level":"info","message":"Received SIGINT. Closing server and shutting down...","timestamp":"2024-06-23T19:48:48.874Z"}
+{"level":"info","message":"Shutting down gracefully...","timestamp":"2024-06-23T19:48:48.900Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-26T16:33:21.622Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-26T16:33:21.667Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-26T16:49:05.188Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-26T16:49:05.238Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-26T16:49:29.090Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-26T16:49:29.119Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-26T16:49:38.930Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-26T16:49:38.962Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-26T16:50:02.843Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-26T16:50:02.871Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 26.6.2024, 20:00:00","timestamp":"2024-06-26T17:00:00.094Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 24.259 ms - 46\n","timestamp":"2024-06-26T17:00:00.101Z"}
+{"level":"debug","message":"Cron job ran successfully at: 26.6.2024, 20:00:00","timestamp":"2024-06-26T17:00:00.109Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 26.6.2024, 21:00:00","timestamp":"2024-06-26T18:00:00.033Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 4.522 ms - 46\n","timestamp":"2024-06-26T18:00:00.034Z"}
+{"level":"debug","message":"Cron job ran successfully at: 26.6.2024, 21:00:00","timestamp":"2024-06-26T18:00:00.036Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 26.6.2024, 22:00:00","timestamp":"2024-06-26T19:00:00.043Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 3.496 ms - 46\n","timestamp":"2024-06-26T19:00:00.045Z"}
+{"level":"debug","message":"Cron job ran successfully at: 26.6.2024, 22:00:00","timestamp":"2024-06-26T19:00:00.046Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 26.6.2024, 23:00:00","timestamp":"2024-06-26T20:00:00.056Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 12.415 ms - 46\n","timestamp":"2024-06-26T20:00:00.059Z"}
+{"level":"debug","message":"Cron job ran successfully at: 26.6.2024, 23:00:00","timestamp":"2024-06-26T20:00:00.060Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 27.6.2024, 0:00:00","timestamp":"2024-06-26T21:00:00.057Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 10.004 ms - 46\n","timestamp":"2024-06-26T21:00:00.059Z"}
+{"level":"debug","message":"Cron job ran successfully at: 27.6.2024, 0:00:00","timestamp":"2024-06-26T21:00:00.060Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 27.6.2024, 3:00:26","timestamp":"2024-06-27T00:00:26.326Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 42.122 ms - 46\n","timestamp":"2024-06-27T00:00:26.336Z"}
+{"level":"debug","message":"Cron job ran successfully at: 27.6.2024, 3:00:26","timestamp":"2024-06-27T00:00:26.337Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 27.6.2024, 21:11:37","timestamp":"2024-06-27T18:11:37.635Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 15.608 ms - 46\n","timestamp":"2024-06-27T18:11:37.645Z"}
+{"level":"debug","message":"Cron job ran successfully at: 27.6.2024, 21:11:37","timestamp":"2024-06-27T18:11:37.648Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:28:04.302Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:28:04.339Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:31:27.643Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:31:27.683Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:31:35.794Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:31:35.842Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:40:43.876Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:40:43.910Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:40:55.724Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:40:55.778Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:49:05.274Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:49:05.303Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:50:02.733Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:50:02.770Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:50:10.189Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:50:10.225Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:52:31.903Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:52:31.943Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:52:41.696Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:52:41.724Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:52:46.822Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:52:46.852Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:53:30.780Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:53:30.814Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:53:52.886Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:53:52.927Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T18:54:06.942Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T18:54:06.975Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 27.6.2024, 22:00:00","timestamp":"2024-06-27T19:00:00.083Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 24.302 ms - 46\n","timestamp":"2024-06-27T19:00:00.086Z"}
+{"level":"debug","message":"Cron job ran successfully at: 27.6.2024, 22:00:00","timestamp":"2024-06-27T19:00:00.091Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:04:43.844Z"}
+{"level":"debug","message":"Data successfully imported","timestamp":"2024-06-27T19:04:43.914Z"}
+{"level":"info","message":"Authentication process complete","timestamp":"2024-06-27T19:05:25.952Z"}
+{"level":"http","message":"POST /api/auth/login 200 231.929 ms - 309\n","timestamp":"2024-06-27T19:05:25.953Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T19:05:30.576Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 15.407 ms - 289\n","timestamp":"2024-06-27T19:05:30.577Z"}
+{"level":"error","message":"Authorization Failed: POST /api/agents/create-agent: Client lacks permission to access the resource - Invalid Token: TokenExpiredError: jwt expired","timestamp":"2024-06-27T19:07:25.463Z"}
+{"level":"http","message":"POST /api/agents/create-agent 403 6.016 ms - 196\n","timestamp":"2024-06-27T19:07:25.465Z"}
+{"level":"debug","message":"Create agent is complete.","timestamp":"2024-06-27T19:07:36.872Z"}
+{"level":"http","message":"POST /api/agents/create-agent 201 46.413 ms - 60\n","timestamp":"2024-06-27T19:07:36.873Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T19:08:32.573Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 17.080 ms - 289\n","timestamp":"2024-06-27T19:08:32.574Z"}
+{"level":"error","message":"Validation Failed: PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: Bad request - \"email\" is not allowed","timestamp":"2024-06-27T19:08:53.327Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 400 9.234 ms - 112\n","timestamp":"2024-06-27T19:08:53.332Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:11:00.205Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:11:00.243Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T19:17:28.471Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 59.055 ms - 289\n","timestamp":"2024-06-27T19:17:28.473Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:17:48.557Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:17:48.558Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 86.609 ms - 140\n","timestamp":"2024-06-27T19:17:48.561Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:18:17.767Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:18:17.769Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 30.615 ms - 140\n","timestamp":"2024-06-27T19:18:17.770Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:18:38.357Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:18:38.360Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 14.252 ms - 140\n","timestamp":"2024-06-27T19:18:38.362Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:18:53.702Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:18:53.704Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 18.059 ms - 140\n","timestamp":"2024-06-27T19:18:53.705Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:19:18.638Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:19:18.677Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:19:23.689Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:19:23.696Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 64.648 ms - 140\n","timestamp":"2024-06-27T19:19:23.700Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:20:05.090Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:20:05.123Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:20:07.751Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:20:07.755Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 62.705 ms - 140\n","timestamp":"2024-06-27T19:20:07.756Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:24:34.077Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:24:34.107Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T19:24:38.354Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 31.927 ms - 289\n","timestamp":"2024-06-27T19:24:38.355Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:24:54.161Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:24:54.163Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 29.170 ms - 140\n","timestamp":"2024-06-27T19:24:54.164Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:27:11.122Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 201 27.922 ms - 228\n","timestamp":"2024-06-27T19:27:11.122Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:27:16.037Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 201 14.958 ms - 228\n","timestamp":"2024-06-27T19:27:16.037Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:27:20.567Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:27:20.569Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 35.401 ms - 140\n","timestamp":"2024-06-27T19:27:20.569Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:27:25.922Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:27:25.924Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 17.744 ms - 140\n","timestamp":"2024-06-27T19:27:25.927Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:27:33.871Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:27:33.872Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 11.613 ms - 140\n","timestamp":"2024-06-27T19:27:33.872Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:28:08.269Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:28:08.270Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 15.579 ms - 140\n","timestamp":"2024-06-27T19:28:08.270Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:28:14.473Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:28:14.476Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 18.093 ms - 140\n","timestamp":"2024-06-27T19:28:14.480Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:28:23.283Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:28:23.285Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 30.147 ms - 140\n","timestamp":"2024-06-27T19:28:23.285Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:29:05.317Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:29:05.351Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:29:06.319Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:29:06.322Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 41.160 ms - 140\n","timestamp":"2024-06-27T19:29:06.329Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:29:07.783Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:29:07.784Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 18.055 ms - 140\n","timestamp":"2024-06-27T19:29:07.785Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:29:41.700Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:29:41.836Z"}
+{"level":"error","message":"Validation Failed: PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: Bad request - \"email\" is not allowed","timestamp":"2024-06-27T19:29:42.565Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 400 62.232 ms - 112\n","timestamp":"2024-06-27T19:29:42.570Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:29:50.420Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:29:50.421Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667db878be0fc41c2b2fe8b0 500 52.233 ms - 140\n","timestamp":"2024-06-27T19:29:50.422Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:30:19.081Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:30:19.125Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:30:33.236Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:30:33.268Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:30:39.348Z"}
+{"level":"debug","message":"Data successfully imported","timestamp":"2024-06-27T19:30:39.367Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T19:30:54.120Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 38.529 ms - 289\n","timestamp":"2024-06-27T19:30:54.121Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:31:07.520Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 80.276 ms - 201\n","timestamp":"2024-06-27T19:31:07.521Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:31:14.347Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:31:14.348Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 26.694 ms - 140\n","timestamp":"2024-06-27T19:31:14.350Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:31:30.221Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 43.596 ms - 201\n","timestamp":"2024-06-27T19:31:30.227Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:31:42.399Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 32.682 ms - 214\n","timestamp":"2024-06-27T19:31:42.399Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:31:48.605Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 30.430 ms - 201\n","timestamp":"2024-06-27T19:31:48.605Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:31:54.436Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:31:54.437Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 18.043 ms - 140\n","timestamp":"2024-06-27T19:31:54.437Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:33:56.822Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 25.353 ms - 189\n","timestamp":"2024-06-27T19:33:56.822Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:39:36.284Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:39:36.324Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:39:56.449Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:39:56.479Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:41:05.349Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:41:05.382Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T19:41:07.892Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 53.105 ms - 289\n","timestamp":"2024-06-27T19:41:07.896Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:41:33.591Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 76.733 ms - 201\n","timestamp":"2024-06-27T19:41:33.592Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T19:41:44.637Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T19:41:44.645Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 70.099 ms - 140\n","timestamp":"2024-06-27T19:41:44.647Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T19:42:05.167Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T19:42:05.203Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 27.6.2024, 23:00:00","timestamp":"2024-06-27T20:00:00.124Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 21.053 ms - 46\n","timestamp":"2024-06-27T20:00:00.130Z"}
+{"level":"debug","message":"Cron job ran successfully at: 27.6.2024, 23:00:00","timestamp":"2024-06-27T20:00:00.136Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T20:03:00.554Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T20:03:00.587Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T20:03:48.097Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T20:03:48.132Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T20:04:00.901Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T20:04:00.946Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T20:04:10.952Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T20:04:10.999Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T20:04:11.793Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 44.340 ms - 289\n","timestamp":"2024-06-27T20:04:11.795Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T20:04:32.216Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T20:04:32.221Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 92.650 ms - 140\n","timestamp":"2024-06-27T20:04:32.224Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 1:27:58","timestamp":"2024-06-27T22:27:58.969Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 9.063 ms - 46\n","timestamp":"2024-06-27T22:27:58.971Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 1:27:58","timestamp":"2024-06-27T22:27:58.977Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-27T22:28:51.312Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 94.934 ms - 289\n","timestamp":"2024-06-27T22:28:51.314Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T22:29:06.828Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:29:06.840Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 345.668 ms - 140\n","timestamp":"2024-06-27T22:29:06.845Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:29:57.732Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 61.763 ms - 214\n","timestamp":"2024-06-27T22:29:57.732Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:09.336Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 37.320 ms - 214\n","timestamp":"2024-06-27T22:30:09.336Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:11.831Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 33.375 ms - 214\n","timestamp":"2024-06-27T22:30:11.832Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:17.597Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 27.828 ms - 201\n","timestamp":"2024-06-27T22:30:17.598Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:39.219Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 22.270 ms - 214\n","timestamp":"2024-06-27T22:30:39.220Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:40.602Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 17.680 ms - 214\n","timestamp":"2024-06-27T22:30:40.602Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:46.578Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 39.853 ms - 201\n","timestamp":"2024-06-27T22:30:46.580Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T22:30:56.958Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:30:56.959Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 27.227 ms - 140\n","timestamp":"2024-06-27T22:30:56.960Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:31:58.321Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:31:58.374Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:33:19.686Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:33:19.715Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:33:28.096Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 90.579 ms - 201\n","timestamp":"2024-06-27T22:33:28.099Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:33:48.494Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 39.465 ms - 214\n","timestamp":"2024-06-27T22:33:48.496Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:33:51.739Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 33.788 ms - 214\n","timestamp":"2024-06-27T22:33:51.741Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:33:58.391Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 22.738 ms - 201\n","timestamp":"2024-06-27T22:33:58.392Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T22:34:06.114Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:34:06.116Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 42.370 ms - 140\n","timestamp":"2024-06-27T22:34:06.117Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:35:55.395Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:35:55.424Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongooseError - Invalid update pipeline operator: \"0\"","timestamp":"2024-06-27T22:35:58.179Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:35:58.183Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 70.077 ms - 140\n","timestamp":"2024-06-27T22:35:58.184Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:36:25.111Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:36:25.149Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:37:16.162Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:37:16.200Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongooseError - Invalid update pipeline operator: \"0\"","timestamp":"2024-06-27T22:37:18.314Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:37:18.317Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 79.548 ms - 140\n","timestamp":"2024-06-27T22:37:18.318Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:37:42.730Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:37:42.759Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T22:37:44.569Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:37:44.577Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 80.091 ms - 140\n","timestamp":"2024-06-27T22:37:44.579Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:37:47.513Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 28.096 ms - 201\n","timestamp":"2024-06-27T22:37:47.514Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:37:51.967Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 16.763 ms - 201\n","timestamp":"2024-06-27T22:37:51.968Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667dbddf39b2496438dd3135: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-27T22:38:00.090Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:38:00.093Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 500 14.309 ms - 140\n","timestamp":"2024-06-27T22:38:00.094Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-27T22:38:01.981Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 57.264 ms - 201\n","timestamp":"2024-06-27T22:38:01.983Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T22:38:23.960Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T22:38:23.992Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 2:00:00","timestamp":"2024-06-27T23:00:00.257Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 40.656 ms - 46\n","timestamp":"2024-06-27T23:00:00.271Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 2:00:00","timestamp":"2024-06-27T23:00:00.281Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-27T23:55:11.358Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-27T23:55:11.752Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 3:00:00","timestamp":"2024-06-28T00:00:00.122Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 34.484 ms - 46\n","timestamp":"2024-06-28T00:00:00.130Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 3:00:00","timestamp":"2024-06-28T00:00:00.138Z"}
+{"level":"info","message":"Received SIGINT. Closing server and shutting down...","timestamp":"2024-06-28T00:12:16.943Z"}
+{"level":"info","message":"Shutting down gracefully...","timestamp":"2024-06-28T00:12:16.949Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:37:03.712Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:37:03.743Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:39:10.907Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:39:10.974Z"}
+{"level":"info","message":"Authentication process complete","timestamp":"2024-06-28T13:40:01.897Z"}
+{"level":"http","message":"POST /api/auth/login 200 422.183 ms - 309\n","timestamp":"2024-06-28T13:40:01.901Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-28T13:40:07.445Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 11.566 ms - 289\n","timestamp":"2024-06-28T13:40:07.446Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:40:52.093Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:40:52.130Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T13:41:05.405Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 85.142 ms - 201\n","timestamp":"2024-06-28T13:41:05.408Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T13:41:34.420Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 56.659 ms - 214\n","timestamp":"2024-06-28T13:41:34.420Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T13:41:52.796Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 27.191 ms - 189\n","timestamp":"2024-06-28T13:41:52.796Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T13:41:55.185Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667dbddf39b2496438dd3135 201 32.972 ms - 189\n","timestamp":"2024-06-28T13:41:55.186Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:46:38.383Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:46:38.414Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:47:15.212Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:47:15.252Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:47:38.972Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:47:39.026Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-28T13:47:39.545Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 40.622 ms - 289\n","timestamp":"2024-06-28T13:47:39.549Z"}
+{"level":"debug","message":"Create agent is complete.","timestamp":"2024-06-28T13:47:56.066Z"}
+{"level":"http","message":"POST /api/agents/create-agent 201 74.070 ms - 60\n","timestamp":"2024-06-28T13:47:56.066Z"}
+{"level":"error","message":"Internal Server Error: Unexpected Error:PUT /api/agents/update-agent/667ebf0cb28ed081e2471077: MongoServerError - Updating the path 'phone' would create a conflict at 'phone'","timestamp":"2024-06-28T13:48:46.166Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T13:48:46.169Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667ebf0cb28ed081e2471077 500 39.332 ms - 140\n","timestamp":"2024-06-28T13:48:46.170Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:49:14.013Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:49:14.069Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T13:49:15.752Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667ebf0cb28ed081e2471077 201 119.776 ms - 201\n","timestamp":"2024-06-28T13:49:15.755Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:50:03.618Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:50:03.656Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:52:20.971Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:52:21.045Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T13:53:38.404Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T13:53:38.440Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 17:00:00","timestamp":"2024-06-28T14:00:00.067Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 11.609 ms - 46\n","timestamp":"2024-06-28T14:00:00.070Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 17:00:00","timestamp":"2024-06-28T14:00:00.074Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 18:54:56","timestamp":"2024-06-28T15:54:56.214Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 7.690 ms - 46\n","timestamp":"2024-06-28T15:54:56.218Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 18:54:56","timestamp":"2024-06-28T15:54:56.238Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-28T15:58:52.468Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 154.858 ms - 289\n","timestamp":"2024-06-28T15:58:52.474Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T15:59:06.169Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667ebf0cb28ed081e2471077 201 160.665 ms - 201\n","timestamp":"2024-06-28T15:59:06.172Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T15:59:23.389Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667ebf0cb28ed081e2471077 201 29.538 ms - 201\n","timestamp":"2024-06-28T15:59:23.389Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-28T15:59:35.290Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667ebf0cb28ed081e2471077 201 33.898 ms - 214\n","timestamp":"2024-06-28T15:59:35.290Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T15:59:57.024Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T15:59:57.137Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 19:00:00","timestamp":"2024-06-28T16:00:00.106Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 21.622 ms - 46\n","timestamp":"2024-06-28T16:00:00.119Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 19:00:00","timestamp":"2024-06-28T16:00:00.125Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:00:10.000Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:00:10.036Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:00:34.492Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:00:34.574Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:00:46.782Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:00:46.822Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:01:03.075Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:01:03.117Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:01:47.509Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:01:47.543Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:02:02.304Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:02:02.342Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:05:29.408Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:05:29.443Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:05:40.475Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-28T16:05:40.553Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-28T16:06:03.125Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 51.136 ms - 289\n","timestamp":"2024-06-28T16:06:03.127Z"}
+{"level":"debug","message":"Create agent is complete.","timestamp":"2024-06-28T16:06:33.772Z"}
+{"level":"http","message":"POST /api/agents/create-agent 201 81.702 ms - 60\n","timestamp":"2024-06-28T16:06:33.773Z"}
+{"level":"debug","message":"Create agent is complete.","timestamp":"2024-06-28T16:06:36.589Z"}
+{"level":"http","message":"POST /api/agents/create-agent 201 15.922 ms - 60\n","timestamp":"2024-06-28T16:06:36.589Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-28T16:07:21.163Z"}
+{"level":"debug","message":"Data successfully imported","timestamp":"2024-06-28T16:07:21.236Z"}
+{"level":"debug","message":"Create agent is complete.","timestamp":"2024-06-28T16:07:30.928Z"}
+{"level":"http","message":"POST /api/agents/create-agent 201 19.069 ms - 60\n","timestamp":"2024-06-28T16:07:30.932Z"}
+{"level":"error","message":"Client request failed: POST /api/agents/create-agent: Conflict with the current state of the target resource - Agent with name 'test agentcdscsasad' already exists.","timestamp":"2024-06-28T16:07:32.491Z"}
+{"level":"debug","message":"Create agent is complete.","timestamp":"2024-06-28T16:07:32.492Z"}
+{"level":"http","message":"POST /api/agents/create-agent 409 15.262 ms - 220\n","timestamp":"2024-06-28T16:07:32.492Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 28.6.2024, 22:18:59","timestamp":"2024-06-28T19:18:59.557Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 10.427 ms - 46\n","timestamp":"2024-06-28T19:18:59.559Z"}
+{"level":"debug","message":"Cron job ran successfully at: 28.6.2024, 22:18:59","timestamp":"2024-06-28T19:18:59.569Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 10:56:06","timestamp":"2024-06-29T07:56:06.382Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 47.579 ms - 46\n","timestamp":"2024-06-29T07:56:06.385Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 10:56:06","timestamp":"2024-06-29T07:56:06.388Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-29T07:57:32.740Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 379.820 ms - 289\n","timestamp":"2024-06-29T07:57:32.745Z"}
+{"level":"error","message":"Authorization Failed: PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09: Client lacks permission to access the resource - Invalid Token: TokenExpiredError: jwt expired","timestamp":"2024-06-29T07:57:42.560Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 403 48.384 ms - 196\n","timestamp":"2024-06-29T07:57:42.564Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T07:58:04.214Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 282.714 ms - 225\n","timestamp":"2024-06-29T07:58:04.216Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T07:58:44.292Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 28.934 ms - 259\n","timestamp":"2024-06-29T07:58:44.293Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T07:58:46.063Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 15.363 ms - 259\n","timestamp":"2024-06-29T07:58:46.063Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T07:58:56.597Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 22.514 ms - 241\n","timestamp":"2024-06-29T07:58:56.598Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T07:59:39.570Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 18.954 ms - 241\n","timestamp":"2024-06-29T07:59:39.571Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T07:59:51.118Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 14.484 ms - 225\n","timestamp":"2024-06-29T07:59:51.119Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 11:00:00","timestamp":"2024-06-29T08:00:00.059Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 10.731 ms - 46\n","timestamp":"2024-06-29T08:00:00.059Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 11:00:00","timestamp":"2024-06-29T08:00:00.062Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T08:01:02.435Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T08:01:02.469Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:01:22.999Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 92.027 ms - 241\n","timestamp":"2024-06-29T08:01:23.006Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:01:30.868Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 21.401 ms - 228\n","timestamp":"2024-06-29T08:01:30.869Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:01:45.311Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 15.046 ms - 241\n","timestamp":"2024-06-29T08:01:45.311Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:02:08.238Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 24.028 ms - 241\n","timestamp":"2024-06-29T08:02:08.239Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:02:19.908Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 19.785 ms - 216\n","timestamp":"2024-06-29T08:02:19.909Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T08:02:51.602Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T08:02:51.635Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:02:52.680Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 77.111 ms - 216\n","timestamp":"2024-06-29T08:02:52.682Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:02:57.230Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 16.020 ms - 241\n","timestamp":"2024-06-29T08:02:57.230Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T08:31:01.732Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T08:31:01.881Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-29T08:31:03.435Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 77.669 ms - 289\n","timestamp":"2024-06-29T08:31:03.437Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:31:18.075Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 142.115 ms - 241\n","timestamp":"2024-06-29T08:31:18.078Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:31:19.892Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 27.608 ms - 241\n","timestamp":"2024-06-29T08:31:19.895Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:31:27.591Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 18.671 ms - 241\n","timestamp":"2024-06-29T08:31:27.592Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:31:38.927Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 26.102 ms - 212\n","timestamp":"2024-06-29T08:31:38.929Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T08:32:08.435Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T08:32:08.470Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T08:32:48.184Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T08:32:48.248Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:32:51.001Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 71.197 ms - 212\n","timestamp":"2024-06-29T08:32:51.002Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T08:32:54.651Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667edfc252b5fe7f9eda8a09 201 15.539 ms - 241\n","timestamp":"2024-06-29T08:32:54.652Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 12:36:02","timestamp":"2024-06-29T09:36:02.732Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 148.975 ms - 46\n","timestamp":"2024-06-29T09:36:02.763Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 12:36:02","timestamp":"2024-06-29T09:36:02.784Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 13:00:00","timestamp":"2024-06-29T10:00:00.333Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 66.327 ms - 46\n","timestamp":"2024-06-29T10:00:00.355Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 13:00:00","timestamp":"2024-06-29T10:00:00.360Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T10:11:47.427Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T10:11:47.529Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T10:12:09.083Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T10:12:09.237Z"}
+{"level":"info","message":"Received SIGINT. Closing server and shutting down...","timestamp":"2024-06-29T10:12:30.135Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T10:12:55.441Z"}
+{"level":"debug","message":"Data successfully imported","timestamp":"2024-06-29T10:12:55.592Z"}
+{"level":"info","message":"Connected To MongoDB Locally.","timestamp":"2024-06-29T10:13:26.026Z"}
+{"level":"info","message":"Server is running on port: 8181","timestamp":"2024-06-29T10:13:26.063Z"}
+{"level":"debug","message":"Refresh token process complete","timestamp":"2024-06-29T10:13:58.050Z"}
+{"level":"http","message":"GET /api/auth/refresh-token 200 96.055 ms - 289\n","timestamp":"2024-06-29T10:13:58.055Z"}
+{"level":"debug","message":"Update agent is complete.","timestamp":"2024-06-29T10:14:14.256Z"}
+{"level":"http","message":"PUT /api/agents/update-agent/667fde27121f3178e090678d 201 119.418 ms - 241\n","timestamp":"2024-06-29T10:14:14.257Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 14:09:12","timestamp":"2024-06-29T11:09:12.725Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 16.147 ms - 46\n","timestamp":"2024-06-29T11:09:12.728Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 14:09:12","timestamp":"2024-06-29T11:09:12.735Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 17:32:50","timestamp":"2024-06-29T14:32:50.167Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 88.574 ms - 46\n","timestamp":"2024-06-29T14:32:50.217Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 17:32:50","timestamp":"2024-06-29T14:32:50.237Z"}
+{"level":"debug","message":"Cron task to remove expired refresh tokens ran at: 29.6.2024, 18:00:00","timestamp":"2024-06-29T15:00:00.163Z"}
+{"level":"http","message":"GET /api/crons/cron-job 200 26.098 ms - 46\n","timestamp":"2024-06-29T15:00:00.173Z"}
+{"level":"debug","message":"Cron job ran successfully at: 29.6.2024, 18:00:00","timestamp":"2024-06-29T15:00:00.178Z"}
+{"level":"info","message":"Received SIGINT. Closing server and shutting down...","timestamp":"2024-06-29T15:00:24.679Z"}
+{"level":"info","message":"Shutting down gracefully...","timestamp":"2024-06-29T15:00:24.692Z"}
+{"level":"info","message":"MongoDB connection closed.","timestamp":"2024-06-29T15:00:24.775Z"}

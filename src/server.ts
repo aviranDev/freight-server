@@ -25,8 +25,8 @@ async function startServer(port: string | number): Promise<http.Server> {
     });
   });
 
-  // Connect to MongoDB
   try {
+    // Connect to MongoDB
     await initializeDb();
   } catch (error) {
     // Handle MongoDB connection error
@@ -44,7 +44,6 @@ async function startServer(port: string | number): Promise<http.Server> {
       logger.info(`Server is running on port: ${port}`);
       resolve(server); // Resolve the Server instance
     });
-
 
     // Handle HTTP server errors, if any
     server.on("error", (err) => {

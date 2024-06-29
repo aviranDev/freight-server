@@ -45,6 +45,14 @@ const validateAgent = (body: IAgent): Joi.ValidationResult<IAgent> => {
       'any.required': 'Phone is required',
       'string.pattern.base': 'Phone must be 10 digits',
     }),
+    // Step 7: Validate the 'email' field.
+    email: Joi.array().items(
+      Joi.string().pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
+    ).messages({
+      'array.base': 'Email must be an array',
+      'any.required': 'Email is required',
+      'string.pattern.base': 'Email must be 10 digits',
+    }),
   });
 
   // Step 6: Return the result of the validation.
